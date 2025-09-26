@@ -1,0 +1,17 @@
+﻿* text=auto eol=lf
+
+# Windows scripts keep CRLF
+*.bat  text eol=crlf
+*.cmd  text eol=crlf
+*.ps1  text eol=crlf
+
+# Always treat these as binary (no line-ending changes)
+*.png -text
+*.jpg -text
+*.jpeg -text
+*.gif -text
+*.pdf -text
+*.zip -text
+*.jar -text
+*.exe -text
+*.dll -text
