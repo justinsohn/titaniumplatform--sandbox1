@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Provides Read/Write access to the Sales Region and Sales Area fields on Opportunities.</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Sales_Area__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Sales_Region__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>R/W Access to Sales Region and Sales Area Fields on Opportunities</label>
+</PermissionSet>

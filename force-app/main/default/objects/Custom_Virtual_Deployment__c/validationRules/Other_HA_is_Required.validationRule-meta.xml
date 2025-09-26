@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_HA_is_Required</fullName>
+    <active>true</active>
+    <description>Other HA is required when Other is selected for HA &amp; Resiliency Required</description>
+    <errorConditionFormula>AND(
+INCLUDES(HA_Resiliency__c  , &quot;Other&quot;),
+ISBLANK(  Other_HA__c  )
+)</errorConditionFormula>
+    <errorDisplayField>Other_HA__c</errorDisplayField>
+    <errorMessage>Required when Other is selected for HA &amp; Resiliency Required</errorMessage>
+</ValidationRule>

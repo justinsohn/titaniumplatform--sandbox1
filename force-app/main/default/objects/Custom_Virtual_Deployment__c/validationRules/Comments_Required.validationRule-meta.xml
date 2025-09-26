@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Comments_Required</fullName>
+    <active>true</active>
+    <description>Comments are required when the Status equals Needs More Information</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(  Status__c  , &quot;Needs More Information&quot;),
+ISBLANK( Comments__c  )
+)</errorConditionFormula>
+    <errorDisplayField>Comments__c</errorDisplayField>
+    <errorMessage>Required when the Status equals Needs More Information</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Lifecycle_is_Required</fullName>
+    <active>true</active>
+    <description>Other Lifecycle is required when Other is selected for Lifecycle Operation Required</description>
+    <errorConditionFormula>AND(
+INCLUDES(  Lifecycle_Operations__c  , &quot;Other&quot;),
+ISBLANK(  Other_Lifecycle__c   )
+)</errorConditionFormula>
+    <errorDisplayField>Other_Lifecycle__c</errorDisplayField>
+    <errorMessage>Required when Other is selected for Lifecycle Operation Required</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Read/Write Access to SO Reviewed on LoEs</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Level_of_Effort_Estimate__c.SO_Reviewed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Read/Write Access to SO Reviewed on LoEs</label>
+    <license>Salesforce</license>
+</PermissionSet>

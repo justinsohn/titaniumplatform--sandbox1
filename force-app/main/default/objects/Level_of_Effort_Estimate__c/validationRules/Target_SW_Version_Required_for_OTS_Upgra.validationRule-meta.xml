@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Target_SW_Version_Required_for_OTS_Upgra</fullName>
+    <active>false</active>
+    <description>Target SW Version is Required for OTS Upgrade</description>
+    <errorConditionFormula>AND( 
+ISPICKVAl(    Deployment_Type__c   , &quot;OTS Upgrade&quot; ),
+ISBLANK(   Target_SW_Version__c  ))</errorConditionFormula>
+    <errorDisplayField>Target_SW_Version__c</errorDisplayField>
+    <errorMessage>Required for OTS Upgrade</errorMessage>
+</ValidationRule>

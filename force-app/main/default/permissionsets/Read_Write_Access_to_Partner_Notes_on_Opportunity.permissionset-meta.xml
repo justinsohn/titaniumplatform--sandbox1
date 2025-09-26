@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Read/Write Access to Partner Notes on Opportunity</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Partner_Notes__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Read/Write Access to Partner Notes on Opportunity</label>
+    <license>Salesforce</license>
+</PermissionSet>

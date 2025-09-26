@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>Optimizer</label>
+    <navType>Console</navType>
+    <tabs>standard-OrgMetric</tabs>
+    <tabs>NetSuiteCredit_Memos__c</tabs>
+    <tabs>NetSuiteInvoices__c</tabs>
+    <tabs>Credit_Memo_Line_Items__c</tabs>
+    <tabs>Invoice_Line_Item__c</tabs>
+    <tabs>NS_Payment__c</tabs>
+    <uiType>Lightning</uiType>
+    <workspaceConfig>
+        <mappings>
+            <tab>Credit_Memo_Line_Items__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Invoice_Line_Item__c</tab>
+        </mappings>
+        <mappings>
+            <tab>NS_Payment__c</tab>
+        </mappings>
+        <mappings>
+            <tab>NetSuiteCredit_Memos__c</tab>
+        </mappings>
+        <mappings>
+            <tab>NetSuiteInvoices__c</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-OrgMetric</tab>
+        </mappings>
+    </workspaceConfig>
+</CustomApplication>

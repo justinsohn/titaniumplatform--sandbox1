@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Comments__c</fullName>
+    <inlineHelpText>Sales teams should add here all relavant additional information neede dby the dleivery teams to build the LoE Estimate.
+
+This can include (but not limited to) topics such as deployment timing, bespoke customer requirements, approach with partners...</inlineHelpText>
+    <label>Comments</label>
+    <length>5000</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

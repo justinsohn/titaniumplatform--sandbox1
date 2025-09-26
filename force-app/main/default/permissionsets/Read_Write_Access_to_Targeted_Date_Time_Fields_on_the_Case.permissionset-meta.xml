@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Read and Write access to Targeted Date/Time fields on the case</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Original_Targeted_Final_Solution_Date_Ti__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Targeted_Assigned_Date_Time__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Targeted_Final_Solution_Date_Time__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Targeted_Restored_Date_Time__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Read/Write Access to Targeted Date/Time Fields on the Case</label>
+    <license>Salesforce</license>
+</PermissionSet>

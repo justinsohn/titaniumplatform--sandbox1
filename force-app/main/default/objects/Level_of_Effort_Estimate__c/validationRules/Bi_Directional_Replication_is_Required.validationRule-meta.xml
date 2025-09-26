@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bi_Directional_Replication_is_Required</fullName>
+    <active>false</active>
+    <description>Bi Directional Replication is required on LoE Estimate Requested</description>
+    <errorConditionFormula>AND(
+ISPICKVAl(  Stage__c  , &quot;LoE Estimate Requested&quot; ),
+ISPICKVAL(   Bi_Directional_Replication__c  , &quot;&quot;   ))</errorConditionFormula>
+    <errorDisplayField>Bi_Directional_Replication__c</errorDisplayField>
+    <errorMessage>Required when LoE Estimate Requested</errorMessage>
+</ValidationRule>

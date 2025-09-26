@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Products_are_Required</fullName>
+    <active>false</active>
+    <description>Product(SKUs) are required on LoE Estimate Requested</description>
+    <errorConditionFormula>AND(
+ISPICKVAl(  Stage__c  , &quot;LoE Estimate Requested&quot; ),
+ISBLANK(    Product_SKUs__c   ))</errorConditionFormula>
+    <errorDisplayField>Product_SKUs__c</errorDisplayField>
+    <errorMessage>Required when LoE Estimate Requested</errorMessage>
+</ValidationRule>

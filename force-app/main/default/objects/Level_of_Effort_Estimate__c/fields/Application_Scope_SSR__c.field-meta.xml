@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Application_Scope_SSR__c</fullName>
+    <label>Application Scope (SSR)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>STP</fullName>
+                <default>false</default>
+                <label>STP</label>
+            </value>
+            <value>
+                <fullName>STP ECC</fullName>
+                <default>false</default>
+                <label>STP ECC</label>
+            </value>
+            <value>
+                <fullName>STP ECC + NP</fullName>
+                <default>false</default>
+                <label>STP ECC + NP</label>
+            </value>
+            <value>
+                <fullName>STP ECC + SiGFW (SS7)</fullName>
+                <default>false</default>
+                <label>STP ECC + SiGFW (SS7)</label>
+            </value>
+            <value>
+                <fullName>DSC</fullName>
+                <default>false</default>
+                <label>DSC</label>
+            </value>
+            <value>
+                <fullName>DSC ECC</fullName>
+                <default>false</default>
+                <label>DSC ECC</label>
+            </value>
+            <value>
+                <fullName>DSC ECC + SiGFW (DIA)</fullName>
+                <default>false</default>
+                <label>DSC ECC + SiGFW (DIA)</label>
+            </value>
+            <value>
+                <fullName>SiGFW (SS7)</fullName>
+                <default>false</default>
+                <label>SiGFW (SS7)</label>
+            </value>
+            <value>
+                <fullName>SiGFW (DIA)</fullName>
+                <default>false</default>
+                <label>SiGFW (DIA)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

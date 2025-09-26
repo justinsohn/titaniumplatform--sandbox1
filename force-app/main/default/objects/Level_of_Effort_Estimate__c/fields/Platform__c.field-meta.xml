@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Platform__c</fullName>
+    <inlineHelpText>Please confirm the platform(s) to be deployed, if more than 1 platform then provide details in the comments section.</inlineHelpText>
+    <label>Platform</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Stage__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>TITAN 7</fullName>
+                <default>false</default>
+                <label>TITAN 7</label>
+            </value>
+            <value>
+                <fullName>TITAN.IUM</fullName>
+                <default>false</default>
+                <label>TITAN.IUM</label>
+            </value>
+            <value>
+                <fullName>TITAN 7 + TITAN.IUM</fullName>
+                <default>false</default>
+                <label>TITAN 7 + TITAN.IUM</label>
+            </value>
+            <value>
+                <fullName>TITAN 8</fullName>
+                <default>false</default>
+                <label>TITAN 8</label>
+            </value>
+            <value>
+                <fullName>TITAN 8 + TITAN.IUM</fullName>
+                <default>false</default>
+                <label>TITAN 8 + TITAN.IUM</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Open</controllingFieldValue>
+            <controllingFieldValue>LoE Estimate Requested</controllingFieldValue>
+            <controllingFieldValue>LoE Request Received - WIP</controllingFieldValue>
+            <controllingFieldValue>Awaiting Clarifications</controllingFieldValue>
+            <controllingFieldValue>LoE Estimate Completed</controllingFieldValue>
+            <controllingFieldValue>Request Cancelled</controllingFieldValue>
+            <valueName>TITAN 7</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Open</controllingFieldValue>
+            <controllingFieldValue>LoE Estimate Requested</controllingFieldValue>
+            <controllingFieldValue>LoE Request Received - WIP</controllingFieldValue>
+            <controllingFieldValue>Awaiting Clarifications</controllingFieldValue>
+            <controllingFieldValue>LoE Estimate Completed</controllingFieldValue>
+            <controllingFieldValue>Request Cancelled</controllingFieldValue>
+            <valueName>TITAN.IUM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Open</controllingFieldValue>
+            <controllingFieldValue>LoE Estimate Requested</controllingFieldValue>
+            <controllingFieldValue>LoE Request Received - WIP</controllingFieldValue>
+            <controllingFieldValue>Awaiting Clarifications</controllingFieldValue>
+            <controllingFieldValue>LoE Estimate Completed</controllingFieldValue>
+            <controllingFieldValue>Request Cancelled</controllingFieldValue>
+            <valueName>TITAN 7 + TITAN.IUM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Open</controllingFieldValue>
+            <controllingFieldValue>LoE Estimate Requested</controllingFieldValue>
+            <controllingFieldValue>LoE Request Received - WIP</controllingFieldValue>
+            <controllingFieldValue>Awaiting Clarifications</controllingFieldValue>
+            <controllingFieldValue>LoE Estimate Completed</controllingFieldValue>
+            <controllingFieldValue>Request Cancelled</controllingFieldValue>
+            <valueName>TITAN 8</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Open</controllingFieldValue>
+            <controllingFieldValue>LoE Estimate Requested</controllingFieldValue>
+            <controllingFieldValue>LoE Request Received - WIP</controllingFieldValue>
+            <controllingFieldValue>Awaiting Clarifications</controllingFieldValue>
+            <controllingFieldValue>LoE Estimate Completed</controllingFieldValue>
+            <controllingFieldValue>Request Cancelled</controllingFieldValue>
+            <valueName>TITAN 8 + TITAN.IUM</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

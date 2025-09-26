@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Read Only Access to Opportunity Characteristics Field</description>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Opportunity_Characteristics__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Read Only Access to Opportunity Characteristics Field</label>
+</PermissionSet>

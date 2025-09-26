@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <defaultLandingTab>standard-Case</defaultLandingTab>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <tabs>Getting_Started_reg</tabs>
+    <tabs>standard-Case</tabs>
+    <tabs>standard-Solution</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>standard-Chatter</tabs>
+    <tabs>standard-File</tabs>
+    <tabs>Price_Method_2__c</tabs>
+    <tabs>Price_Method_1__c</tabs>
+    <tabs>SBQQ__ProcessInput__c</tabs>
+    <tabs>Subscription_Pricing__c</tabs>
+    <tabs>TPM_Pricing__c</tabs>
+    <tabs>SBQQ__ProcessInputCondition__c</tabs>
+    <tabs>standard-WaveHome</tabs>
+    <tabs>Access_Control_Profile__c</tabs>
+    <tabs>SBQQ__ProductOption__c</tabs>
+    <tabs>Knowledge__kav</tabs>
+    <tabs>NetSuiteCredit_Memos__c</tabs>
+    <tabs>NetSuiteInvoices__c</tabs>
+    <tabs>Credit_Memo_Line_Items__c</tabs>
+    <tabs>Invoice_Line_Item__c</tabs>
+    <tabs>NS_Payment__c</tabs>
+</CustomApplication>

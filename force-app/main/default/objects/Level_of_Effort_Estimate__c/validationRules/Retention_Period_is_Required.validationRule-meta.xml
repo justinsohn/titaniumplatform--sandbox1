@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Retention_Period_is_Required</fullName>
+    <active>false</active>
+    <description>Retention Period is Required when TDR Utilization equals Yes</description>
+    <errorConditionFormula>AND( 
+ISPICKVAl(    TDR_Utilization__c   , &quot;Yes&quot; ),
+ISBLANK(  Retention_Period_for_all_Nodes_months__c   ))</errorConditionFormula>
+    <errorDisplayField>Retention_Period_for_all_Nodes_months__c</errorDisplayField>
+    <errorMessage>Required when TDR Utilization equals Yes</errorMessage>
+</ValidationRule>

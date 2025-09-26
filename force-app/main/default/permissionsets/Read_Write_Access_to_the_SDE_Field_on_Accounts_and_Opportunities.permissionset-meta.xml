@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Read/Write Access to the SDE Field on Accounts and Opportunities</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Read/Write Access to the SDE Field on Accounts and Opportunities</label>
+</PermissionSet>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Application_Scope_SDM__c</fullName>
+    <label>Application Scope (SDM)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>HSS (SDM/AuC)</fullName>
+                <default>false</default>
+                <label>HSS (SDM/AuC)</label>
+            </value>
+            <value>
+                <fullName>HLR</fullName>
+                <default>false</default>
+                <label>HLR</label>
+            </value>
+            <value>
+                <fullName>HSS + HLR (SDM/AuC)</fullName>
+                <default>false</default>
+                <label>HSS + HLR (SDM/AuC)</label>
+            </value>
+            <value>
+                <fullName>EIR</fullName>
+                <default>false</default>
+                <label>EIR</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

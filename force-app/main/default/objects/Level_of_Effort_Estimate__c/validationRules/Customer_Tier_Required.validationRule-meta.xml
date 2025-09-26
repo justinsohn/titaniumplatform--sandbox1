@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Tier_Required</fullName>
+    <active>false</active>
+    <description>Customer Tier is required on LoE Estimate Requested</description>
+    <errorConditionFormula>AND(
+ISPICKVAl(  Stage__c  , &quot;LoE Estimate Requested&quot; ),
+ISPICKVAL(   Customer_Tier__c , &quot;&quot; ))</errorConditionFormula>
+    <errorDisplayField>Customer_Tier__c</errorDisplayField>
+    <errorMessage>Required when LoE Estimate Requested</errorMessage>
+</ValidationRule>

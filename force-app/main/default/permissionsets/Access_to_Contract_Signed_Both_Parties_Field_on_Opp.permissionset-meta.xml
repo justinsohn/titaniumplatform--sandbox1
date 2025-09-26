@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Read/Write access to the Contract Signed (Both Parties) Field on the Opportunity.  Only assigned to Contracts Team.</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Contract_Signed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Access to Contract Signed (Both Parties) Field on Opp</label>
+</PermissionSet>

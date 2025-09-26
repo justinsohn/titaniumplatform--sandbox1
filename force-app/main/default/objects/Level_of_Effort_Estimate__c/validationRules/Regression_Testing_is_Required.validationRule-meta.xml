@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Regression_Testing_is_Required</fullName>
+    <active>false</active>
+    <description>Regression Testing is required on LoE Estimate Requested</description>
+    <errorConditionFormula>AND(
+ISPICKVAl(  Stage__c  , &quot;LoE Estimate Requested&quot; ),
+ISPICKVAL(    Regression_Testing__c   , &quot;&quot;   ))</errorConditionFormula>
+    <errorDisplayField>Regression_Testing__c</errorDisplayField>
+    <errorMessage>Required when LoE Estimate Requested</errorMessage>
+</ValidationRule>

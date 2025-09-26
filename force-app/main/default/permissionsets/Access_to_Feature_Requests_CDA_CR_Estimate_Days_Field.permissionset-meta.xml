@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Access to Feature Requests CDA/CR Estimate (Days) Field</description>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Feature_Request__c.CDA_CR_Estimate_Days__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Access to Feature Requests CDA/CR Estimate (Days) Field</label>
+    <license>Salesforce</license>
+</PermissionSet>

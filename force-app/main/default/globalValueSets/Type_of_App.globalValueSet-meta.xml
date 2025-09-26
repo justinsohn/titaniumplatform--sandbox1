@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>CRE</fullName>
+        <default>false</default>
+        <label>CRE</label>
+    </customValue>
+    <customValue>
+        <fullName>AAA</fullName>
+        <default>false</default>
+        <label>AAA</label>
+    </customValue>
+    <customValue>
+        <fullName>BGCF-IMS</fullName>
+        <default>false</default>
+        <label>BGCF-IMS</label>
+    </customValue>
+    <customValue>
+        <fullName>D-IWF</fullName>
+        <default>false</default>
+        <label>D-IWF</label>
+    </customValue>
+    <customValue>
+        <fullName>DEA</fullName>
+        <default>false</default>
+        <label>DEA</label>
+    </customValue>
+    <customValue>
+        <fullName>Diameter FW</fullName>
+        <default>false</default>
+        <label>Diameter FW</label>
+    </customValue>
+    <customValue>
+        <fullName>DNS (Standard)</fullName>
+        <default>false</default>
+        <label>DNS (Standard)</label>
+    </customValue>
+    <customValue>
+        <fullName>DNS Firewall</fullName>
+        <default>false</default>
+        <label>DNS Firewall</label>
+    </customValue>
+    <customValue>
+        <fullName>DNS-IMS</fullName>
+        <default>false</default>
+        <label>DNS-IMS</label>
+    </customValue>
+    <customValue>
+        <fullName>DRA</fullName>
+        <default>false</default>
+        <label>DRA</label>
+    </customValue>
+    <customValue>
+        <fullName>DSC base</fullName>
+        <default>false</default>
+        <label>DSC base</label>
+    </customValue>
+    <customValue>
+        <fullName>DSC Full Package</fullName>
+        <default>false</default>
+        <label>DSC Full Package</label>
+    </customValue>
+    <customValue>
+        <fullName>EIR-SS7 SUB</fullName>
+        <default>false</default>
+        <label>EIR-SS7 SUB</label>
+    </customValue>
+    <customValue>
+        <fullName>EIR-SS7 TPS</fullName>
+        <default>false</default>
+        <label>EIR-SS7 TPS</label>
+    </customValue>
+    <customValue>
+        <fullName>ENUM (Standard)</fullName>
+        <default>false</default>
+        <label>ENUM (Standard)</label>
+    </customValue>
+    <customValue>
+        <fullName>ENUM-DNS Combo - Sub</fullName>
+        <default>false</default>
+        <label>ENUM-DNS Combo - Sub</label>
+    </customValue>
+    <customValue>
+        <fullName>ENUM-DNS Combo-TPS</fullName>
+        <default>false</default>
+        <label>ENUM-DNS Combo-TPS</label>
+    </customValue>
+    <customValue>
+        <fullName>ENUM-IMS</fullName>
+        <default>false</default>
+        <label>ENUM-IMS</label>
+    </customValue>
+    <customValue>
+        <fullName>ENUM/DNS (Standard)</fullName>
+        <default>false</default>
+        <label>ENUM/DNS (Standard)</label>
+    </customValue>
+    <customValue>
+        <fullName>HLR Base +CS/PS</fullName>
+        <default>false</default>
+        <label>HLR Base +CS/PS</label>
+    </customValue>
+    <customValue>
+        <fullName>HLR GSM SCP</fullName>
+        <default>false</default>
+        <label>HLR GSM SCP</label>
+    </customValue>
+    <customValue>
+        <fullName>HLR Non3GPP</fullName>
+        <default>false</default>
+        <label>HLR Non3GPP</label>
+    </customValue>
+    <customValue>
+        <fullName>HSS base +Zh</fullName>
+        <default>false</default>
+        <label>HSS base +Zh</label>
+    </customValue>
+    <customValue>
+        <fullName>HSS CLF</fullName>
+        <default>false</default>
+        <label>HSS CLF</label>
+    </customValue>
+    <customValue>
+        <fullName>HSS Cx</fullName>
+        <default>false</default>
+        <label>HSS Cx</label>
+    </customValue>
+    <customValue>
+        <fullName>HSS S6</fullName>
+        <default>false</default>
+        <label>HSS S6</label>
+    </customValue>
+    <customValue>
+        <fullName>HSS Sh</fullName>
+        <default>false</default>
+        <label>HSS Sh</label>
+    </customValue>
+    <customValue>
+        <fullName>HSS SWx</fullName>
+        <default>false</default>
+        <label>HSS SWx</label>
+    </customValue>
+    <customValue>
+        <fullName>HSS/HLR Combo</fullName>
+        <default>false</default>
+        <label>HSS/HLR Combo</label>
+    </customValue>
+    <customValue>
+        <fullName>HTTP Firewall</fullName>
+        <default>false</default>
+        <label>HTTP Firewall</label>
+    </customValue>
+    <customValue>
+        <fullName>I/S CSCF-IMS</fullName>
+        <default>false</default>
+        <label>I/S CSCF-IMS</label>
+    </customValue>
+    <customValue>
+        <fullName>IMSSF-IMS</fullName>
+        <default>false</default>
+        <label>IMSSF-IMS</label>
+    </customValue>
+    <customValue>
+        <fullName>LRF</fullName>
+        <default>false</default>
+        <label>LRF</label>
+    </customValue>
+    <customValue>
+        <fullName>LRF-IMS</fullName>
+        <default>false</default>
+        <label>LRF-IMS</label>
+    </customValue>
+    <customValue>
+        <fullName>Machine Type Communications (MTC)</fullName>
+        <default>false</default>
+        <label>Machine Type Communications (MTC)</label>
+    </customValue>
+    <customValue>
+        <fullName>Number Portability</fullName>
+        <default>false</default>
+        <label>Number Portability</label>
+    </customValue>
+    <customValue>
+        <fullName>Number Portability - SS7</fullName>
+        <default>false</default>
+        <label>Number Portability - SS7</label>
+    </customValue>
+    <customValue>
+        <fullName>PCRF</fullName>
+        <default>false</default>
+        <label>PCRF</label>
+    </customValue>
+    <customValue>
+        <fullName>SIP Firewall</fullName>
+        <default>false</default>
+        <label>SIP Firewall</label>
+    </customValue>
+    <customValue>
+        <fullName>SIP Traffic Manager (STM)</fullName>
+        <default>false</default>
+        <label>SIP Traffic Manager (STM)</label>
+    </customValue>
+    <customValue>
+        <fullName>SLF</fullName>
+        <default>false</default>
+        <label>SLF</label>
+    </customValue>
+    <customValue>
+        <fullName>SMS Home Routing</fullName>
+        <default>false</default>
+        <label>SMS Home Routing</label>
+    </customValue>
+    <customValue>
+        <fullName>SS7 Firewall</fullName>
+        <default>false</default>
+        <label>SS7 Firewall</label>
+    </customValue>
+    <customValue>
+        <fullName>STP Sigtran</fullName>
+        <default>false</default>
+        <label>STP Sigtran</label>
+    </customValue>
+    <customValue>
+        <fullName>STP TDM</fullName>
+        <default>false</default>
+        <label>STP TDM</label>
+    </customValue>
+    <customValue>
+        <fullName>STP/DSC Combo</fullName>
+        <default>false</default>
+        <label>STP/DSC Combo</label>
+    </customValue>
+    <customValue>
+        <fullName>STP/Number Portablity Combo</fullName>
+        <default>false</default>
+        <label>STP/Number Portablity Combo</label>
+    </customValue>
+    <customValue>
+        <fullName>USSD-GW-IMS</fullName>
+        <default>false</default>
+        <label>USSD-GW-IMS</label>
+    </customValue>
+    <customValue>
+        <fullName>UT Proxy-IMS</fullName>
+        <default>false</default>
+        <label>UT Proxy-IMS</label>
+    </customValue>
+    <masterLabel>Type of App</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

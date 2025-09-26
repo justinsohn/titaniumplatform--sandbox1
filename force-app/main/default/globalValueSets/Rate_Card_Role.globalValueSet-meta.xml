@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Program Manager</fullName>
+        <default>false</default>
+        <label>Program Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Project Manager</fullName>
+        <default>false</default>
+        <label>Project Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Principal SDE</fullName>
+        <default>false</default>
+        <label>Principal SDE</label>
+    </customValue>
+    <customValue>
+        <fullName>Senior SDE</fullName>
+        <default>false</default>
+        <label>Senior SDE</label>
+    </customValue>
+    <customValue>
+        <fullName>SDE</fullName>
+        <default>false</default>
+        <label>SDE</label>
+    </customValue>
+    <customValue>
+        <fullName>Jr SDE</fullName>
+        <default>false</default>
+        <label>Jr SDE</label>
+    </customValue>
+    <customValue>
+        <fullName>Principal FIE</fullName>
+        <default>false</default>
+        <label>Principal FIE</label>
+    </customValue>
+    <customValue>
+        <fullName>Senior FIE</fullName>
+        <default>false</default>
+        <label>Senior FIE</label>
+    </customValue>
+    <customValue>
+        <fullName>FIE</fullName>
+        <default>false</default>
+        <label>FIE</label>
+    </customValue>
+    <customValue>
+        <fullName>Jr FIE</fullName>
+        <default>false</default>
+        <label>Jr FIE</label>
+    </customValue>
+    <customValue>
+        <fullName>Principal SWE</fullName>
+        <default>false</default>
+        <label>Principal SWE</label>
+    </customValue>
+    <customValue>
+        <fullName>Senior SWE</fullName>
+        <default>false</default>
+        <label>Senior SWE</label>
+    </customValue>
+    <customValue>
+        <fullName>SWE</fullName>
+        <default>false</default>
+        <label>SWE</label>
+    </customValue>
+    <customValue>
+        <fullName>Jr SWE</fullName>
+        <default>false</default>
+        <label>Jr SWE</label>
+    </customValue>
+    <customValue>
+        <fullName>Principal Trainer</fullName>
+        <default>false</default>
+        <label>Principal Trainer</label>
+    </customValue>
+    <customValue>
+        <fullName>Senior Trainer</fullName>
+        <default>false</default>
+        <label>Senior Trainer</label>
+    </customValue>
+    <masterLabel>Rate Card Role</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

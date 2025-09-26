@@ -1,0 +1,5 @@
+.THIS .slds-grid button.overrideSelected {
+    background-color: white;
+    box-shadow: none;
+    border: 1px solid #b5b5b5;
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>DaveO</label>
+    <navType>Standard</navType>
+    <profileActionOverrides>
+        <actionName>Tab</actionName>
+        <content>Home_Page_Default</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Business Operations User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>Tab</actionName>
+        <content>Sales_Home_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Titan.ium Standard User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>Tab</actionName>
+        <content>Sales_Home_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>TSA Manager User</profile>
+    </profileActionOverrides>
+    <tabs>standard-Account</tabs>
+    <tabs>APXTConga4__Conga_Merge_Query__c</tabs>
+    <tabs>APXT_CongaSign__Setup</tabs>
+    <tabs>APXTConga4__Conga_Template__c</tabs>
+    <tabs>standard-Opportunity</tabs>
+    <tabs>standard-Product2</tabs>
+    <tabs>SBQQ__Quote__c</tabs>
+    <tabs>Question__c</tabs>
+    <tabs>Features__c</tabs>
+    <tabs>Access_Control_Profile__c</tabs>
+    <tabs>SBQQ__ProductOption__c</tabs>
+    <tabs>NetSuiteCredit_Memos__c</tabs>
+    <tabs>NetSuiteInvoices__c</tabs>
+    <tabs>Credit_Memo_Line_Items__c</tabs>
+    <tabs>Invoice_Line_Item__c</tabs>
+    <tabs>NS_Payment__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>DaveO_UtilityBar</utilityBar>
+</CustomApplication>

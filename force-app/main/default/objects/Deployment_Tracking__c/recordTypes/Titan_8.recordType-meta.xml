@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Titan_8</fullName>
+    <active>true</active>
+    <label>Titan 8</label>
+    <picklistValues>
+        <picklist>Bridge_Cots__c</picklist>
+        <values>
+            <fullName>COTS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Edge_VM_Cots__c</picklist>
+        <values>
+            <fullName>COTS - Genband</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COTS - HP DL360</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COTS - HP DL380G10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COTS - HP DL380G9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VM - Openstack</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VM - Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VM - Vmware</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>License_Type__c</picklist>
+        <values>
+            <fullName>Premium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Master_VM_Cots__c</picklist>
+        <values>
+            <fullName>COTS - Genband</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COTS - HP DL360</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COTS - HP DL380G10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COTS - HP DL380G9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VM - Openstack</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VM - Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VM - Vmware</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Decommissioned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deployed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Staged</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Lab</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner-Lab</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Production</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>VM_COTS__c</picklist>
+        <values>
+            <fullName>COTS - Genband</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COTS - HP DL360</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COTS - HP DL380G10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COTS - HP DL380G9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VM - Openstack</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VM - Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VM - Vmware</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,211 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader"
+                controller="QuestionsAndAnswers"
+                access="global">
+    <!-- includes -->
+    <aura:html tag="style">
+        .slds-modal__container {
+            max-width: 70rem !important;
+            width:90% !important;
+        	height: auto !important;
+        }
+        .slds-modal__content {
+            height: auto !important;
+        }
+    </aura:html>
+    
+    <!-- private variables -->
+    <aura:attribute name="_questionsAndAnswers" type="Map" />
+    <aura:attribute name="_previousStates" type="List" default="[]" />
+    <aura:attribute name="_previousStages" type="List" default="['start']" />
+    <aura:attribute name="_questions" type="List" />
+    <aura:attribute name="_answers" type="List" default="[]" />
+    <aura:attribute name="_stage" type="String" default="start" />
+    <aura:attribute name="_selectedProducts" type="List" default="[]"/>
+    <aura:attribute name="_isLoaded" type="Boolean" default="false" />
+    <aura:attribute name="_isAnswerSelected" type="Boolean" default="false" />
+    <aura:attribute name="_isProductSelected" type="Boolean" default="false" />
+    <aura:attribute name="_error" type="String" default="" />
+    <aura:attribute name="_message" type="String" default=""/>
+    
+    <!-- passed in parameters -->
+    <aura:attribute name="recordId" type="String" />
+    
+    <!-- handlers -->
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <a id="link" target="_parent" href="{! '/apex/SBQQ__sb?id=' + v.recordId }" style="display: none"></a>
+    <lightning:card title="Guided Selling">
+        <aura:if isTrue="{! not(v._isLoaded) }">
+            <lightning:spinner alternativeText="Loading" size="medium" />
+        </aura:if>
+        <aura:if isTrue="{! not(empty(v._error)) }">
+            <ui:message title="Error" severity="error" closable="true">
+                {!v._error}
+            </ui:message>
+        </aura:if>
+        <aura:if isTrue="{! not(empty(v._message)) }">
+            <ui:message title="Confirmation" severity="confirm" closable="true">
+                {!v._message}
+            </ui:message>
+        </aura:if>
+        <aura:if isTrue="{! v._isLoaded }">
+            <div class="slds-grid slds-align_absolute-center slds-wrap" style="min-width: 900px;">
+                <aura:if isTrue="{! v._stage == 'start' }">
+                    <div class="slds-grid slds-align_absolute-center slds-wrap slds-size_2-of-3">
+                        <h2 class="slds-size_1-of-1 slds-border_bottom">What Sales Process is this? </h2>
+                        <lightning:buttonGroup class="slds-grid slds-wrap slds-size_1-of-1 slds-m-top_small">
+                            <aura:iteration items="{! v._questionsAndAnswers.processTypes }" var="item">
+                                <div id="{! item.value }"
+                                     class="slds-size_1-of-1 slds-align_absolute-center"
+                                     onclick="{! c.handeProcessTypeSelectionChange }">
+                                    <lightning:buttonStateful aura:id="answer"
+                                                              class="slds-size_2-of-3 overrideSelected"
+                                                              iconNameWhenOn="utility:check"
+                                                              labelWhenOn="{! item.label }"
+                                                              iconNameWhenOff="utility:add"
+                                                              labelWhenOff="{! item.label }"
+                                                              iconNameWhenHover="utility:close"
+                                                              labelWhenHover="{! item.label }"
+                                                              state="{! item.selected }"/>
+                                </div>
+                            </aura:iteration>
+                        </lightning:buttonGroup>
+                    </div>
+                </aura:if>
+                <aura:if isTrue="{! v._stage == 'question1' }">
+                    <div class="slds-grid slds-align_absolute-center slds-wrap slds-size_2-of-3">
+                        <aura:iteration items="{! v._questions }" var="question">
+                            <h2 class="slds-size_1-of-1 slds-border_bottom">{! question.Name }</h2>
+                            <div class="slds-grid slds-wrap slds-size_1-of-1 slds-m-top_small">
+                                <aura:iteration items="{! question.Answers__r }" var="answer">
+                                    <!--
+                                    <lightning:button label="{! answer.Name }" value="{! answer.Id }" onclick="{! c.handleNext }"/>
+									-->
+                                    <div id="{! answer.Id }"
+                                         class="slds-size_1-of-1 slds-align_absolute-center"
+                                         onclick="{! c.handeSelectionChange }">
+                                        <lightning:buttonStateful aura:id="answer"
+                                                                  class="slds-size_2-of-3 overrideSelected"
+                                                                  iconNameWhenOn="utility:check"
+                                                                  labelWhenOn="{! answer.Name }"
+                                                                  iconNameWhenOff="utility:add"
+                                                                  labelWhenOff="{! answer.Name }"
+                                                                  iconNameWhenHover="utility:close"
+                                                                  labelWhenHover="{! answer.Name }"
+                                                                  state="{! answer.selected }"/>
+                                    </div>
+                                </aura:iteration>
+                            </div>
+                        </aura:iteration>
+                    </div>
+                </aura:if>
+                <aura:if isTrue="{! v._stage == 'question2' }">
+                    <div class="slds-grid slds-align_absolute-center slds-wrap slds-size_2-of-3">
+                        <aura:iteration items="{! v._questions }" var="question">
+                            <h2 class="slds-size_1-of-1 slds-border_bottom">{! question.Name }</h2>
+                            <div class="slds-grid slds-wrap slds-size_1-of-1 slds-m-top_small">
+                                <aura:iteration items="{! question.Answer_2__r }" var="answer">
+                                    <div id="{! answer.Id }"
+                                         class="slds-size_1-of-1 slds-align_absolute-center"
+                                         onclick="{! c.handeSelectionChange }">
+                                        <lightning:buttonStateful class="slds-size_2-of-3 overrideSelected"
+                                                                  iconNameWhenOn="utility:check"
+                                                                  labelWhenOn="{! answer.Name }"
+                                                                  iconNameWhenOff="utility:add"
+                                                                  labelWhenOff="{! answer.Name }"
+                                                                  iconNameWhenHover="utility:close"
+                                                                  labelWhenHover="{! answer.Name }"
+                                                                  state="{! answer.selected }"/>
+                                    </div>
+                                </aura:iteration>
+                            </div>
+                        </aura:iteration>
+                    </div>
+                </aura:if>
+                <aura:if isTrue="{! v._stage == 'question3' }">
+                    <div class="slds-grid slds-align_absolute-center slds-wrap slds-size_2-of-3">
+                        <aura:iteration items="{! v._questions }" var="question">
+                            <h2 class="slds-size_1-of-1 slds-border_bottom slds-m-top_small">{! question.Name }</h2>
+                            <div class="slds-grid slds-wrap slds-size_1-of-1 slds-m-top_x-small">
+                                <aura:iteration items="{! question.Answer_3__r }" var="answer">
+                                    <div id="{! answer.Id }"
+                                         class="slds-size_1-of-1 slds-align_absolute-center"
+                                         onclick="{! c.handeSelectionChange }">
+                                        <lightning:buttonStateful class="slds-size_2-of-3 overrideSelected"
+                                                                  iconNameWhenOn="utility:check"
+                                                                  labelWhenOn="{! answer.Name }"
+                                                                  iconNameWhenOff="utility:add"
+                                                                  labelWhenOff="{! answer.Name }"
+                                                                  iconNameWhenHover="utility:close"
+                                                                  labelWhenHover="{! answer.Name }"
+                                                                  state="{! answer.selected }"/>
+                                    </div>
+                                </aura:iteration>
+                            </div>
+                        </aura:iteration>
+                    </div>
+                </aura:if>
+                <aura:if isTrue="{! v._stage == 'review' }">
+                    <lightning:layout class="slds-size_1-of-1">
+                        <lightning:layoutItem padding="around-small" size="12">
+                            <lightning:layout class="slds-border_bottom" multipleRows="true">
+                                <lightning:layoutItem size="4" padding="around-small">
+                                    <div>Question</div>
+                                </lightning:layoutItem>
+                                <lightning:layoutItem size="4" padding="around-small">
+                                    <div>Answer</div>
+                                </lightning:layoutItem>
+                                <lightning:layoutItem size="4" padding="around-small">
+                                    <div>Product Name</div>
+                                </lightning:layoutItem>
+                            </lightning:layout>
+                            <aura:iteration items="{! v._selectedProducts }" var="answer">
+                                <lightning:layout multipleRows="true">
+                                    <lightning:layoutItem size="4" padding="around-small">
+                                        <aura:if isTrue="{! not(empty(answer.Question__r.Name)) }">
+                                            <div>{! answer.Question__r.Name }</div>
+                                        </aura:if>
+                                        <aura:if isTrue="{! not(empty(answer.Question_2__r.Name)) }">
+                                            <div>{! answer.Question_2__r.Name }</div>
+                                        </aura:if>
+                                        <aura:if isTrue="{! not(empty(answer.Question_3__r.Name)) }">
+                                            <div>{! answer.Question_3__r.Name }</div>
+                                        </aura:if>
+                                    </lightning:layoutItem>
+                                    <lightning:layoutItem size="4" padding="around-small">
+                                        <div>{! answer.Name }</div>
+                                    </lightning:layoutItem>
+                                    <lightning:layoutItem size="4" padding="around-small">
+                                        <aura:if isTrue="{! empty(answer.Products__c) }">
+                                            <div>{! answer.Product__r.Name }</div>
+                                            <aura:set attribute="else">
+                                                <div>{! answer.Products__c }</div>
+                                            </aura:set>
+                                        </aura:if>
+                                    </lightning:layoutItem>
+                                </lightning:layout>
+                            </aura:iteration>
+                        </lightning:layoutItem>
+                    </lightning:layout>
+                </aura:if>
+            </div>
+        </aura:if>
+        <aura:set attribute="footer">
+            <lightning:button label="Cancel" title="Close and do not save" variant="destructive" onclick="{! c.handleCancel }"/>
+            <aura:if isTrue="{! v._stage != 'start' }">
+                <lightning:button label="Go Back" title="Go Back" onclick="{! c.handleGoBack }"/>
+            </aura:if>
+            <aura:if isTrue="{! not(or(v._stage == 'review'),or(v._stage == 'start')) }">
+                <aura:if isTrue="{! v._isAnswerSelected }">
+                    <lightning:button variant="brand" label="Next" title="Next" onclick="{! c.handleNext }" />
+                </aura:if>
+                <aura:if isTrue="{! not(v._isAnswerSelected) }">
+                    <lightning:button variant="brand" label="Next" title="Select an Answer to continue" disabled="true" />
+                </aura:if>
+            </aura:if>
+            <aura:if isTrue="{! v._stage == 'review' }">
+                <lightning:button variant="brand" label="Save" title="Save" onclick="{! c.handleSubmit }" />
+                <lightning:button variant="brand" label="Save and Add Product" title="Save and Add Product" onclick="{! c.handleSubmitAndReset }" />
+            </aura:if>
+        </aura:set>
+    </lightning:card>
+</aura:component>

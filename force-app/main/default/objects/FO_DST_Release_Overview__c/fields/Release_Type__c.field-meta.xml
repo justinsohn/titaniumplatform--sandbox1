@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Release_Type__c</fullName>
+    <label>Release Type</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Quarterly Release</fullName>
+                <default>false</default>
+                <label>Quarterly Release</label>
+            </value>
+            <value>
+                <fullName>Maintenance Release</fullName>
+                <default>false</default>
+                <label>Maintenance Release</label>
+            </value>
+            <value>
+                <fullName>Emergency Maintenance Release</fullName>
+                <default>false</default>
+                <label>Emergency Maintenance Release</label>
+            </value>
+            <value>
+                <fullName>Security Patch Release</fullName>
+                <default>false</default>
+                <label>Security Patch Release</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

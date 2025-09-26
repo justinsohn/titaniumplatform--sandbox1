@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Datastore_is_Required</fullName>
+    <active>true</active>
+    <description>Other Lifecycle is required when Other is selected for Datastore Requirements</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(   Datastore__c  , &quot;Other&quot;),
+ISBLANK(   Other_Datastore__c   )
+)</errorConditionFormula>
+    <errorDisplayField>Other_Datastore__c</errorDisplayField>
+    <errorMessage>Required when Other is selected for Datastore Requirements</errorMessage>
+</ValidationRule>

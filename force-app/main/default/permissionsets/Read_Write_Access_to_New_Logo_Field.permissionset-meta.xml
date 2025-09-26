@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Read/Write Access to New Logo Field</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.New_Logo_Year__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Read/Write Access to New Logo Field</label>
+    <license>Salesforce</license>
+</PermissionSet>

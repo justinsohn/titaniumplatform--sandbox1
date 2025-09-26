@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Core_MD_Total__c</fullName>
+    <externalId>false</externalId>
+    <formula>PS_TRA_CDA_SVCS_Core_MD__c + PS_FIE_CDA_PROD_SVCS_Core_MD__c + PS_FIE_CDA_LAB_SVCS_Core_MD__c +  PS_SE_CDA_SVCS_Core_MD__c +  PS_CIA_CDA_SVCS_Core_MD__c +  PS_PMO_CDA_SVCS_Core_MD__c +  PS_CCA_CDA_SVCS_Core_MD__c + PS_PMO_SVCS_Core_MD__c + PS_SDE_SVCS_Core_MD__c + PS_FIE_LAB_SVCS_Core_MD__c + PS_FIE_PROD_SVCS_Core_MD__c + PS_TRA_SVCS_Core_MD__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Core MD</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

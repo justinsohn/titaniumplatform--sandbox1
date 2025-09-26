@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Application_Scope_ASM__c</fullName>
+    <label>Application Scope (ASM)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>NP</fullName>
+                <default>false</default>
+                <label>NP</label>
+            </value>
+            <value>
+                <fullName>UT Proxy</fullName>
+                <default>false</default>
+                <label>UT Proxy</label>
+            </value>
+            <value>
+                <fullName>ENUM-DNS</fullName>
+                <default>false</default>
+                <label>ENUM-DNS</label>
+            </value>
+            <value>
+                <fullName>ENUM-DNS + NP</fullName>
+                <default>false</default>
+                <label>ENUM-DNS + NP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

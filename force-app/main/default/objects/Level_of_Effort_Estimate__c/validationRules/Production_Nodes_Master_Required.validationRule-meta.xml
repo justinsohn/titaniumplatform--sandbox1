@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Production_Nodes_Master_Required</fullName>
+    <active>false</active>
+    <description>Production Nodes Master is required on LoE Estimate Requested</description>
+    <errorConditionFormula>AND(
+ISPICKVAl(  Stage__c  , &quot;LoE Estimate Requested&quot; ),
+ISBLANK(    Production_Nodes_Master__c  ))</errorConditionFormula>
+    <errorDisplayField>Production_Nodes_Master__c</errorDisplayField>
+    <errorMessage>Required when LoE Estimate Requested</errorMessage>
+</ValidationRule>

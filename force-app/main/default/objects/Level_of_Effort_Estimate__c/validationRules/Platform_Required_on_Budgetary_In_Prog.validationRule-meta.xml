@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Platform_Required_on_Budgetary_In_Prog</fullName>
+    <active>false</active>
+    <description>Platform Required on Budgetary LoEs</description>
+    <errorConditionFormula>AND(
+ISPICKVAl( Stage__c , &quot;Budgetary LoE in Progress&quot; ),
+ISPICKVAL( Platform__c ,&quot;&quot;))</errorConditionFormula>
+    <errorDisplayField>Platform__c</errorDisplayField>
+    <errorMessage>Required when Stage is Budgetary</errorMessage>
+</ValidationRule>

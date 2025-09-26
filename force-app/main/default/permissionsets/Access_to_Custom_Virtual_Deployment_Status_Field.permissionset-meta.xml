@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Read/Write Access to the Status Field in Custom Virtual Deployments</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Custom_Virtual_Deployment__c.Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Access to Custom Virtual Deployment Status Field</label>
+</PermissionSet>

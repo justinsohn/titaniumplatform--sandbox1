@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Un_forecasted__c</fullName>
+    <formula>Opportunity_Name__r.Amount - (  X2022_and_Prior_Booked__c + January_2023__c + February_2023__c + March_2023__c + April_2023__c + May_2023__c + June_2023__c + July_2023__c + August_2023__c + September_2023__c + October_2023__c + November_2023__c + December_2023__c +  January_2024__c +  February_2024__c + March_2024__c +  April_2024__c +  May_2024__c +  June_2024__c +  July_2024__c +  August_2024__c +  September_2024__c +  October_2024__c +  November_2024__c +  December_2024__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Un-forecasted</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

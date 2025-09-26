@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Write Access to Solution Overview Approved Field on Opportunity</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Solution_Overview_Approved__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Write Access to Solution Overview Approved Field on Opp</label>
+    <license>Salesforce</license>
+</PermissionSet>

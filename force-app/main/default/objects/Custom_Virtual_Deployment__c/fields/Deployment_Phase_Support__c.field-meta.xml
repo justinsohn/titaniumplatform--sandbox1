@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deployment_Phase_Support__c</fullName>
+    <description>Support Requirements</description>
+    <label>Deployment Phase Support</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>During Onboarding</fullName>
+                <default>false</default>
+                <label>During Onboarding</label>
+            </value>
+            <value>
+                <fullName>During LCM</fullName>
+                <default>false</default>
+                <label>During LCM</label>
+            </value>
+            <value>
+                <fullName>During Operation</fullName>
+                <default>false</default>
+                <label>During Operation</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>3</visibleLines>
+</CustomField>

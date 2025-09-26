@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Delivery_Change__c</fullName>
+    <label>Reason for Delivery Change</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New functionality of other CR with urgent demand</fullName>
+                <default>false</default>
+                <label>New functionality of other CR with urgent demand</label>
+            </value>
+            <value>
+                <fullName>Change functionality of other CR with urgent demand</fullName>
+                <default>false</default>
+                <label>Change functionality of other CR with urgent demand</label>
+            </value>
+            <value>
+                <fullName>Software behaviour of other CR not acceptable for production</fullName>
+                <default>false</default>
+                <label>Software behaviour of other CR not acceptable for production</label>
+            </value>
+            <value>
+                <fullName>Scope change of this CR</fullName>
+                <default>false</default>
+                <label>Scope change of this CR</label>
+            </value>
+            <value>
+                <fullName>NN resource capacity issue</fullName>
+                <default>false</default>
+                <label>NN resource capacity issue</label>
+            </value>
+            <value>
+                <fullName>NN could not release as release defects</fullName>
+                <default>false</default>
+                <label>NN could not release as release defects</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

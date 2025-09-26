@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Office_Location__c</fullName>
+    <description>Where the new hire will work.</description>
+    <label>Office Location</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Frankfurt</fullName>
+                <default>false</default>
+                <label>Frankfurt</label>
+            </value>
+            <value>
+                <fullName>Lowell</fullName>
+                <default>false</default>
+                <label>Lowell</label>
+            </value>
+            <value>
+                <fullName>NN-TV</fullName>
+                <default>false</default>
+                <label>NN-TV</label>
+            </value>
+            <value>
+                <fullName>Poland</fullName>
+                <default>false</default>
+                <label>Poland</label>
+            </value>
+            <value>
+                <fullName>Prague</fullName>
+                <default>false</default>
+                <label>Prague</label>
+            </value>
+            <value>
+                <fullName>Remote Office</fullName>
+                <default>false</default>
+                <label>Remote Office</label>
+            </value>
+            <value>
+                <fullName>Toronto</fullName>
+                <default>false</default>
+                <label>Toronto</label>
+            </value>
+            <value>
+                <fullName>Utrecht</fullName>
+                <default>false</default>
+                <label>Utrecht</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

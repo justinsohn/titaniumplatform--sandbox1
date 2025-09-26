@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deployment_Type__c</fullName>
+    <label>Deployment Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Stage__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>OTS Deployment</fullName>
+                <default>false</default>
+                <label>OTS Deployment</label>
+            </value>
+            <value>
+                <fullName>CDA Deployment</fullName>
+                <default>false</default>
+                <label>CDA Deployment</label>
+            </value>
+            <value>
+                <fullName>OTS &amp; CDA Deployment</fullName>
+                <default>false</default>
+                <label>OTS &amp; CDA Deployment</label>
+            </value>
+            <value>
+                <fullName>OTS Upgrade</fullName>
+                <default>false</default>
+                <label>OTS Upgrade</label>
+            </value>
+            <value>
+                <fullName>CDA Enhancement</fullName>
+                <default>false</default>
+                <label>CDA Enhancement</label>
+            </value>
+            <value>
+                <fullName>CDA Dep&apos;</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CDA Dep&apos;</label>
+            </value>
+            <value>
+                <fullName>CDA Upgrade</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CDA Upgrade</label>
+            </value>
+            <value>
+                <fullName>COTS</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>COTS</label>
+            </value>
+            <value>
+                <fullName>COTS + Virtualized</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>COTS + Virtualized</label>
+            </value>
+            <value>
+                <fullName>Guaranteed Caller</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Guaranteed Caller</label>
+            </value>
+            <value>
+                <fullName>OTS Dep + CDA Dep&apos;</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OTS Dep + CDA Dep&apos;</label>
+            </value>
+            <value>
+                <fullName>OTS Dep&apos;</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OTS Dep&apos;</label>
+            </value>
+            <value>
+                <fullName>OTS Upgrade + CDA Upgrade</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OTS Upgrade + CDA Upgrade</label>
+            </value>
+            <value>
+                <fullName>Virtualized - Openstack</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Virtualized - Openstack</label>
+            </value>
+            <value>
+                <fullName>Virtualized - VMware</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Virtualized - VMware</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Open</controllingFieldValue>
+            <controllingFieldValue>LoE Estimate Requested</controllingFieldValue>
+            <controllingFieldValue>LoE Request Received - WIP</controllingFieldValue>
+            <controllingFieldValue>Awaiting Clarifications</controllingFieldValue>
+            <controllingFieldValue>LoE Estimate Completed</controllingFieldValue>
+            <controllingFieldValue>Request Cancelled</controllingFieldValue>
+            <valueName>OTS Deployment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Open</controllingFieldValue>
+            <controllingFieldValue>LoE Estimate Requested</controllingFieldValue>
+            <controllingFieldValue>LoE Request Received - WIP</controllingFieldValue>
+            <controllingFieldValue>Awaiting Clarifications</controllingFieldValue>
+            <controllingFieldValue>LoE Estimate Completed</controllingFieldValue>
+            <controllingFieldValue>Request Cancelled</controllingFieldValue>
+            <valueName>CDA Deployment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Open</controllingFieldValue>
+            <controllingFieldValue>LoE Estimate Requested</controllingFieldValue>
+            <controllingFieldValue>LoE Request Received - WIP</controllingFieldValue>
+            <controllingFieldValue>Awaiting Clarifications</controllingFieldValue>
+            <controllingFieldValue>LoE Estimate Completed</controllingFieldValue>
+            <controllingFieldValue>Request Cancelled</controllingFieldValue>
+            <valueName>OTS &amp; CDA Deployment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Open</controllingFieldValue>
+            <controllingFieldValue>LoE Estimate Requested</controllingFieldValue>
+            <controllingFieldValue>LoE Request Received - WIP</controllingFieldValue>
+            <controllingFieldValue>Awaiting Clarifications</controllingFieldValue>
+            <controllingFieldValue>LoE Estimate Completed</controllingFieldValue>
+            <controllingFieldValue>Request Cancelled</controllingFieldValue>
+            <valueName>OTS Upgrade</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Open</controllingFieldValue>
+            <controllingFieldValue>LoE Estimate Requested</controllingFieldValue>
+            <controllingFieldValue>LoE Request Received - WIP</controllingFieldValue>
+            <controllingFieldValue>Awaiting Clarifications</controllingFieldValue>
+            <controllingFieldValue>LoE Estimate Completed</controllingFieldValue>
+            <controllingFieldValue>Request Cancelled</controllingFieldValue>
+            <valueName>CDA Enhancement</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

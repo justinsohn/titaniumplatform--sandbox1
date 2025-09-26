@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Management_Tooling_is_Required</fullName>
+    <active>true</active>
+    <description>Other Management Tooling is required when Other is selected for VNF/CNF Management Tooling Used</description>
+    <errorConditionFormula>AND(
+ISPICKVAL( VNF_Management_Tooling__c  , &quot;Other&quot;),
+ISBLANK(    Other_VNF_Management_Tooling__c   )
+)</errorConditionFormula>
+    <errorDisplayField>Other_VNF_Management_Tooling__c</errorDisplayField>
+    <errorMessage>Required when Other is selected for VNF/CNF Management Tooling Used</errorMessage>
+</ValidationRule>

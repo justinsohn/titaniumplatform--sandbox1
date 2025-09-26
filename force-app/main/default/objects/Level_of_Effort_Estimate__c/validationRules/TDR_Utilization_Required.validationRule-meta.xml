@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TDR_Utilization_Required</fullName>
+    <active>false</active>
+    <description>TDR Utilization is required on LoE Estimate Requested</description>
+    <errorConditionFormula>AND(
+ISPICKVAl(  Stage__c  , &quot;LoE Estimate Requested&quot; ),
+ISPICKVAL(  TDR_Utilization__c, &quot;&quot;   ))</errorConditionFormula>
+    <errorDisplayField>TDR_Utilization__c</errorDisplayField>
+    <errorMessage>Required when LoE Estimate Requested</errorMessage>
+</ValidationRule>

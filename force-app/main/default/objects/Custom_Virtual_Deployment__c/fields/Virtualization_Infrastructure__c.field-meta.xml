@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Virtualization_Infrastructure__c</fullName>
+    <description>Virtualization infrastructure used</description>
+    <label>Virtualization Infrastructure</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Bare-metal</fullName>
+                <default>false</default>
+                <label>Bare-metal</label>
+            </value>
+            <value>
+                <fullName>Openstack</fullName>
+                <default>false</default>
+                <label>Openstack</label>
+            </value>
+            <value>
+                <fullName>VMware NFV</fullName>
+                <default>false</default>
+                <label>VMware NFV</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

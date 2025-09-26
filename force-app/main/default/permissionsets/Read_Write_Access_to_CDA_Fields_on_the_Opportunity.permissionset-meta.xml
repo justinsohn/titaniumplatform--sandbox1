@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>CDA Cost and Includes CDA</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.CDA_Cost__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Includes_CDA__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Read/Write Access to CDA Fields on the Opportunity</label>
+    <license>Salesforce</license>
+</PermissionSet>

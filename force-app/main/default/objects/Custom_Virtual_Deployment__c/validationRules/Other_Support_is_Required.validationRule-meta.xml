@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Support_is_Required</fullName>
+    <active>false</active>
+    <description>Other Support is required when Other is selected for Support Requirements</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(  Deployment_Phase_Support__c  , &quot;Other&quot;),
+ISBLANK(  Other_Support__c  )
+)</errorConditionFormula>
+    <errorDisplayField>Other_Support__c</errorDisplayField>
+    <errorMessage>Required when Other is selected for Support Requirements</errorMessage>
+</ValidationRule>

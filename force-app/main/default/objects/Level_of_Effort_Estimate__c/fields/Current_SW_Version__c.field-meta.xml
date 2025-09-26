@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_SW_Version__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>For additional scope to existing deployments (OTS or CDA), please confirm the current SW version deployed today.</inlineHelpText>
+    <label>Current SW Version</label>
+    <length>100</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product__c</fullName>
+    <description>NetNumber&apos;s products that are associated with the feature request.</description>
+    <label>Product</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>5G-AUSF</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>5G-AUSF</label>
+            </value>
+            <value>
+                <fullName>5G-BSF</fullName>
+                <default>false</default>
+                <label>5G-BSF</label>
+            </value>
+            <value>
+                <fullName>5G-NRF</fullName>
+                <default>false</default>
+                <label>5G-NRF</label>
+            </value>
+            <value>
+                <fullName>5G-NSSF</fullName>
+                <default>false</default>
+                <label>5G-NSSF</label>
+            </value>
+            <value>
+                <fullName>5G-SCP</fullName>
+                <default>false</default>
+                <label>5G-SCP</label>
+            </value>
+            <value>
+                <fullName>5G-SEPP</fullName>
+                <default>false</default>
+                <label>5G-SEPP</label>
+            </value>
+            <value>
+                <fullName>5G-UDM</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>5G-UDM</label>
+            </value>
+            <value>
+                <fullName>AAA</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>AAA</label>
+            </value>
+            <value>
+                <fullName>Analytics</fullName>
+                <default>false</default>
+                <label>Analytics</label>
+            </value>
+            <value>
+                <fullName>BGCF</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>BGCF</label>
+            </value>
+            <value>
+                <fullName>CBAM-Blueprint</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CBAM-Blueprint</label>
+            </value>
+            <value>
+                <fullName>CLF</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CLF</label>
+            </value>
+            <value>
+                <fullName>Core Platform</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Core Platform</label>
+            </value>
+            <value>
+                <fullName>Core-Platform-NG</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Core-Platform-NG</label>
+            </value>
+            <value>
+                <fullName>CRE</fullName>
+                <default>false</default>
+                <label>CRE</label>
+            </value>
+            <value>
+                <fullName>CSCF</fullName>
+                <default>false</default>
+                <label>CSCF</label>
+            </value>
+            <value>
+                <fullName>Custom Data</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Custom Data</label>
+            </value>
+            <value>
+                <fullName>Custom Reporting</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Custom Reporting</label>
+            </value>
+            <value>
+                <fullName>DNS</fullName>
+                <default>false</default>
+                <label>DNS</label>
+            </value>
+            <value>
+                <fullName>DSC</fullName>
+                <default>false</default>
+                <label>DSC</label>
+            </value>
+            <value>
+                <fullName>EIR</fullName>
+                <default>false</default>
+                <label>EIR</label>
+            </value>
+            <value>
+                <fullName>EIR FE</fullName>
+                <default>false</default>
+                <label>EIR FE</label>
+            </value>
+            <value>
+                <fullName>EMS</fullName>
+                <default>false</default>
+                <label>EMS</label>
+            </value>
+            <value>
+                <fullName>ENUM</fullName>
+                <default>false</default>
+                <label>ENUM</label>
+            </value>
+            <value>
+                <fullName>ENUM/DNS - combo</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ENUM/DNS - combo</label>
+            </value>
+            <value>
+                <fullName>GDS - Carrier-ID</fullName>
+                <default>false</default>
+                <label>GDS - Carrier-ID</label>
+            </value>
+            <value>
+                <fullName>GDS - CNAM</fullName>
+                <default>false</default>
+                <label>GDS - CNAM</label>
+            </value>
+            <value>
+                <fullName>GDS - Mobile Number Information</fullName>
+                <default>false</default>
+                <label>GDS - Mobile Number Information</label>
+            </value>
+            <value>
+                <fullName>GDS - Nuisance Calls Identification</fullName>
+                <default>false</default>
+                <label>GDS - Nuisance Calls Identification</label>
+            </value>
+            <value>
+                <fullName>GDS - OSR</fullName>
+                <default>false</default>
+                <label>GDS - OSR</label>
+            </value>
+            <value>
+                <fullName>GDS - Porting History</fullName>
+                <default>false</default>
+                <label>GDS - Porting History</label>
+            </value>
+            <value>
+                <fullName>GDS - Toll-Free Routing</fullName>
+                <default>false</default>
+                <label>GDS - Toll-Free Routing</label>
+            </value>
+            <value>
+                <fullName>Guaranteed Caller</fullName>
+                <default>false</default>
+                <label>Guaranteed Caller - Enterprise</label>
+            </value>
+            <value>
+                <fullName>Guaranteed Caller - Service Provider</fullName>
+                <default>false</default>
+                <label>Guaranteed Caller - Service Provider</label>
+            </value>
+            <value>
+                <fullName>Hardware</fullName>
+                <default>false</default>
+                <label>Hardware</label>
+            </value>
+            <value>
+                <fullName>HLR</fullName>
+                <default>false</default>
+                <label>HLR</label>
+            </value>
+            <value>
+                <fullName>HLR FE</fullName>
+                <default>false</default>
+                <label>HLR FE</label>
+            </value>
+            <value>
+                <fullName>HSS</fullName>
+                <default>false</default>
+                <label>HSS</label>
+            </value>
+            <value>
+                <fullName>HSS/HLR - combo</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>HSS/HLR - combo</label>
+            </value>
+            <value>
+                <fullName>HSS FE</fullName>
+                <default>false</default>
+                <label>HSS FE</label>
+            </value>
+            <value>
+                <fullName>IM SSF</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>IM SSF</label>
+            </value>
+            <value>
+                <fullName>IN-SCP</fullName>
+                <default>false</default>
+                <label>IN-SCP</label>
+            </value>
+            <value>
+                <fullName>IP SM GW</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>IP SM GW</label>
+            </value>
+            <value>
+                <fullName>IWF</fullName>
+                <default>false</default>
+                <label>IWF</label>
+            </value>
+            <value>
+                <fullName>License Expansion</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>License Expansion</label>
+            </value>
+            <value>
+                <fullName>LRF</fullName>
+                <default>false</default>
+                <label>LRF</label>
+            </value>
+            <value>
+                <fullName>Mobile Connectivity Services</fullName>
+                <default>false</default>
+                <label>Mobile Connectivity Services</label>
+            </value>
+            <value>
+                <fullName>NetCore 2G</fullName>
+                <default>false</default>
+                <label>NetCore 2G</label>
+            </value>
+            <value>
+                <fullName>NetCore 3G</fullName>
+                <default>false</default>
+                <label>NetCore 3G</label>
+            </value>
+            <value>
+                <fullName>NetCore 5G NSA</fullName>
+                <default>false</default>
+                <label>NetCore 5G NSA</label>
+            </value>
+            <value>
+                <fullName>NetCore 5G SA</fullName>
+                <default>false</default>
+                <label>NetCore 5G SA</label>
+            </value>
+            <value>
+                <fullName>NetCore LTE</fullName>
+                <default>false</default>
+                <label>NetCore LTE</label>
+            </value>
+            <value>
+                <fullName>New Maintenance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>New Maintenance</label>
+            </value>
+            <value>
+                <fullName>NP</fullName>
+                <default>false</default>
+                <label>NP</label>
+            </value>
+            <value>
+                <fullName>PCRF</fullName>
+                <default>false</default>
+                <label>PCRF</label>
+            </value>
+            <value>
+                <fullName>Core-Platform-TITAN.IUM</fullName>
+                <default>false</default>
+                <label>Platform-TITAN.IUM</label>
+            </value>
+            <value>
+                <fullName>Core-Platform-TITAN7</fullName>
+                <default>false</default>
+                <label>Platform-TITAN7</label>
+            </value>
+            <value>
+                <fullName>Core-Platform-TITAN8</fullName>
+                <default>false</default>
+                <label>Platform-TITAN8</label>
+            </value>
+            <value>
+                <fullName>Professional Services</fullName>
+                <default>false</default>
+                <label>Professional Services</label>
+            </value>
+            <value>
+                <fullName>P Star</fullName>
+                <default>false</default>
+                <label>P Star</label>
+            </value>
+            <value>
+                <fullName>Reporting</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Reporting</label>
+            </value>
+            <value>
+                <fullName>Reporting &amp; Analytics</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Reporting &amp; Analytics</label>
+            </value>
+            <value>
+                <fullName>Robocalling</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Robocalling</label>
+            </value>
+            <value>
+                <fullName>Sig FW</fullName>
+                <default>false</default>
+                <label>SFW</label>
+            </value>
+            <value>
+                <fullName>SLF</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SLF</label>
+            </value>
+            <value>
+                <fullName>SS7 GW</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SS7 GW</label>
+            </value>
+            <value>
+                <fullName>STC</fullName>
+                <default>false</default>
+                <label>SSC</label>
+            </value>
+            <value>
+                <fullName>STG</fullName>
+                <default>false</default>
+                <label>STG</label>
+            </value>
+            <value>
+                <fullName>STP</fullName>
+                <default>false</default>
+                <label>STP</label>
+            </value>
+            <value>
+                <fullName>STP/DSC - combo</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>STP/DSC - combo</label>
+            </value>
+            <value>
+                <fullName>STP/NP - combo</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>STP/NP - combo</label>
+            </value>
+            <value>
+                <fullName>STP Appliance</fullName>
+                <default>false</default>
+                <label>STP Appliance</label>
+            </value>
+            <value>
+                <fullName>TDM-Bridge</fullName>
+                <default>false</default>
+                <label>TDM-Bridge</label>
+            </value>
+            <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Training</label>
+            </value>
+            <value>
+                <fullName>UT Proxy</fullName>
+                <default>false</default>
+                <label>UT Proxy</label>
+            </value>
+            <value>
+                <fullName>VNF-Manager</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>VNF-Manager</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>8</visibleLines>
+</CustomField>

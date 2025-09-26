@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Red_Hat_PO__c</fullName>
+    <description>Tracked by the Sales Operations Manager.  Updated with the PO # when the PO is received.</description>
+    <externalId>false</externalId>
+    <label>Red Hat PO#</label>
+    <length>35</length>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

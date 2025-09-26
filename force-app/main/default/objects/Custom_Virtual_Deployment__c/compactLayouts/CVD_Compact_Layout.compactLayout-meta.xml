@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CVD_Compact_Layout</fullName>
+    <fields>Title__c</fields>
+    <fields>Output_Pricing__c</fields>
+    <fields>Status__c</fields>
+    <label>CVD Compact Layout</label>
+</CompactLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Which_Systems_is_required</fullName>
+    <active>false</active>
+    <description>Which Systems is required when Integrations is Yes</description>
+    <errorConditionFormula>AND( 
+ISPICKVAl(  Integration_to_external_legacy_systems__c , &quot;Yes&quot; ),
+ISBLANK(Systems_to_be_Integrated_to__c ))</errorConditionFormula>
+    <errorDisplayField>Systems_to_be_Integrated_to__c</errorDisplayField>
+    <errorMessage>Required when Integration equals Yes</errorMessage>
+</ValidationRule>

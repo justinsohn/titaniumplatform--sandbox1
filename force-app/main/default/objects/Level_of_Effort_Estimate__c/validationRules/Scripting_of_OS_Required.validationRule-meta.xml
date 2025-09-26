@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Scripting_of_OS_Required</fullName>
+    <active>false</active>
+    <description>Scripting of OS Required is required on LoE Estimate Requested</description>
+    <errorConditionFormula>AND(
+ISPICKVAl(  Stage__c  , &quot;LoE Estimate Requested&quot; ),
+ISPICKVAL(   Scripting_of_OS_Required__c , &quot;&quot;   ))</errorConditionFormula>
+    <errorDisplayField>Scripting_of_OS_Required__c</errorDisplayField>
+    <errorMessage>Required when LoE Estimate Requested</errorMessage>
+</ValidationRule>

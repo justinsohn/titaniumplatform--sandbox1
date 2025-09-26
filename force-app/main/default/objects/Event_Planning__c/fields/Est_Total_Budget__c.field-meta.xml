@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Est_Total_Budget__c</fullName>
+    <formula>Est_Event_Fee_s__c +  Est_Furniture_Accessories__c +  Est_Hotels__c +  Est_per_Diems__c +  Est_Scanning_App__c +  Est_Swag__c +  Est_Travel__c +  Est_Booth_Design_and_Construction__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Est Total Budget</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

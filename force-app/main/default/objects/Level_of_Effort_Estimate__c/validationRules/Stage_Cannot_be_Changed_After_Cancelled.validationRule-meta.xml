@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stage_Cannot_be_Changed_After_Cancelled</fullName>
+    <active>false</active>
+    <description>Stage Cannot be Changed After Request Cancelled</description>
+    <errorConditionFormula>PRIORVALUE(  IsClosed__c  ) = True</errorConditionFormula>
+    <errorDisplayField>Stage__c</errorDisplayField>
+    <errorMessage>Stage Cannot be Changed after Request Cancelled</errorMessage>
+</ValidationRule>

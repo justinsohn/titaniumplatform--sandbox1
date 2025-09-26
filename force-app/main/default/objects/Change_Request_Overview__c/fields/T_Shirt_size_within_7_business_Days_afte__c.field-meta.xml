@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>T_Shirt_size_within_7_business_Days_afte__c</fullName>
+    <label>Timely T-Shirt Size (Manual)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Late</fullName>
+                <default>false</default>
+                <label>LATE</label>
+            </value>
+            <value>
+                <fullName>Ontime</fullName>
+                <default>false</default>
+                <label>ONTIME</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

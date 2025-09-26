@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delivery_Group__c</fullName>
+    <label>Delivery Group</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>DT &amp; Orange</fullName>
+                <default>false</default>
+                <label>DT &amp; Orange</label>
+            </value>
+            <value>
+                <fullName>Global Projects - Americas</fullName>
+                <default>false</default>
+                <label>Global Projects - Americas</label>
+            </value>
+            <value>
+                <fullName>Global Projects - APAC</fullName>
+                <default>false</default>
+                <label>Global Projects - APAC</label>
+            </value>
+            <value>
+                <fullName>Global Projects - Europe</fullName>
+                <default>false</default>
+                <label>Global Projects - Europe</label>
+            </value>
+            <value>
+                <fullName>Global Projects - MEA</fullName>
+                <default>false</default>
+                <label>Global Projects - MEA</label>
+            </value>
+            <value>
+                <fullName>Private Networks</fullName>
+                <default>false</default>
+                <label>Private Networks</label>
+            </value>
+            <value>
+                <fullName>Verizon</fullName>
+                <default>false</default>
+                <label>Verizon</label>
+            </value>
+            <value>
+                <fullName>Vodafone</fullName>
+                <default>false</default>
+                <label>Vodafone</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

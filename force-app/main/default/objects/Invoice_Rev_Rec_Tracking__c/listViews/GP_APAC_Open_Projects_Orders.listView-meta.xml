@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GP_APAC_Open_Projects_Orders</fullName>
+    <columns>NAME</columns>
+    <columns>Opportunity_Name__c</columns>
+    <columns>Account_Name__c</columns>
+    <columns>End_Customer__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Delivery_Group__c</field>
+        <operation>equals</operation>
+        <value>Global Projects - APAC</value>
+    </filters>
+    <filters>
+        <field>Order_Status__c</field>
+        <operation>equals</operation>
+        <value>Open</value>
+    </filters>
+    <label>GP APAC - Open Projects/Orders</label>
+</ListView>

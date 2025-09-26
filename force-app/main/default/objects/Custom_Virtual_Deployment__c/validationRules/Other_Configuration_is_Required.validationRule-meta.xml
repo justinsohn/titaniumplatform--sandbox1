@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Configuration_is_Required</fullName>
+    <active>true</active>
+    <description>Other Configuration is required when Other is selected for Configuration Requirements</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(  Configuration_Method__c  , &quot;Other&quot;),
+ISBLANK(  Other_Configuration__c  )
+)</errorConditionFormula>
+    <errorDisplayField>Other_Configuration__c</errorDisplayField>
+    <errorMessage>Required when Other is selected for Configuration Requirements</errorMessage>
+</ValidationRule>

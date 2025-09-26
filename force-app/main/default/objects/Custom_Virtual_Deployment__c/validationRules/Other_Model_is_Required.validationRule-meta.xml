@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Model_is_Required</fullName>
+    <active>true</active>
+    <description>Other Model is required when Other is selected for Deployment Model Required</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(   Deployment_Model__c  , &quot;Other&quot;),
+ISBLANK(   Other_Model__c  )
+)</errorConditionFormula>
+    <errorDisplayField>Other_Model__c</errorDisplayField>
+    <errorMessage>Required when Other is selected for Deployment Model Required</errorMessage>
+</ValidationRule>

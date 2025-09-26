@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Edge_OS_Solaris__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This checkbox is checked if the Edge OS is Solaris.</description>
+    <label>Edge OS - Solaris</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

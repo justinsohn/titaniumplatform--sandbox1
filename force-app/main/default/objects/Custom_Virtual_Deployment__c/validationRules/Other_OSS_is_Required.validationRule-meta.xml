@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_OSS_is_Required</fullName>
+    <active>true</active>
+    <description>Other OSS is required when Other is selected for OSS Integration and APIs</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(   OSS_Integration_and_APIs__c   , &quot;Other&quot;),
+ISBLANK(  Other_OSS__c )
+)</errorConditionFormula>
+    <errorDisplayField>Other_OSS__c</errorDisplayField>
+    <errorMessage>Required when Other is selected for OSS Integration and APIs</errorMessage>
+</ValidationRule>

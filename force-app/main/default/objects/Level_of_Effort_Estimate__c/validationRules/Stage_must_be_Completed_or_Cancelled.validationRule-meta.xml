@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stage_must_be_Completed_or_Cancelled</fullName>
+    <active>true</active>
+    <description>Stage must be Awaiting Clarifications, Completed or Cancelled after WIP</description>
+    <errorConditionFormula>ISCHANGED(Stage__c) &amp;&amp;
+
+ISPICKVAL(PRIORVALUE(Stage__c),&quot;LoE Request Received - WIP&quot;) &amp;&amp;
+AND(
+!ISPICKVAL(Stage__c, &quot;Awaiting Clarifications&quot;),
+!ISPICKVAL(Stage__c, &quot;LoE Estimate Completed&quot;),
+!ISPICKVAL(Stage__c, &quot;Request Cancelled&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>Stage__c</errorDisplayField>
+    <errorMessage>Stage must be Awaiting Clarifications, Completed or Cancelled after WIP</errorMessage>
+</ValidationRule>

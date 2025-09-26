@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_SKUs__c</fullName>
+    <inlineHelpText>Product SKUs to be added, e.g. AP-STP-ENT-TPS, AP-STP-PRE-TPS, CP-TITAN22-LAB...</inlineHelpText>
+    <label>Product (SKUs)</label>
+    <length>5000</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

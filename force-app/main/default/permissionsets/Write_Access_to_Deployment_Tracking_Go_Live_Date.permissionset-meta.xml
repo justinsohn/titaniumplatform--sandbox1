@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Provides Write Access to Deployment Tracking Go Live Date</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Deployment_Tracking__c.Go_Live_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Write Access to Deployment Tracking Go Live Date</label>
+</PermissionSet>

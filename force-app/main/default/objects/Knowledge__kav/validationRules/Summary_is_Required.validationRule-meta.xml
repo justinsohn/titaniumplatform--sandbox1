@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Summary_is_Required</fullName>
+    <active>true</active>
+    <description>Summary is Required</description>
+    <errorConditionFormula>LEN(Summary)=0 &amp;&amp; RecordType.DeveloperName = &quot;Support Troubleshooting&quot;</errorConditionFormula>
+    <errorMessage>Summary field is used for searching. Must be populated.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Level_is_Required</fullName>
+    <active>true</active>
+    <description>Other Level is required when Other is selected for Deployment Level Required</description>
+    <errorConditionFormula>AND(
+INCLUDES(  Deployment_Level__c  , &quot;Other&quot;),
+ISBLANK(  Other_Level__c )
+)</errorConditionFormula>
+    <errorDisplayField>Other_Level__c</errorDisplayField>
+    <errorMessage>Required when Other is selected for Deployment Level Required</errorMessage>
+</ValidationRule>

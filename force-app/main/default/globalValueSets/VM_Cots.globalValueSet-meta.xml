@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>VM - Vmware</fullName>
+        <default>false</default>
+        <label>VM - Vmware</label>
+    </customValue>
+    <customValue>
+        <fullName>VM - Openstack</fullName>
+        <default>false</default>
+        <label>VM - Openstack</label>
+    </customValue>
+    <customValue>
+        <fullName>VM - Other</fullName>
+        <default>false</default>
+        <label>VM - Other</label>
+    </customValue>
+    <customValue>
+        <fullName>COTS - HP DL380G10</fullName>
+        <default>false</default>
+        <label>COTS - HP DL380G10</label>
+    </customValue>
+    <customValue>
+        <fullName>COTS - HP DL380G9</fullName>
+        <default>false</default>
+        <label>COTS - HP DL380G9</label>
+    </customValue>
+    <customValue>
+        <fullName>COTS - HP DL360</fullName>
+        <default>false</default>
+        <label>COTS - HP DL360</label>
+    </customValue>
+    <customValue>
+        <fullName>COTS - Genband</fullName>
+        <default>false</default>
+        <label>COTS - Genband</label>
+    </customValue>
+    <description>Used for Deployment Detail Tracking</description>
+    <masterLabel>VM/Cots</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

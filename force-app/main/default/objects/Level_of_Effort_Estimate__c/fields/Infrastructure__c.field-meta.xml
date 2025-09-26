@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Infrastructure__c</fullName>
+    <inlineHelpText>Please confirm the infrastructure on which the solution should be deployed.</inlineHelpText>
+    <label>Infrastructure</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CaaS</fullName>
+                <default>false</default>
+                <label>CaaS</label>
+            </value>
+            <value>
+                <fullName>COTS</fullName>
+                <default>false</default>
+                <label>COTS</label>
+            </value>
+            <value>
+                <fullName>COTS + Virtualized</fullName>
+                <default>false</default>
+                <label>COTS + Virtualized</label>
+            </value>
+            <value>
+                <fullName>Virtualized - KVM</fullName>
+                <default>false</default>
+                <label>Virtualized – KVM</label>
+            </value>
+            <value>
+                <fullName>Virtualized – VMware</fullName>
+                <default>false</default>
+                <label>Virtualized – VMware</label>
+            </value>
+            <value>
+                <fullName>Virtualized</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Virtualized</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

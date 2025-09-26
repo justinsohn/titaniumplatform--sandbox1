@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VNF_Management_Tooling__c</fullName>
+    <description>VNF Management Tooling</description>
+    <label>VNF Management Tooling</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CBAM</fullName>
+                <default>false</default>
+                <label>CBAM</label>
+            </value>
+            <value>
+                <fullName>Cisco NSO/ECM</fullName>
+                <default>false</default>
+                <label>Cisco NSO/ECM</label>
+            </value>
+            <value>
+                <fullName>Cloudify</fullName>
+                <default>false</default>
+                <label>Cloudify</label>
+            </value>
+            <value>
+                <fullName>Ericsson UNICA</fullName>
+                <default>false</default>
+                <label>Ericsson UNICA</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

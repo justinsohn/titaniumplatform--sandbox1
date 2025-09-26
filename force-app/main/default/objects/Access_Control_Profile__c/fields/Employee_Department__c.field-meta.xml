@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Employee_Department__c</fullName>
+    <label>Employee Department</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Business Operations and IT</fullName>
+                <default>false</default>
+                <label>Business Operations and IT</label>
+            </value>
+            <value>
+                <fullName>Central Bid Desk</fullName>
+                <default>false</default>
+                <label>Central Bid Desk</label>
+            </value>
+            <value>
+                <fullName>Contracts</fullName>
+                <default>false</default>
+                <label>Contracts</label>
+            </value>
+            <value>
+                <fullName>Engineering</fullName>
+                <default>false</default>
+                <label>Engineering</label>
+            </value>
+            <value>
+                <fullName>Finance</fullName>
+                <default>false</default>
+                <label>Finance</label>
+            </value>
+            <value>
+                <fullName>GDS Operations</fullName>
+                <default>false</default>
+                <label>GDS Operations</label>
+            </value>
+            <value>
+                <fullName>HR</fullName>
+                <default>false</default>
+                <label>HR</label>
+            </value>
+            <value>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+                <label>Marketing</label>
+            </value>
+            <value>
+                <fullName>Partner Sales and Solutions</fullName>
+                <default>false</default>
+                <label>Partner Sales and Solutions</label>
+            </value>
+            <value>
+                <fullName>Product Management</fullName>
+                <default>false</default>
+                <label>Product Management</label>
+            </value>
+            <value>
+                <fullName>Project Management</fullName>
+                <default>false</default>
+                <label>Project Management</label>
+            </value>
+            <value>
+                <fullName>Sales</fullName>
+                <default>false</default>
+                <label>Sales</label>
+            </value>
+            <value>
+                <fullName>Service Delivery Manager</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Service Delivery Manager</label>
+            </value>
+            <value>
+                <fullName>Service Engineering</fullName>
+                <default>false</default>
+                <label>Service Engineering</label>
+            </value>
+            <value>
+                <fullName>Solution Design Engineering</fullName>
+                <default>false</default>
+                <label>Solution Design Engineering</label>
+            </value>
+            <value>
+                <fullName>Support</fullName>
+                <default>false</default>
+                <label>Support</label>
+            </value>
+            <value>
+                <fullName>System Architecture</fullName>
+                <default>false</default>
+                <label>System Architecture</label>
+            </value>
+            <value>
+                <fullName>Technical Sales Architects</fullName>
+                <default>false</default>
+                <label>Technical Sales Architects</label>
+            </value>
+            <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <label>Training</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

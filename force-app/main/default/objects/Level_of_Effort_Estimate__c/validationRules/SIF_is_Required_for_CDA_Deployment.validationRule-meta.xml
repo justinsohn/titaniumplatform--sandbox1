@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SIF_is_Required_for_CDA_Deployment</fullName>
+    <active>false</active>
+    <description>SIF is Required for CDA Deployment</description>
+    <errorConditionFormula>AND( 
+ISPICKVAl(    Deployment_Type__c   , &quot;CDA Deployment&quot; ),
+ISPICKVAL(   SIF__c  , &quot;&quot; ))</errorConditionFormula>
+    <errorDisplayField>SIF__c</errorDisplayField>
+    <errorMessage>Required for CDA Deployment</errorMessage>
+</ValidationRule>

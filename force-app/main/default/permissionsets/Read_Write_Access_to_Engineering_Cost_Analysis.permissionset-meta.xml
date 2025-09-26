@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Read/Write access to engineering cost analysis on custom virtual deployments</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Custom_Virtual_Deployment__c.Engineering_Cost_Analysis__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Read/Write Access to Engineering Cost Analysis</label>
+</PermissionSet>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Red Hat Renewal Date, Red Hat PO# and Red Hat Project #-Write Access to fields on Deployment Tracking</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Deployment_Tracking__c.Red_Hat_PO__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Deployment_Tracking__c.Red_Hat_Project__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Deployment_Tracking__c.Red_Hat_Renewal_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Red Hat Renewal Date and Red Hat PO#-Write Access to fields on Deployment Track</label>
+</PermissionSet>

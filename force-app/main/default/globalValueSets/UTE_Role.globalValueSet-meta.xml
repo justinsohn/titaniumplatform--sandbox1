@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Head of PS</fullName>
+        <default>false</default>
+        <label>Head of PS</label>
+    </customValue>
+    <customValue>
+        <fullName>Project Manager</fullName>
+        <default>false</default>
+        <label>Project Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Solution Architect</fullName>
+        <default>false</default>
+        <label>Solution Architect</label>
+    </customValue>
+    <customValue>
+        <fullName>Senior Consultant</fullName>
+        <default>false</default>
+        <label>Senior Consultant</label>
+    </customValue>
+    <customValue>
+        <fullName>Consultant</fullName>
+        <default>false</default>
+        <label>Consultant</label>
+    </customValue>
+    <masterLabel>UTE Role</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VM_COTS__c</fullName>
+    <label>VM/COTS</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>VM - Vmware</fullName>
+                <default>false</default>
+                <label>VM - Vmware</label>
+            </value>
+            <value>
+                <fullName>VM - Openstack</fullName>
+                <default>false</default>
+                <label>VM - Openstack</label>
+            </value>
+            <value>
+                <fullName>VM - Other</fullName>
+                <default>false</default>
+                <label>VM - Other</label>
+            </value>
+            <value>
+                <fullName>COTS - HP DL380G10</fullName>
+                <default>false</default>
+                <label>COTS - HP DL380G10</label>
+            </value>
+            <value>
+                <fullName>COTS - HP DL380G9</fullName>
+                <default>false</default>
+                <label>COTS - HP DL380G9</label>
+            </value>
+            <value>
+                <fullName>COTS - HP DL360</fullName>
+                <default>false</default>
+                <label>COTS - HP DL360</label>
+            </value>
+            <value>
+                <fullName>COTS - Genband</fullName>
+                <default>false</default>
+                <label>COTS - Genband</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

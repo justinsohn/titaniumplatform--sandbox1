@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rev_Rec</fullName>
+    <active>true</active>
+    <label>Rev Rec</label>
+    <picklistValues>
+        <picklist>Delivery_Group__c</picklist>
+        <values>
+            <fullName>DT %26 Orange</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Global Projects - APAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Global Projects - Americas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Global Projects - Europe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Global Projects - MEA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private Networks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Verizon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vodafone</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Invoice_Forecast_Status__c</picklist>
+        <values>
+            <fullName>At Risk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>To Plan</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Order_Owner__c</picklist>
+        <values>
+            <fullName>Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Order_Status__c</picklist>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Order_Type__c</picklist>
+        <values>
+            <fullName>Backlog %28CDA Delivery%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Backlog %28OTS Delivery%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Backlog %28Training%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>License %28OTS%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recurring %28Dedicated Resources%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recurring %28MT%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Special Circumstance</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Revenue_Forecast_Status__c</picklist>
+        <values>
+            <fullName>At Risk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>To Plan</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

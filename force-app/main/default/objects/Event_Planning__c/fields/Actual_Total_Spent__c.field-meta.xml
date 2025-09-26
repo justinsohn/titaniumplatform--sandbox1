@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actual_Total_Spent__c</fullName>
+    <formula>Actual_Event_Fee_s__c +  Actual_Furniture_Accessories__c +  Actual_Hotels__c +  Actual_per_Diems__c +  Actual_Scanning_App__c +  Actual_Swag__c +  Actual_Travel__c +  Actual_Booth_Design_and_Construction__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Actual Total Spent</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

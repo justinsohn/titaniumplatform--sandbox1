@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Process_Type__c</fullName>
+    <label>Process Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>GDS</fullName>
+                <default>false</default>
+                <label>GDS</label>
+            </value>
+            <value>
+                <fullName>TITAN</fullName>
+                <default>false</default>
+                <label>TITAN</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
