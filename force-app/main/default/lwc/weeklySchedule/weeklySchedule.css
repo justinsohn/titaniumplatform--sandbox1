@@ -1,0 +1,363 @@
+.schedule-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.week-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    background: #f3f3f3;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+}
+
+.week-range {
+    font-weight: 600;
+    color: #032e61;
+    font-size: 0.875rem;
+}
+
+.nav-button {
+    background: #0176d3;
+    color: white;
+    border: none;
+    padding: 0.375rem 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-size: 0.8125rem;
+}
+
+.nav-button:hover:not(:disabled) {
+    background: #014486;
+}
+
+.nav-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    overflow-y: visible;
+    max-width: 100%;
+    border: 1px solid #dddbda;
+    border-radius: 8px;
+}
+
+.schedule-table {
+    min-width: 800px;
+    border-collapse: collapse;
+}
+
+.schedule-table th {
+    background: #f3f3f3;
+    font-weight: 600;
+    color: #032e61;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 2px solid #dddbda;
+}
+
+.schedule-table th.fixed-column {
+    position: sticky;
+    left: 0;
+    z-index: 11;
+    background: #f7f9fb;
+    border-right: 2px solid #dddbda;
+}
+
+.schedule-table td.fixed-column {
+    position: sticky;
+    left: 0;
+    background: white;
+    border-right: 2px solid #dddbda;
+    z-index: 9;
+}
+
+.week-header {
+    padding: 0.5rem;
+    text-align: center;
+    border-right: 1px solid #dddbda;
+}
+
+.week-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+}
+
+.week-dates {
+    font-size: 0.6875rem;
+    color: #706e6b;
+    margin-top: 0.125rem;
+}
+
+.allocation-info {
+    padding: 0.375rem;
+    background: #f7f9fb;
+    border-radius: 4px;
+    margin-bottom: 0.25rem;
+}
+
+.allocation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.25rem;
+}
+
+.allocation-percentage {
+    font-weight: 600;
+    color: #032e61;
+    font-size: 0.75rem;
+}
+
+.available-hours {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #706e6b;
+}
+
+.allocation-bar {
+    flex: 1;
+    height: 8px;
+    background: #ecebea;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.allocation-fill {
+    height: 100%;
+    background: #0176d3;
+    transition: width 0.3s ease;
+}
+
+.allocation-fill.warning {
+    background: #ff6b35;
+}
+
+.allocation-fill.danger {
+    background: #c23934;
+}
+
+.hours-breakdown {
+    margin-top: 0.25rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.hours-label {
+    font-size: 0.6875rem;
+    color: #706e6b;
+    font-weight: 500;
+}
+
+.hours-cell {
+    padding: 0.25rem;
+    background: white;
+}
+
+.hours-cell lightning-input {
+    margin: 0;
+}
+
+.calculated-cell {
+    padding: 0.25rem;
+    text-align: center;
+    background: #f7f9fb;
+    height: 1.5rem;
+    vertical-align: middle;
+}
+
+.calculated-value {
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.calculated-value.cost {
+    color: #c23934;
+}
+
+.calculated-value.revenue {
+    color: #04844b;
+}
+
+.resource-row {
+    border-bottom: none;
+}
+
+.cost-row, .revenue-row {
+    border-bottom: 2px solid #dddbda;
+    height: 1.5rem;
+}
+
+.cost-row td {
+    border-top: 1px solid #ecebea;
+    padding: 0.25rem;
+    vertical-align: middle;
+}
+
+.revenue-row td {
+    border-top: 1px solid #ecebea;
+    padding: 0.25rem;
+    vertical-align: middle;
+}
+
+.totals-row {
+    background: #f7f9fb;
+    font-weight: 600;
+}
+
+.totals-row td {
+    border-top: 2px solid #dddbda;
+}
+
+.save-section {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.task-resource-cell {
+    min-width: 300px;
+    font-weight: 500;
+    vertical-align: top;
+    text-align: center;
+}
+
+.totals-row .fixed-column {
+    text-align: center;
+}
+
+.resource-info {
+    padding: 0.5rem;
+}
+
+.resource-name {
+    font-weight: 600;
+    color: #032e61;
+    margin-bottom: 0.25rem;
+    font-size: 0.875rem;
+}
+
+.resource-rates {
+    margin-top: 0.25rem;
+    display: flex;
+    gap: 0.75rem;
+}
+
+.rate-label {
+    font-size: 0.75rem;
+    color: #706e6b;
+}
+
+.metric-label {
+    font-size: 0.75rem;
+    color: #706e6b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.cell-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-right: 1px solid #dddbda;
+}
+
+.cell-group:hover {
+    background: #f7f9fb;
+}
+
+.summary-card {
+    background: #f7f9fb;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.summary-item {
+    text-align: center;
+}
+
+.summary-label {
+    font-size: 0.875rem;
+    color: #706e6b;
+    margin-bottom: 0.25rem;
+}
+
+.summary-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #032e61;
+}
+
+.totals-cell {
+    vertical-align: middle;
+    padding: 0.5rem;
+    background: #f7f9fb;
+    text-align: center;
+}
+
+.total-value {
+    font-weight: 600;
+    color: #032e61;
+    font-size: 0.875rem;
+}
+
+.column-total {
+    text-align: center;
+    padding: 0.375rem;
+}
+
+.column-total > div {
+    margin: 0.125rem 0;
+}
+
+.total-hours {
+    font-weight: 600;
+    color: #032e61;
+    font-size: 0.875rem;
+}
+
+.total-cost {
+    color: #c23934;
+    font-size: 0.75rem;
+}
+
+.total-revenue {
+    color: #04844b;
+    font-size: 0.75rem;
+}
+
+.grand-total {
+    background: #f3f3f3;
+    color: #032e61;
+    text-align: center;
+    padding: 0.375rem;
+}
+
+.grand-total .total-hours {
+    color: #032e61;
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+    .week-navigation {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .schedule-table {
+        font-size: 0.875rem;
+    }
+}

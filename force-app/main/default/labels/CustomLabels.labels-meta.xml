@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_CONSTRUCTOR_MESSAGE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER CONSTRUCTOR MESSAGE</shortDescription>
+        <value>The sObject types for each Id must be the same</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_CONSTRUCTOR_TITLE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER CONSTRUCTOR TITLE</shortDescription>
+        <value>Record SObject Types</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_NOT_AN_ID_ERROR_MESSAGE_1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER NOT AN ID ERROR MESSAGE 1</shortDescription>
+        <value>Source Id:</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_NOT_AN_ID_ERROR_MESSAGE_2</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER NOT AN ID ERROR MESSAGE 2</shortDescription>
+        <value>is not a valid Id or cannot be associated to an object in this org</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_NOT_AN_ID_ERROR_MESSAGE_DESTINATION_1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER NOT AN ID ERROR MESSAGE DESTINATION 1</shortDescription>
+        <value>Destination Id:</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_NOT_AN_ID_ERROR_TITLE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER NOT AN ID ERROR TITLE</shortDescription>
+        <value>Not an Id</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_NOT_SELECTED_ERROR_MESSAGE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER NOT SELECTED ERROR MESSAGE</shortDescription>
+        <value>Please select at least 1 set of Child records</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_NOT_SELECTED_ERROR_TITLE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER NOT SELECTED ERROR TITLE</shortDescription>
+        <value>Child Records Not Selected</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_NO_CHILD_OBJECTS_ERROR_MESSAGE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER NO CHILD OBJECTS ERROR MESSAGE</shortDescription>
+        <value>There are no Child Objects associated with:</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_NO_CHILD_OBJECTS_ERROR_TITLE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER NO CHILD OBJECTS ERROR TITLE</shortDescription>
+        <value>No Child Objects</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_NO_CHILD_RECORDS_MESSAGE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER NO CHILD RECORDS MESSAGE</shortDescription>
+        <value>There are no child records on this parent record to clone</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_NO_CHILD_RECORDS_TITLE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER NO CHILD RECORDS TITLE</shortDescription>
+        <value>No Child Records</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_OBJECT_MISMATCH_ERROR_MESSAGE_1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER OBJECT MISMATCH ERROR MESSAGE 1</shortDescription>
+        <value>The Source:</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_OBJECT_MISMATCH_ERROR_MESSAGE_2</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER OBJECT MISMATCH ERROR MESSAGE 2</shortDescription>
+        <value>and Destination:</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_OBJECT_MISMATCH_ERROR_MESSAGE_3</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER OBJECT MISMATCH ERROR MESSAGE 3</shortDescription>
+        <value>Id Objects do not Match</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_OBJECT_MISMATCH_ERROR_TITLE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER OBJECT MISMATCH ERROR TITLE</shortDescription>
+        <value>Object Mismatch</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_PARENT_CLONE_RECORD_ERROR_MESSAGE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER PARENT CLONE RECORD ERROR MESSAGE</shortDescription>
+        <value>Errors have occurred when trying to clone your parent record</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_PARENT_CLONE_RECORD_ERROR_TITLE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER PARENT CLONE RECORD ERROR TITLE</shortDescription>
+        <value>Parent Clone Error</value>
+    </labels>
+    <labels>
+        <fullName>DESTINATION_RECORD_PAGE_BLOCK_SECTION_ACTION_BUTTON</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DESTINATION RECORD PAGE BLOCK SECTION ACTION BUTTON</shortDescription>
+        <value>Copy Selected Objects</value>
+    </labels>
+    <labels>
+        <fullName>DESTINATION_RECORD_PAGE_BLOCK_SECTION_ACTION_LABEL</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DESTINATION RECORD PAGE BLOCK SECTION ACTION LABEL</shortDescription>
+        <value>Copying records, sending it over to destination record please wait.......</value>
+    </labels>
+    <labels>
+        <fullName>DESTINATION_RECORD_PAGE_BLOCK_SECTION_DEST_LABEL</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DESTINATION RECORD PAGE BLOCK SECTION DEST LABEL</shortDescription>
+        <value>Please Insert the Destination Id</value>
+    </labels>
+    <labels>
+        <fullName>DESTINATION_RECORD_PAGE_BLOCK_TITLE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DESTINATION RECORD PAGE BLOCK TITLE</shortDescription>
+        <value>Destination Record</value>
+    </labels>
+    <labels>
+        <fullName>SOURCE_RECORD_PAGE_BLOCK_SECTION_BUTTON</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SOURCE RECORD PAGE BLOCK SECTION BUTTON</shortDescription>
+        <value>Get Child Data</value>
+    </labels>
+    <labels>
+        <fullName>SOURCE_RECORD_PAGE_BLOCK_SECTION_CHECKBOX</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SOURCE RECORD PAGE BLOCK SECTION CHECKBOX</shortDescription>
+        <value>Clone this Parent Too</value>
+    </labels>
+    <labels>
+        <fullName>SOURCE_RECORD_PAGE_BLOCK_SECTION_MASTER_HEADER</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SOURCE RECORD PAGE BLOCK SECTION MASTER HEADER</shortDescription>
+        <value>Master Detail</value>
+    </labels>
+    <labels>
+        <fullName>SOURCE_RECORD_PAGE_BLOCK_SECTION_RECORD_HEADER</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SOURCE RECORD PAGE BLOCK SECTION RECORD HEADER</shortDescription>
+        <value>Record Amount</value>
+    </labels>
+    <labels>
+        <fullName>SOURCE_RECORD_PAGE_BLOCK_SECTION_SELECT_HEADER</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SOURCE RECORD PAGE BLOCK SECTION SELECT HEADER</shortDescription>
+        <value>Select</value>
+    </labels>
+    <labels>
+        <fullName>SOURCE_RECORD_PAGE_BLOCK_SECTION_SELECT_NAME</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SOURCE RECORD PAGE BLOCK SECTION SELECT NAME</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>SOURCE_RECORD_PAGE_BLOCK_SECTION_START_FACET</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SOURCE RECORD PAGE BLOCK SECTION START FACET</shortDescription>
+        <value>Getting data please wait....</value>
+    </labels>
+    <labels>
+        <fullName>SOURCE_RECORD_PAGE_BLOCK_SECTION_TITLE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SOURCE RECORD PAGE BLOCK SECTION TITLE</shortDescription>
+        <value>Please Insert the Source Id</value>
+    </labels>
+    <labels>
+        <fullName>SOURCE_RECORD_PAGE_BLOCK_TITLE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SOURCE RECORD PAGE BLOCK TITLE</shortDescription>
+        <value>Source Record</value>
+    </labels>
+</CustomLabels>

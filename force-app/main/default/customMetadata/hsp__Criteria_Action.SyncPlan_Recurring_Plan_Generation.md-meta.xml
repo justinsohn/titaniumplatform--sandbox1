@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Sync_Plan-Recurring Plan Generation</label>
+    <protected>false</protected>
+    <values>
+        <field>hsp__Action__c</field>
+        <value xsi:type="xsd:string">Sync_Plan</value>
+    </values>
+    <values>
+        <field>hsp__Description__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Process_Modified_Records_Only__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Scenario_Schedule_Type_Setting__c</field>
+        <value xsi:type="xsd:string">SST_165A0F0AFA9C21E9F4FFD25623A166C6</value>
+    </values>
+    <values>
+        <field>hsp__revVana_Solution__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,154 @@
+<template>
+    <lightning-card title="Resource Planning Dashboard">
+        <div class="slds-p-around_medium">
+            <!-- Summary Cards -->
+            <div class="summary-card">
+                <div class="summary-item">
+                    <div class="summary-label">Total Resources</div>
+                    <div class="summary-value">{totalResources}</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-label">Total Hours</div>
+                    <div class="summary-value">{totalHours}</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-label">Total Cost</div>
+                    <div class="summary-value">{totalCostFormatted}</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-label">Total Revenue</div>
+                    <div class="summary-value">{totalRevenueFormatted}</div>
+                </div>
+            </div>
+
+            <!-- Week Navigation -->
+            <div class="week-navigation">
+                <button class="nav-button" onclick={handlePreviousWeeks} disabled={isAtStart}>
+                    Previous {visibleWeeksCount} Weeks
+                </button>
+                <div class="week-range">
+                    {currentWeekRangeLabel}
+                </div>
+                <button class="nav-button" onclick={handleNextWeeks} disabled={isAtEnd}>
+                    Next {visibleWeeksCount} Weeks
+                </button>
+            </div>
+
+            <!-- Table Container -->
+            <div class="schedule-container">
+                <div class="table-wrapper">
+                    <table class="schedule-table slds-table">
+                        <thead>
+                            <tr>
+                                <th class="fixed-column task-resource-cell" rowspan="3">
+                                    <div>
+                                        Task - Resource
+                                    </div>
+                                </th>
+                                <template for:each={visibleWeeks} for:item="week">
+                                    <th key={week.key} class="week-header">
+                                        <div class="week-label">{week.label}</div>
+                                        <div class="week-dates">{week.dateRange}</div>
+                                    </th>
+                                </template>
+                                <th rowspan="3" class="week-header">
+                                    <div class="week-label">Totals</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={visibleTableData} for:item="row">
+                                <tr key={row.id} class="resource-row">
+                                    <td class="fixed-column task-resource-cell" rowspan="3">
+                                        <div class="resource-info">
+                                            <div class="resource-name">{row.taskAndResource}</div>
+                                            <div class="allocation-info">
+                                                <div class="allocation-header">
+                                                    <span class="allocation-percentage">{row.allocationPercentage}% Allocated</span>
+                                                    <span class="available-hours">{row.rowTotalHours} / {row.totalAssignmentHours} hrs</span>
+                                                </div>
+                                                <div class="allocation-bar">
+                                                    <div class="allocation-fill {row.allocationClass}" 
+                                                         style={row.allocationStyle}></div>
+                                                </div>
+                                                <div class="hours-breakdown">
+                                                    <span class="hours-label">Available: {row.remainingHours} hrs</span>
+                                                </div>
+                                            </div>
+                                            <div class="resource-rates">
+                                                <span class="rate-label">Cost Rate: {row.costRateFormatted}/hr</span>
+                                                <span class="rate-label">Bill Rate: {row.billRateFormatted}/hr</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <template for:each={row.visibleWeeklyData} for:item="week">
+                                        <td key={week.uniqueKey} class="hours-cell">
+                                            <lightning-input
+                                                type="number"
+                                                variant="label-hidden"
+                                                placeholder="Hours"
+                                                data-assignment-id={week.assignmentId}
+                                                data-week-start-date={week.weekStartDateISO}
+                                                value={week.plannedHours}
+                                                onchange={handleHoursChange}
+                                                readonly={week.isPastWeek}>
+                                            </lightning-input>
+                                        </td>
+                                    </template>
+                                    <td rowspan="3" class="totals-cell">
+                                        <div class="total-value">{row.rowTotalHours} hrs</div>
+                                    </td>
+                                </tr>
+                                <tr key={row.costRowKey} class="cost-row">
+                                    <template for:each={row.visibleWeeklyData} for:item="week">
+                                        <td key={week.costKey} class="calculated-cell">
+                                            <div class="calculated-value cost">{week.plannedCostFormatted}</div>
+                                        </td>
+                                    </template>
+                                </tr>
+                                <tr key={row.revenueRowKey} class="revenue-row">
+                                    <template for:each={row.visibleWeeklyData} for:item="week">
+                                        <td key={week.revenueKey} class="calculated-cell">
+                                            <div class="calculated-value revenue">{week.plannedRevenueFormatted}</div>
+                                        </td>
+                                    </template>
+                                </tr>
+                            </template>
+                            <!-- Column Totals -->
+                            <tr class="totals-row">
+                                <td class="fixed-column">
+                                    <strong>Weekly Totals</strong>
+                                </td>
+                                <template for:each={visibleColumnTotals} for:item="total">
+                                    <td key={total.key} class="column-total">
+                                        <div class="total-hours">{total.hours} hrs</div>
+                                        <div class="total-cost">{total.costFormatted}</div>
+                                        <div class="total-revenue">{total.revenueFormatted}</div>
+                                    </td>
+                                </template>
+                                <td class="grand-total">
+                                    <div class="total-hours">{grandTotalHours} hrs</div>
+                                    <div class="total-cost">{grandTotalCostFormatted}</div>
+                                    <div class="total-revenue">{grandTotalRevenueFormatted}</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Save Section -->
+            <div class="save-section">
+                <lightning-button 
+                    label="Cancel" 
+                    onclick={handleCancel}>
+                </lightning-button>
+                <lightning-button 
+                    variant="brand" 
+                    label="Save Changes" 
+                    onclick={handleSave}>
+                </lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

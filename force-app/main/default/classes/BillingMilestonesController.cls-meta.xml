@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexClass xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <packageVersions>
+        <majorNumber>3</majorNumber>
+        <minorNumber>114</minorNumber>
+        <namespace>ccpe_ocp</namespace>
+    </packageVersions>
+    <packageVersions>
+        <majorNumber>25</majorNumber>
+        <minorNumber>3</minorNumber>
+        <namespace>project_cloud</namespace>
+    </packageVersions>
+    <status>Active</status>
+</ApexClass>

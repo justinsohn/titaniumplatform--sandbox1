@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Plan Trigger Control</label>
+    <protected>false</protected>
+    <values>
+        <field>hsp__Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>hsp__After_Delete__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__After_Insert__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__After_Undelete__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__After_Update__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>hsp__Async_Execution_Override_Flag_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Asynchronous_Execution__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Before_Delete__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Before_Insert__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Before_Update__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Class__c</field>
+        <value xsi:type="xsd:string">PlanTriggerHandler</value>
+    </values>
+    <values>
+        <field>hsp__Criteria__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Execute_Only_Updated_Records__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Execution_Order__c</field>
+        <value xsi:type="xsd:double">1.0</value>
+    </values>
+    <values>
+        <field>hsp__Field_Checklist_Needed__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Field_Checklist_Required__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Namespace__c</field>
+        <value xsi:type="xsd:string">hsp</value>
+    </values>
+    <values>
+        <field>hsp__Object__c</field>
+        <value xsi:type="xsd:string">hsp__Plan__c</value>
+    </values>
+    <values>
+        <field>hsp__User_Exclusion__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__revVana_Solution__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

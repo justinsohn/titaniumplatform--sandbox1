@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <environments>Default</environments>
+    <formulas>
+        <name>ConcatenateNameREV</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Opportunity_Name__r.Name}&amp;&quot;-&quot;&amp;&quot;REV&quot;</expression>
+    </formulas>
+    <interviewLabel>Concatenate Record Name - REV {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Concatenate Record Name - REV</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Concatenate_Name_REV</name>
+        <label>Concatenate Name - REV</label>
+        <locationX>456</locationX>
+        <locationY>383</locationY>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>ConcatenateNameREV</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>330</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Concatenate_Name_REV</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>RecordTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>0124N000000l1TbQAI</stringValue>
+            </value>
+        </filters>
+        <object>Invoice_Rev_Rec_Tracking__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

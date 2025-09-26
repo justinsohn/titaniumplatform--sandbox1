@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>SALES_Notification_is_sent_from_Old_TSA_to_new_TSA</name>
+        <label>Opportunity.SALES_Notification_is_sent_from_Old_TSA_to_new_TSA</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>Opportunity.SALES_Notification_is_sent_from_Old_TSA_to_new_TSA</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Opportunity.SALES_Notification_is_sent_from_Old_TSA_to_new_TSA</nameSegment>
+    </actionCalls>
+    <apiVersion>63.0</apiVersion>
+    <description>Migrated from the: SALES: Notifies SDE and TSA Assigned to an Opportunity workflow rule
+Workflow rule description: Notifies SDE and TSA Assigned to an opportunity.  As well as Jose&quot;</description>
+    <label>SALES: Notifies SDE and TSA Assigned to an Opportunity</label>
+    <migratedFromWorkflowRuleName>SALES: Notifies SDE and TSA Assigned to an Opportunity</migratedFromWorkflowRuleName>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>SALES_Notification_is_sent_from_Old_TSA_to_new_TSA</targetReference>
+        </connector>
+        <filterFormula>ISCHANGED( {!$Record.Primary_SDE__c} )</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

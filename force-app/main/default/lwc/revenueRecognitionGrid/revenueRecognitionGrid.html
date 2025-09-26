@@ -1,0 +1,225 @@
+<template>
+    <lightning-card title="Revenue Recognition Grid" icon-name="standard:partner_fund_claim" class="slds-card_boundary">
+        <div class="slds-p-around_medium">
+            <!-- Loading Spinner -->
+            <template if:true={isLoading}>
+                <div class="loading-container slds-align_absolute-center slds-m-vertical_large">
+                    <lightning-spinner alternative-text="Loading revenue data..." size="medium"></lightning-spinner>
+                    <p class="slds-text-body_small slds-text-color_weak slds-m-top_small">Loading revenue recognition data...</p>
+                </div>
+            </template>
+
+            <!-- Error Message -->
+            <template if:true={error}>
+                <div class="slds-box slds-theme_error error-container slds-m-bottom_medium">
+                    <div class="slds-media slds-media_center">
+                        <div class="slds-media__figure">
+                            <lightning-icon icon-name="utility:error" variant="inverse" size="small"></lightning-icon>
+                        </div>
+                        <div class="slds-media__body">
+                            <p class="slds-text-heading_small">Error Loading Data</p>
+                            <p class="slds-text-body_small">{error}</p>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <!-- Main Content -->
+            <template if:false={isLoading}>
+                <template if:true={hasMonths}>
+                    <div class="slds-scrollable_x revenue-grid-container">
+                        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered revenue-grid-table">
+                            <thead>
+                                <tr class="slds-line-height_reset">
+                                    <th class="slds-p-horizontal_small header-cell" scope="col" style="min-width: 250px;">
+                                        <div class="slds-truncate" title="Group / Family / Product">
+                                            <span class="slds-text-title_bold">Group / Family / Product</span>
+                                        </div>
+                                    </th>
+                                    <th class="slds-text-align_right slds-p-horizontal_small header-cell" scope="col" style="min-width: 130px;">
+                                        <div class="slds-truncate" title="Price/Rev (Sold)">
+                                            <span class="slds-text-title_bold">Price/Rev (Sold)</span>
+                                        </div>
+                                    </th>
+                                    <!-- NEW: Header for Forecast Total -->
+                                    <th class="slds-text-align_right slds-p-horizontal_small header-cell" scope="col" style="min-width: 130px;">
+                                        <div class="slds-truncate" title="Forecast Total">
+                                            <span class="slds-text-title_bold">Forecast Total</span>
+                                        </div>
+                                    </th>
+                                    <template for:each={monthHeaders} for:item="monthHeader">
+                                        <th key={monthHeader} class="slds-text-align_right slds-p-horizontal_small header-cell" scope="col" style="min-width: 120px;">
+                                            <div class="slds-truncate" title={monthHeader}>
+                                                <span class="slds-text-title_bold">{monthHeader}</span>
+                                            </div>
+                                        </th>
+                                    </template>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template if:true={hasData}>
+                                    <!-- The main loop now iterates over the flattened data structure -->
+                                    <template for:each={gridData.flattenedData} for:item="item">
+                                        
+                                        <!-- RENDER SUPER GROUP HEADER -->
+                                        <template if:true={item.isSuperGroupHeader}>
+                                            <tr key={item.id} class="super-group-header-row">
+                                                <td colspan={colspanSize}>
+                                                     <div class="slds-media slds-media_center">
+                                                        <div class="slds-media__figure">
+                                                            <lightning-icon icon-name="utility:apps" size="small"></lightning-icon>
+                                                        </div>
+                                                        <div class="slds-media__body">
+                                                            <div class="slds-text-heading_small">
+                                                                <strong>{item.name}</strong>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </template>
+                                        
+                                        <!-- RENDER FAMILY HEADER -->
+                                        <template if:true={item.isFamilyHeader}>
+                                            <tr key={item.id} class="family-header-row">
+                                                <td colspan={colspanSize}>
+                                                     <div class="slds-media slds-media_center" style="padding-left: 2rem;">
+                                                        <div class="slds-media__figure">
+                                                            <lightning-icon icon-name="utility:package" size="x-small"></lightning-icon>
+                                                        </div>
+                                                        <div class="slds-media__body">
+                                                            <div class="slds-text-title">
+                                                                <strong>{item.name}</strong>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </template>
+
+                                        <!-- RENDER PRODUCT CODE ROW -->
+                                        <template if:true={item.isProductCode}>
+                                            <tr key={item.id} class="product-code-row">
+                                                <td data-label="Product Code" style="padding-left: 3.5rem;">
+                                                    <div class="slds-truncate" title={item.name}>
+                                                        <lightning-icon icon-name="utility:product" size="xx-small" class="slds-m-right_xsmall"></lightning-icon>
+                                                        {item.name}
+                                                    </div>
+                                                </td>
+                                                <td data-label="Price/Rev (Sold)" class="slds-text-align_right amount-cell">
+                                                    <div class="revenue-amount">
+                                                        <lightning-formatted-number value={item.soldPrice} format-style="currency" currency-code="USD" minimum-fraction-digits="2" maximum-fraction-digits="2"></lightning-formatted-number>
+                                                    </div>
+                                                </td>
+                                                <!-- NEW: Cell for Forecast Total -->
+                                                <td data-label="Forecast Total" class="slds-text-align_right amount-cell">
+                                                    <div class="revenue-amount">
+                                                        <lightning-formatted-number value={item.forecastTotal} format-style="currency" currency-code="USD" minimum-fraction-digits="2" maximum-fraction-digits="2"></lightning-formatted-number>
+                                                    </div>
+                                                </td>
+                                                <template for:each={item.monthlyData} for:item="monthData">
+                                                    <td key={monthData.month} data-label={monthData.month} class="slds-text-align_right amount-cell">
+                                                        <div class="revenue-amount">
+                                                            <lightning-formatted-number value={monthData.amount} format-style="currency" currency-code="USD" minimum-fraction-digits="2" maximum-fraction-digits="2"></lightning-formatted-number>
+                                                        </div>
+                                                    </td>
+                                                </template>
+                                            </tr>
+                                        </template>
+
+                                        <!-- RENDER FAMILY TOTAL -->
+                                        <template if:true={item.isFamilyTotal}>
+                                             <tr key={item.id} class="family-totals-row">
+                                                <td colspan={totalLabelColspanSize} style="padding-left: 2.5rem;">
+                                                    <span class="family-total-label">{item.name}</span>
+                                                </td>
+                                                <template for:each={item.monthlyData} for:item="monthTotal">
+                                                    <td key={monthTotal.month} class="slds-text-align_right family-total-cell amount-cell">
+                                                        <div class="family-total-value">
+                                                            <lightning-formatted-number value={monthTotal.amount} format-style="currency" currency-code="USD" minimum-fraction-digits="2" maximum-fraction-digits="2"></lightning-formatted-number>
+                                                        </div>
+                                                    </td>
+                                                </template>
+                                            </tr>
+                                        </template>
+
+                                        <!-- RENDER SUPER GROUP TOTAL -->
+                                        <template if:true={item.isSuperGroupTotal}>
+                                             <tr key={item.id} class="super-group-total-row">
+                                                <td colspan={totalLabelColspanSize} style="padding-left: 1.5rem;">
+                                                    <span class="super-group-total-label">{item.name}</span>
+                                                </td>
+                                                <template for:each={item.monthlyData} for:item="monthTotal">
+                                                    <td key={monthTotal.month} class="slds-text-align_right super-group-total-cell amount-cell">
+                                                        <div class="super-group-total-value">
+                                                            <lightning-formatted-number value={monthTotal.amount} format-style="currency" currency-code="USD" minimum-fraction-digits="2" maximum-fraction-digits="2"></lightning-formatted-number>
+                                                        </div>
+                                                    </td>
+                                                </template>
+                                            </tr>
+                                        </template>
+                                        
+                                        <!-- RENDER SPACER -->
+                                        <template if:true={item.isSpacer}>
+                                            <tr key={item.id} class="family-spacer-row">
+                                                <td colspan={colspanSize} class="family-spacer-cell">
+                                                    <div class="family-separator"></div>
+                                                </td>
+                                            </tr>
+                                        </template>
+                                        
+                                    </template>
+                                </template>
+                                <!-- No Data Message -->
+                                <template if:false={hasData}>
+                                    <tr>
+                                        <td colspan={colspanSize} class="slds-text-align_center slds-p-around_large">
+                                            <div class="slds-illustration slds-illustration_small empty-state-container">
+                                                <img src="/apexpages/slds/latest/assets/images/illustrations/empty-state-results.svg" alt="No Data" class="slds-illustration__svg" />
+                                                <div class="slds-text-longform slds-m-top_medium">
+                                                    <h3 class="slds-text-heading_medium">No Revenue Data Found</h3>
+                                                    <p class="slds-text-body_regular">There is no revenue recognition or forecast data to display for the selected period.</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                             <!-- Table Footer for Grand Totals -->
+                            <template if:true={hasData}>
+                                <tfoot>
+                                    <tr class="grand-totals-row">
+                                        <td data-label="Grand Total" class="slds-p-horizontal_small grand-total-label-cell" colspan={totalLabelColspanSize}>
+                                            <div class="slds-truncate">
+                                                <span class="grand-total-label">Grand Totals:</span>
+                                            </div>
+                                        </td>
+                                        <template for:each={grandTotalData} for:item="grandMonthTotal">
+                                            <td key={grandMonthTotal.month} data-label={grandMonthTotal.month} class="slds-text-align_right grand-total-value-cell amount-cell">
+                                                <div class="grand-total-value" data-value={grandMonthTotal.amount}>
+                                                    <lightning-formatted-number value={grandMonthTotal.amount} format-style="currency" currency-code="USD" minimum-fraction-digits="2" maximum-fraction-digits="2"></lightning-formatted-number>
+                                                </div>
+                                            </td>
+                                        </template>
+                                    </tr>
+                                </tfoot>
+                            </template>
+                        </table>
+                    </div>
+                </template>
+                 <!-- No Months/No Data Available -->
+                <template if:false={hasMonths}>
+                    <div class="slds-align_absolute-center slds-p-around_large empty-state-container">
+                        <div class="slds-illustration slds-illustration_small">
+                            <img src="/apexpages/slds/latest/assets/images/illustrations/empty-state-tasks.svg" alt="No Data Available" class="slds-illustration__svg" />
+                            <div class="slds-text-longform slds-m-top_medium">
+                                <h3 class="slds-text-heading_medium">No Data Available</h3>
+                                <p class="slds-text-body_regular">No revenue recognition data or date range could be determined for this project.</p>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

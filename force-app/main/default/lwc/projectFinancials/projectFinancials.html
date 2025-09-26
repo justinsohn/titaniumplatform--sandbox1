@@ -1,0 +1,208 @@
+<template>
+    <lightning-card title="Project Financials by Phase" icon-name="standard:investment_account">
+        <div class="slds-p-horizontal_medium slds-p-vertical_small">
+            <template if:true={isLoading}>
+                <div class="slds-is-relative slds-m-vertical_large">
+                    <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+                </div>
+            </template>
+
+            <template if:true={error}>
+                <div class="slds-box slds-theme_error slds-m-bottom_medium">
+                    <p>
+                        <lightning-icon icon-name="utility:error" alternative-text="Error" size="x-small" class="slds-m-right_x-small"></lightning-icon>
+                        An error occurred while loading data: {errorText}
+                    </p>
+                </div>
+            </template>
+
+            <template if:false={isLoading}>
+                <template if:true={showSummaryTable}>
+                    <div class="slds-m-bottom_large summary-table-container">
+                        <h3 class="slds-text-heading_medium slds-m-bottom_small">Overall Project Financial Summary</h3>
+                        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped slds-table_fixed-layout">
+                            <thead>
+                                <tr class="slds-line-height_reset slds-text-title_caps slds-theme_shade">
+                                    <th scope="col" class="slds-size_6-of-12"><div class="slds-truncate slds-p-horizontal_small" title="Metric">Metric</div></th>
+                                    <th scope="col" class="slds-size_6-of-12"><div class="slds-truncate slds-p-horizontal_small slds-text-align_right" title="Total Value">Total Value</div></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="Metric" class="slds-p-horizontal_small">Total Price/Rev (Sold)</td>
+                                    <td data-label="Total Price/Rev (Sold) Value" class="slds-text-align_right slds-p-horizontal_small">
+                                        <lightning-formatted-number value={grandTotalPriceRevSold} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Metric" class="slds-p-horizontal_small">Total LOE Est. Cost (Sold)</td>
+                                    <td data-label="Total LOE Est. Cost (Sold) Value" class="slds-text-align_right slds-p-horizontal_small">
+                                        <lightning-formatted-number value={grandTotalLoeEstimatedCostSold} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td data-label="Metric" class="slds-p-horizontal_small">Total MH (Sold)</td>
+                                    <td data-label="Total MH (Sold) Value" class="slds-text-align_right slds-p-horizontal_small">
+                                        <lightning-formatted-number value={grandTotalMhSold}></lightning-formatted-number>
+                                    </td>
+                                </tr>
+                                <tr class="actuals-section-start"> 
+                                    <td data-label="Metric" class="slds-p-horizontal_small">Total Rev Rec (Actual)</td>
+                                    <td data-label="Total Rev Rec (Actual) Value" class="slds-text-align_right slds-p-horizontal_small">
+                                        <lightning-formatted-number value={grandTotalRevRecActual} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                    </td>
+                                </tr>
+                                <tr class="actuals-section-start">
+                                    <td data-label="Metric" class="slds-p-horizontal_small">Total Costs (Actual)</td>
+                                    <td data-label="Total Costs (Actual) Value" class="slds-text-align_right slds-p-horizontal_small">
+                                        <lightning-formatted-number value={grandTotalCostsActual} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                    </td>
+                                </tr>
+                                <tr class="actuals-section-start"> 
+                                    <td data-label="Metric" class="slds-p-horizontal_small">Total MH (Actual)</td>
+                                    <td data-label="Total MH (Actual) Value" class="slds-text-align_right slds-p-horizontal_small">
+                                        <lightning-formatted-number value={grandTotalMhActual}></lightning-formatted-number>
+                                    </td>
+                                </tr>
+                                <tr class="actuals-section-start"> 
+                                    <td data-label="Metric" class="slds-p-horizontal_small"><strong>Overall Ratio (Sold)</strong></td>
+                                    <td data-label="Overall Ratio (Sold) Value" class="slds-text-align_right slds-p-horizontal_small">
+                                        <span class={grandTotalRatioSoldColorClass}>
+                                            <strong><lightning-formatted-number value={grandTotalRatioSold} minimum-fraction-digits="2" maximum-fraction-digits="2"></lightning-formatted-number></strong>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr class="actuals-section-start">
+                                    <td data-label="Metric" class="slds-p-horizontal_small"><strong>Overall Ratio (Actual)</strong></td>
+                                    <td data-label="Overall Ratio (Actual) Value" class="slds-text-align_right slds-p-horizontal_small">
+                                        <span class={grandTotalRatioActualColorClass}>
+                                            <strong><lightning-formatted-number value={grandTotalRatioActual} minimum-fraction-digits="2" maximum-fraction-digits="2"></lightning-formatted-number></strong>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr class="actuals-section-start">
+                                    <td data-label="Metric" class="slds-p-horizontal_small"><strong>Overall Ratio (Delta)</strong></td>
+                                    <td data-label="Overall Ratio (Delta) Value" class="slds-text-align_right slds-p-horizontal_small">
+                                        <span class={grandTotalRatioDeltaColorClass}>
+                                            <strong><lightning-formatted-number value={grandTotalRatioDelta} minimum-fraction-digits="2" maximum-fraction-digits="2" sign-display="auto"></lightning-formatted-number></strong>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </template>
+
+                <template if:true={hasData}>
+                    <template for:each={phasesData} for:item="phase">
+                        <div key={phase.phaseId} class="slds-m-bottom_large">
+                             <div class="slds-box slds-theme_default slds-m-bottom_medium slds-border_left slds-border_top slds-border_right slds-border_bottom phase-container">
+                                <div class="slds-grid slds-page-header__row slds-page-header__row_gutters slds-p-around_small slds-theme_shade">
+                                    <div class="slds-col slds-has-flexi-truncate">
+                                        <h2 class="slds-text-heading_medium slds-truncate" title={phase.phaseName}>
+                                            <lightning-icon icon-name="standard:product_item" alternative-text="Phase" size="small" class="slds-m-right_small"></lightning-icon>
+                                            {phase.phaseName}
+                                        </h2>
+                                    </div>
+                                </div>
+                                <div class="slds-p-around_medium">
+                                    <template if:true={phase.hasAnyTasks}>
+                                        <div class="task-list slds-scrollable_x">
+                                            <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered slds-table_striped">
+                                                <thead>
+                                                    <tr class="slds-line-height_reset slds-text-title_caps slds-theme_shade">
+                                                        <th class="slds-size_2-of-12 slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Task Name">Task Name</div></th>
+                                                        <th class="slds-size_1-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Price/Rev (Sold)">Price/Rev (Sold)</div></th>
+                                                        <th class="slds-size_1-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="LOE Est. Cost (Sold)">LOE Est. Cost (Sold)</div></th>
+                                                        <th class="slds-size_1-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Ratio (Sold)">Ratio (Sold)</div></th>
+                                                        <th class="slds-size_1-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="MH (Sold)">MH (Sold)</div></th>
+                                                        <th class="slds-size_1-of-12 slds-text-align_right slds-p-horizontal_small sold-actual-divider" scope="col"><div class="slds-truncate" title="MH Rate (Sold)">MH Rate (Sold)</div></th>
+                                                        
+                                                        <th class="slds-size_1-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Rev Rec (Actual)">Rev Rec (Actual)</div></th>
+                                                        <th class="slds-size_1-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Costs (Actual)">Costs (Actual)</div></th>
+                                                        <th class="slds-size_1-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Ratio (Actual)">Ratio (Actual)</div></th>
+                                                        <th class="slds-size_1-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="MH (Actual)">MH (Actual)</div></th>
+                                                        <th class="slds-size_1-of-12 slds-text-align_right slds-p-horizontal_small sold-actual-divider" scope="col"><div class="slds-truncate" title="MH Rate (Actual)">MH Rate (Actual)</div></th>
+                                                        
+                                                        <th class="slds-size_1-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="MH Rate (Var)">MH Rate (Var)</div></th>
+                                                        <th class="slds-size_1-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Ratio (Delta)">Ratio (Delta)</div></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <template for:each={phase.tasks} for:item="task">
+                                                        <tr key={task.taskId} class="slds-hint-parent">
+                                                            <td data-label="Task Name" class="slds-p-horizontal_small"><div class="slds-truncate" title={task.taskName}>{task.taskName}</div></td>
+                                                            <td data-label="Price/Rev (Sold)" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.priceRevSold} format-style="currency" currency-code="USD"></lightning-formatted-number></td>
+                                                            <td data-label="LOE Est. Cost (Sold)" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.loeEstimatedCostSold} format-style="currency" currency-code="USD"></lightning-formatted-number></td>
+                                                            <td data-label="Ratio (Sold)" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.ratioSold} minimum-fraction-digits="2" maximum-fraction-digits="2"></lightning-formatted-number></td>
+                                                            <td data-label="MH (Sold)" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.mhSold}></lightning-formatted-number></td>
+                                                            <td data-label="MH Rate (Sold)" class="slds-text-align_right slds-p-horizontal_small sold-actual-divider"><lightning-formatted-number value={task.mhRateSold} format-style="currency" currency-code="USD" minimum-fraction-digits="2" maximum-fraction-digits="2"></lightning-formatted-number></td>
+                                                            
+                                                            <td data-label="Rev Rec (Actual)" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.revRecActual} format-style="currency" currency-code="USD"></lightning-formatted-number></td>
+                                                            <td data-label="Costs (Actual)" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.costsActual} format-style="currency" currency-code="USD"></lightning-formatted-number></td>
+                                                            <td data-label="Ratio (Actual)" class="slds-text-align_right slds-p-horizontal_small">
+                                                                <span class={task.ratioActualColorClass}>
+                                                                    <lightning-formatted-number value={task.ratioActual} minimum-fraction-digits="2" maximum-fraction-digits="2"></lightning-formatted-number>
+                                                                </span>
+                                                            </td>
+                                                            <td data-label="MH (Actual)" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.mhActual}></lightning-formatted-number></td>
+                                                            <td data-label="MH Rate (Actual)" class="slds-text-align_right slds-p-horizontal_small sold-actual-divider"><lightning-formatted-number value={task.mhRateActual} format-style="currency" currency-code="USD" minimum-fraction-digits="2" maximum-fraction-digits="2"></lightning-formatted-number></td>
+                                                            
+                                                            <td data-label="MH Rate (Var)" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.mhRateVar} format-style="currency" currency-code="USD" sign-display="auto" minimum-fraction-digits="2" maximum-fraction-digits="2"></lightning-formatted-number></td>
+                                                            <td data-label="Ratio (Delta)" class="slds-text-align_right slds-p-horizontal_small">
+                                                                <span class={task.ratioDeltaColorClass}>
+                                                                    <lightning-formatted-number value={task.ratioDelta} minimum-fraction-digits="2" maximum-fraction-digits="2" sign-display="auto"></lightning-formatted-number>
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                    </template>
+                                                    <tr class="slds-text-title_bold slds-theme_shade">
+                                                        <td data-label="Totals" class="slds-p-horizontal_small"><strong>Totals:</strong></td>
+                                                        <td data-label="Total Price/Rev (Sold)" class="slds-text-align_right slds-p-horizontal_small"><strong><lightning-formatted-number value={phase.totalPriceRevSold} format-style="currency" currency-code="USD"></lightning-formatted-number></strong></td>
+                                                        <td data-label="Total LOE Est. Cost (Sold)" class="slds-text-align_right slds-p-horizontal_small"><strong><lightning-formatted-number value={phase.totalLoeEstimatedCostSold} format-style="currency" currency-code="USD"></lightning-formatted-number></strong></td>
+                                                        <td data-label="Total Ratio (Sold)" class="slds-text-align_right slds-p-horizontal_small">
+                                                            <span class={phase.totalRatioSoldColorClass}>
+                                                                <strong><lightning-formatted-number value={phase.totalRatioSold} minimum-fraction-digits="2" maximum-fraction-digits="2"></lightning-formatted-number></strong>
+                                                            </span>
+                                                        </td>
+                                                        <td data-label="Total MH (Sold)" class="slds-text-align_right slds-p-horizontal_small"><strong><lightning-formatted-number value={phase.totalMhSold}></lightning-formatted-number></strong></td>
+                                                        <td data-label="Total MH Rate (Sold)" class="slds-text-align_right slds-p-horizontal_small sold-actual-divider"></td> 
+                                                        
+                                                        <td data-label="Total Rev Rec (Actual)" class="slds-text-align_right slds-p-horizontal_small"><strong><lightning-formatted-number value={phase.totalRevRecActual} format-style="currency" currency-code="USD"></lightning-formatted-number></strong></td>
+                                                        <td data-label="Total Costs (Actual)" class="slds-text-align_right slds-p-horizontal_small"><strong><lightning-formatted-number value={phase.totalCostsActual} format-style="currency" currency-code="USD"></lightning-formatted-number></strong></td>
+                                                        <td data-label="Total Ratio (Actual)" class="slds-text-align_right slds-p-horizontal_small">
+                                                            <span class={phase.totalRatioActualColorClass}>
+                                                                <strong><lightning-formatted-number value={phase.totalRatioActual} minimum-fraction-digits="2" maximum-fraction-digits="2"></lightning-formatted-number></strong>
+                                                            </span>
+                                                        </td>
+                                                        <td data-label="Total MH (Actual)" class="slds-text-align_right slds-p-horizontal_small"><strong><lightning-formatted-number value={phase.totalMhActual}></lightning-formatted-number></strong></td>
+                                                        <td data-label="Total MH Rate (Actual)" class="slds-text-align_right slds-p-horizontal_small sold-actual-divider"></td> 
+                                                        
+                                                        <td data-label="Total MH Rate (Var)" class="slds-text-align_right slds-p-horizontal_small"></td> 
+                                                        <td data-label="Total Ratio (Delta)" class="slds-text-align_right slds-p-horizontal_small">
+                                                            <span class={phase.totalRatioDeltaColorClass}>
+                                                                <strong><lightning-formatted-number value={phase.totalRatioDelta} minimum-fraction-digits="2" maximum-fraction-digits="2" sign-display="auto"></lightning-formatted-number></strong>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </template>
+                                    <template if:false={phase.hasAnyTasks}>
+                                        <div class="slds-text-align_center slds-p-vertical_medium slds-text-color_weak">No tasks found for this phase.</div>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+                <template if:false={hasData}>
+                    <div class="slds-text-align_center slds-p-vertical_large slds-text-color_weak">
+                        No financial data found for this project.
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <environments>Default</environments>
+    <interviewLabel>CC: Screen - Update Announcements {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CC: Screen - Update Announcements</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>Get_Custom_Setting</name>
+        <label>Get Custom Setting</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>AnnouncementSetup</targetReference>
+        </connector>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>PSA_Announcements__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Setting_Text</name>
+        <label>Update Setting Text</label>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
+        <inputAssignments>
+            <field>General_Announcements__c</field>
+            <value>
+                <elementReference>General_Announcements</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Missing_Time__c</field>
+            <value>
+                <elementReference>Missing_Time_Announcement</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unapproved_Time__c</field>
+            <value>
+                <elementReference>Time_Pending_Approval_Announcement</elementReference>
+            </value>
+        </inputAssignments>
+        <object>PSA_Announcements__c</object>
+    </recordUpdates>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <screens>
+        <name>AnnouncementSetup</name>
+        <label>AnnouncementSetup</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Update_Setting_Text</targetReference>
+        </connector>
+        <fields>
+            <name>Instructions</name>
+            <fieldText>&lt;p&gt;&lt;em style=&quot;font-size: 14px;&quot;&gt;Update Announcements. Note each announcement has a maximum text length of 255 characters&lt;/em&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>General_Announcements</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Get_Custom_Setting.General_Announcements__c</elementReference>
+            </defaultValue>
+            <fieldText>General Announcements</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Missing_Time_Announcement</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Get_Custom_Setting.Missing_Time__c</elementReference>
+            </defaultValue>
+            <fieldText>Missing Time Announcement</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Time_Pending_Approval_Announcement</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Get_Custom_Setting.Unapproved_Time__c</elementReference>
+            </defaultValue>
+            <fieldText>Time Pending Approval Announcement</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <nextOrFinishButtonLabel>Update Announcements</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Custom_Setting</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+</Flow>

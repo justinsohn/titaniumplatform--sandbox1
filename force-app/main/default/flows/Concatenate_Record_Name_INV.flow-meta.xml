@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <environments>Default</environments>
+    <formulas>
+        <name>ConcatenateRecordNameINV</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Opportunity_Name__r.Name}&amp;&quot;-&quot;&amp;&quot;INV&quot;</expression>
+    </formulas>
+    <interviewLabel>Concatenate Record Name - INC {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Concatenate Record Name - INV</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>Concatenate Record Name</description>
+        <name>Update_Name_of_Record</name>
+        <label>Update Name of Record</label>
+        <locationX>527</locationX>
+        <locationY>382</locationY>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>ConcatenateRecordNameINV</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>401</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Update_Name_of_Record</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>RecordTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>0124N000000l1TWQAY</stringValue>
+            </value>
+        </filters>
+        <object>Invoice_Rev_Rec_Tracking__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

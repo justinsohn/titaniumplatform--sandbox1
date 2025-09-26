@@ -1,0 +1,253 @@
+<template>
+    <lightning-card title="Billing Milestones" icon-name="standard:opportunity">
+        <div class="slds-p-around_medium">
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner> 
+            </template>
+            
+            <template if:true={error}>
+                <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert">
+                    <span class="slds-assistive-text">Error</span>
+                    <h2>{error}</h2>
+                </div>
+            </template>
+            
+            <template if:true={projectDetails}>
+                <div class="slds-grid slds-gutters slds-m-bottom_medium">
+                    <div class="slds-col">
+                        <p class="slds-text-heading_small slds-m-bottom_xx-small">Project Name</p>
+                        <p class="slds-text-body_regular">{projectDetails.Name}</p>
+                    </div>
+                </div>
+            </template>
+            
+            <template if:true={hasOrders}>
+                <template for:each={orderData} for:item="orderWrapper" for:index="orderIndex">
+                    <div key={orderWrapper.order.Id} class="slds-box slds-m-bottom_medium">
+                        <div class="slds-grid slds-gutters slds-m-bottom_small slds-items-align_center">
+                            <div class="slds-col">
+                                <h2 class="slds-text-heading_medium">
+                                    Order: {orderWrapper.order.OrderNumber} | 
+                                    Amount: <lightning-formatted-number value={orderWrapper.totalAmount} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                    </h2>
+                            </div>
+                            <div class="slds-col slds-shrink-none slds-p-left_small">
+                                <lightning-input
+                                    type="number"
+                                    label="Milestones"
+                                    value={orderWrapper.editableNumberOfMilestones}
+                                    min="1"
+                                    max="20" 
+                                    step="1"
+                                    data-order-index={orderIndex}
+                                    onchange={handleEditableMilestonesChange}
+                                    class="milestone-count-input">
+                                </lightning-input>
+                            </div>
+                            <div class="slds-col slds-shrink-none slds-p-left_xx-small">
+                                <lightning-button
+                                    label="Update Count"
+                                    variant="neutral"
+                                    data-order-index={orderIndex}
+                                    onclick={handleUpdateMilestoneCountForOrder}
+                                    class="slds-m-left_x-small">
+                                </lightning-button>
+                            </div>
+                        </div>
+                        
+                        <template if:true={orderWrapper.hasProducts}>
+                            <div class="slds-scrollable_x">
+                                <table class="slds-table slds-table_bordered slds-table_cell-buffer milestone-table">
+                                    <thead>
+                                        <tr class="slds-line-height_reset">
+                                            <th class="slds-text-title_caps product-column" scope="col">Product</th>
+                                            <th class="slds-text-title_caps amount-column" scope="col">Total Amount</th>
+                                            
+                                            <template for:each={orderWrapper.milestoneHeaders} for:item="milestoneHeader">
+                                                <th key={milestoneHeader.index} 
+                                                    class={milestoneHeader.headerClass} 
+                                                    scope="col">
+                                                    {milestoneHeader.label}
+                                                </th>
+                                            </template>
+                                            
+                                            <th class="slds-text-title_caps allocation-column" scope="col">Allocated</th>
+                                            <th class="slds-text-title_caps remaining-column" scope="col">Remaining</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- *** UPDATED LOOP: Iterate over newProductGroups instead of productFamilies *** -->
+                                        <template for:each={orderWrapper.newProductGroups} for:item="group">
+                                            <!-- Group Header Row -->
+                                            <tr key={group.groupName} class="family-row">
+                                                <td colspan={orderWrapper.totalColumns} class="slds-text-heading_small">
+                                                    {group.groupName}
+                                                </td>
+                                            </tr>
+                                            
+                                            <!-- Product Rows within the Group -->
+                                            <template for:each={group.products} for:item="productWrapper" for:index="productIndexInGroup">
+                                                <tr key={productWrapper.product.Id} class="product-row">
+                                                    <td>
+                                                        <p class="slds-text-body_regular">{productWrapper.product.Product2.Name}</p>
+                                                        <template if:true={productWrapper.displayProductCode}>
+                                                            <p class="slds-text-body_small slds-text-color_weak">{productWrapper.product.ProductCode}</p>
+                                                        </template>
+                                                    </td>
+                                                    <td>
+                                                        <lightning-formatted-number 
+                                                            value={productWrapper.product.TotalPrice}
+                                                            format-style="currency"
+                                                            currency-code="USD">
+                                                        </lightning-formatted-number>
+                                                    </td>
+                                                    
+                                                    <template for:each={productWrapper.milestoneAllocations} for:item="allocation" for:index="allocIndex">
+                                                        <td key={allocation.milestoneNumber} 
+                                                            class={allocation.cellClass}>
+                                                            <div class="slds-grid slds-grid_vertical slds-gutters_xxx-small">
+                                                                <lightning-input
+                                                                    type="number"
+                                                                    label="Percentage"
+                                                                    variant="label-hidden"
+                                                                    value={allocation.percentage}
+                                                                    step="1" min="0" max="100"
+                                                                    data-order-index={orderIndex}
+                                                                    data-group-name={group.groupName}
+                                                                    data-product-index={productIndexInGroup} 
+                                                                    data-milestone={allocation.milestoneNumber}
+                                                                    onchange={handlePercentageChange}
+                                                                    class="percentage-input slds-m-bottom_xx-small"
+                                                                    disabled={allocation.isLocked}>
+                                                                </lightning-input>
+                                                                <div class="slds-text-body_small slds-text-align_right amount-display slds-m-bottom_small">
+                                                                    <lightning-formatted-number 
+                                                                        value={allocation.amount}
+                                                                        format-style="currency"
+                                                                        currency-code="USD">
+                                                                    </lightning-formatted-number>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </template>
+                                                    
+                                                    <td>
+                                                        <div class="slds-text-align_right">
+                                                            <lightning-formatted-number 
+                                                                value={productWrapper.allocatedPercentage}
+                                                                format-style="percent"
+                                                                maximum-fraction-digits="2">
+                                                            </lightning-formatted-number>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class={productWrapper.remainingStyling}>
+                                                            <lightning-formatted-number 
+                                                                value={productWrapper.remainingPercentage}
+                                                                format-style="percent"
+                                                                maximum-fraction-digits="2">
+                                                            </lightning-formatted-number>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </template>
+                                        </template>
+                                        
+                                        <tr class="totals-row">
+                                            <td><strong>Milestone Totals</strong></td>
+                                            <td>
+                                                <lightning-formatted-number 
+                                                    value={orderWrapper.totalAmount}
+                                                    format-style="currency" currency-code="USD">
+                                                </lightning-formatted-number>
+                                            </td>
+                                            <template for:each={orderWrapper.milestoneTotals} for:item="total">
+                                                <td key={total.milestone} 
+                                                    class={total.cellClass}>
+                                                    <lightning-formatted-number 
+                                                        value={total.amount}
+                                                        format-style="currency" currency-code="USD">
+                                                    </lightning-formatted-number>
+                                                </td>
+                                            </template>
+                                            <td colspan="2"></td> 
+                                        </tr>
+
+                                        <tr class="bulk-update-row">
+                                            <td colspan="2"><strong>Invoice Information:</strong></td>
+                                            <template for:each={orderWrapper.milestoneHeaders} for:item="milestoneHeader">
+                                                <td key={milestoneHeader.index} 
+                                                    class={milestoneHeader.cellClass}>
+                                                    <lightning-input
+                                                        type="date"
+                                                        label="Target Date" 
+                                                        value={milestoneHeader.columnTargetDate}
+                                                        data-order-index={orderIndex}
+                                                        data-milestone-header-index={milestoneHeader.index} 
+                                                        onchange={handleColumnTargetDateChange}
+                                                        class="slds-m-bottom_small date-input"
+                                                        disabled={milestoneHeader.isEffectivelyLocked}>
+                                                    </lightning-input>
+                                                    <lightning-textarea
+                                                        name="columnDescription"
+                                                        label="Description"
+                                                        value={milestoneHeader.columnDescription}
+                                                        data-order-index={orderIndex}
+                                                        data-milestone-header-index={milestoneHeader.index}
+                                                        onchange={handleColumnDescriptionChange}
+                                                        class="slds-m-bottom_small description-input"
+                                                        disabled={milestoneHeader.isEffectivelyLocked}
+                                                        max-length="255"> 
+                                                    </lightning-textarea>
+                                                    <lightning-input
+                                                        type="checkbox"
+                                                        label="Ready to Invoice" 
+                                                        checked={milestoneHeader.columnReadyToInvoice}
+                                                        data-order-index={orderIndex}
+                                                        data-milestone-header-index={milestoneHeader.index}
+                                                        onchange={handleColumnReadyToInvoiceChange}
+                                                        class="checkbox-input"
+                                                        disabled={milestoneHeader.isEffectivelyLocked}> 
+                                                    </lightning-input>
+                                                </td>
+                                            </template>
+                                            <td colspan="2"></td> 
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </template>
+                        
+                        <template if:false={orderWrapper.hasProducts}>
+                            <div class="slds-illustration slds-illustration_small" aria-hidden="true">
+                                <div class="slds-text-longform">
+                                    <h3 class="slds-text-heading_medium">No products found for this order</h3>
+                                    <p class="slds-text-body_regular">Add products to the order to set up billing milestones.</p>
+                                </div>
+                            </div>
+                        </template>
+                    </div> 
+                </template> 
+                
+                <div class="slds-m-top_medium slds-text-align_right">
+                    <lightning-button 
+                        label="Save All Milestones" 
+                        variant="brand" 
+                        onclick={handleSave}
+                        disabled={isSaveDisabled}>
+                    </lightning-button>
+                </div>
+                
+            </template> 
+            
+            <template if:false={hasOrders}>
+                <div class="slds-illustration slds-illustration_small" aria-hidden="true">
+                    <div class="slds-text-longform">
+                        <h3 class="slds-text-heading_medium">No orders found for this project</h3>
+                        <p class="slds-text-body_regular">Add orders to the project to set up billing milestones.</p>
+                    </div>
+                </div>
+            </template>
+        </div> 
+    </lightning-card>
+</template>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Opp RecordType Id</label>
+    <protected>false</protected>
+    <values>
+        <field>hsp__Criteria__c</field>
+        <value xsi:type="xsd:string">C_233A1B017D5300CB014EB1B07C270377</value>
+    </values>
+    <values>
+        <field>hsp__Description__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Field__c</field>
+        <value xsi:type="xsd:string">F_B3A43D2B230A09E16733684B756F9052</value>
+    </values>
+    <values>
+        <field>hsp__Operator__c</field>
+        <value xsi:type="xsd:string">Equals</value>
+    </values>
+    <values>
+        <field>hsp__Relationship__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Rule_Number__c</field>
+        <value xsi:type="xsd:double">2.0</value>
+    </values>
+    <values>
+        <field>hsp__Source_Object_Name__c</field>
+        <value xsi:type="xsd:string">Opportunity</value>
+    </values>
+    <values>
+        <field>hsp__Value__c</field>
+        <value xsi:type="xsd:string">0124N000000MeykQAC</value>
+    </values>
+    <values>
+        <field>hsp__revVana_Solution__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

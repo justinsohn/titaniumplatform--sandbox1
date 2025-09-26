@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Pln_Revenue Impact</label>
+    <protected>false</protected>
+    <values>
+        <field>hsp__Description__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Field_Name__c</field>
+        <value xsi:type="xsd:string">Revenue_Impact__c</value>
+    </values>
+    <values>
+        <field>hsp__Metadata_Object_Field_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Metadata_Object_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Object_Name__c</field>
+        <value xsi:type="xsd:string">hsp__Plan__c</value>
+    </values>
+    <values>
+        <field>hsp__Relationship__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Source_Object__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__View_State_Context_Object__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__View_State_Variable_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__revVana_Solution__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

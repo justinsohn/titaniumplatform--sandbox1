@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>j00_project_cloud_Project_c</label>
+    <protected>false</protected>
+    <values>
+        <field>zsfjira__autoUpdate__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>zsfjira__connectionId__c</field>
+        <value xsi:type="xsd:string">j00</value>
+    </values>
+    <values>
+        <field>zsfjira__mappedFields__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>zsfjira__objectName__c</field>
+        <value xsi:type="xsd:string">project_cloud__Project__c</value>
+    </values>
+    <values>
+        <field>zsfjira__relatedJiraIssueFields__c</field>
+        <value xsi:type="xsd:string">[&quot;summary&quot;,&quot;status&quot;,&quot;assignee&quot;,&quot;duedate&quot;]</value>
+    </values>
+    <values>
+        <field>zsfjira__sharedFields__c</field>
+        <value xsi:type="xsd:string">{&quot;sharedFields&quot;:[{&quot;sharedFields&quot;:null,&quot;name&quot;:&quot;Name&quot;,&quot;jiraDisplay&quot;:true},{&quot;sharedFields&quot;:null,&quot;name&quot;:&quot;Unique_Identifier__c&quot;,&quot;jiraDisplay&quot;:true},{&quot;sharedFields&quot;:null,&quot;name&quot;:&quot;Budgeted_Amount__c&quot;,&quot;jiraDisplay&quot;:true},{&quot;sharedFields&quot;:null,&quot;name&quot;:&quot;Change_Request_Fee__c&quot;,&quot;jiraDisplay&quot;:true},{&quot;sharedFields&quot;:null,&quot;name&quot;:&quot;Current_Fee__c&quot;,&quot;jiraDisplay&quot;:true},{&quot;sharedFields&quot;:null,&quot;name&quot;:&quot;Software_Fee__c&quot;,&quot;jiraDisplay&quot;:true},{&quot;sharedFields&quot;:null,&quot;name&quot;:&quot;Maintenance_Fee__c&quot;,&quot;jiraDisplay&quot;:true}],&quot;name&quot;:&quot;project_cloud__Project__c&quot;,&quot;mandatoryField&quot;:&quot;Name&quot;,&quot;labelPlural&quot;:&quot;Projects&quot;,&quot;label&quot;:&quot;Project&quot;,&quot;fields&quot;:[{&quot;type&quot;:&quot;id&quot;,&quot;relationshipName&quot;:null,&quot;referenceTo&quot;:[],&quot;name&quot;:&quot;Id&quot;,&quot;label&quot;:&quot;Record ID&quot;},{&quot;type&quot;:&quot;string&quot;,&quot;relationshipName&quot;:null,&quot;referenceTo&quot;:[],&quot;name&quot;:&quot;Name&quot;,&quot;label&quot;:&quot;Project Name&quot;},{&quot;type&quot;:&quot;string&quot;,&quot;relationshipName&quot;:null,&quot;referenceTo&quot;:[],&quot;name&quot;:&quot;Unique_Identifier__c&quot;,&quot;label&quot;:&quot;Project Number&quot;},{&quot;type&quot;:&quot;currency&quot;,&quot;relationshipName&quot;:null,&quot;referenceTo&quot;:[],&quot;name&quot;:&quot;Budgeted_Amount__c&quot;,&quot;label&quot;:&quot;Services Fee&quot;},{&quot;type&quot;:&quot;currency&quot;,&quot;relationshipName&quot;:null,&quot;referenceTo&quot;:[],&quot;name&quot;:&quot;Change_Request_Fee__c&quot;,&quot;label&quot;:&quot;Change Request Fee&quot;},{&quot;type&quot;:&quot;currency&quot;,&quot;relationshipName&quot;:null,&quot;referenceTo&quot;:[],&quot;name&quot;:&quot;Current_Fee__c&quot;,&quot;label&quot;:&quot;Current Services Fee&quot;},{&quot;type&quot;:&quot;currency&quot;,&quot;relationshipName&quot;:null,&quot;referenceTo&quot;:[],&quot;name&quot;:&quot;Software_Fee__c&quot;,&quot;label&quot;:&quot;Software Fee&quot;},{&quot;type&quot;:&quot;currency&quot;,&quot;relationshipName&quot;:null,&quot;referenceTo&quot;:[],&quot;name&quot;:&quot;Maintenance_Fee__c&quot;,&quot;label&quot;:&quot;Maintenance Fee&quot;}]}</value>
+    </values>
+</CustomMetadata>

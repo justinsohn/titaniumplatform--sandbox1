@@ -1,0 +1,236 @@
+<template>
+    <lightning-card title="Revenue Recognition Triggers (Manual)" icon-name="standard:revenue">
+        <div class="slds-p-around_medium">
+            <template if:true={project.data}>
+                <div class="slds-grid slds-wrap slds-gutters">
+
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2 slds-m-bottom_medium">
+                        <div class="slds-box slds-theme_shade slds-box_height">
+                            <h3 class="slds-text-heading_small slds-m-bottom_small">
+                                <lightning-formatted-rich-text value={mtHeader}></lightning-formatted-rich-text>
+                            </h3>
+                            <div class="slds-grid slds-gutters slds-m-bottom_small">
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning-input type="date" label="Forecasted MT Start Date" value={forecastedMtStartDate}
+                                        onchange={handleInputChange} name="Forecasted_MT_Start_Date__c" disabled={isMtDisabled}>
+                                    </lightning-input>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning-input type="date" label="Actual MT Start Date" value={actualMtStartDate}
+                                        onchange={handleInputChange} name="Actual_MT_Start_Date__c" disabled={isMtDisabled}>
+                                    </lightning-input>
+                                </div>
+                            </div>
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning-input type="number" label="MT Term (Months)" value={mtTerm} onchange={handleInputChange}
+                                        name="MT_Term__c" disabled={isMtDisabled}></lightning-input>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2">
+                                    <label class="slds-form-element__label slds-m-bottom_xx-small">MT POC</label>
+                                    <lightning-progress-bar value={mtPoc} size="large" variant="success"></lightning-progress-bar>
+                                    <div class="slds-text-align_right slds-m-top_xx-small">
+                                        <lightning-formatted-number value={mtPocDecimal} format-style="percent" minimum-fraction-digits="2"></lightning-formatted-number>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2 slds-m-bottom_medium">
+                        <div class="slds-box slds-theme_shade slds-box_height">
+                            <h3 class="slds-text-heading_small slds-m-bottom_small">
+                                <lightning-formatted-rich-text value={msHeader}></lightning-formatted-rich-text>
+                            </h3>
+                            <div class="slds-grid slds-gutters slds-m-bottom_small">
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning-input type="date" label="Forecasted MS Start Date" value={forecastedMsStartDate}
+                                        onchange={handleInputChange} name="Forecasted_MS_Start_Date__c" disabled={isMsDisabled}>
+                                    </lightning-input>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning-input type="date" label="Actual MS Start Date" value={actualMsStartDate}
+                                        onchange={handleInputChange} name="Actual_MS_Start_Date__c" disabled={isMsDisabled}>
+                                    </lightning-input>
+                                </div>
+                            </div>
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning-input type="number" label="MS Term (Months)" value={msTerm} onchange={handleInputChange}
+                                        name="MS_Term__c" disabled={isMsDisabled}></lightning-input>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2">
+                                    <label class="slds-form-element__label slds-m-bottom_xx-small">MS POC</label>
+                                    <lightning-progress-bar value={msPoc} size="large" variant="success"></lightning-progress-bar>
+                                    <div class="slds-text-align_right slds-m-top_xx-small">
+                                        <lightning-formatted-number value={msPocDecimal} format-style="percent" minimum-fraction-digits="2"></lightning-formatted-number>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2 slds-m-bottom_medium">
+                        <div class="slds-box slds-theme_shade slds-box_height">
+                            <h3 class="slds-text-heading_small slds-m-bottom_small">
+                                <lightning-formatted-rich-text value={hwHeader}></lightning-formatted-rich-text>
+                            </h3>
+                            <div class="slds-grid slds-gutters slds-m-bottom_small">
+                                 <div class="slds-col slds-size_1-of-2">
+                                      <lightning-input type="date" label="Forecasted HW Start Date" value={forecastedHwStartDate}
+                                        name="Forecasted_HW_Start_Date__c" disabled>
+                                    </lightning-input>
+                                 </div>
+                                 <div class="slds-col slds-size_1-of-2">
+                                    <lightning-input type="date" label="Actual HW Delivery Date" value={actualHwDeliveryDate}
+                                        onchange={handleInputChange} name="Actual_HW_Delivery_Date__c" disabled={isHwDisabled}>
+                                    </lightning-input>
+                                 </div>
+                            </div>
+                             <div class="slds-grid slds-gutters">
+                                <div class="slds-col slds-size_1-of-2">
+                                    </div>
+                                <div class="slds-col slds-size_1-of-2">
+                                    <label class="slds-form-element__label slds-m-bottom_xx-small">Completion %</label>
+                                    <lightning-progress-bar value={hwCompletion} size="large" variant="success"></lightning-progress-bar>
+                                    <div class="slds-text-align_right slds-m-top_xx-small">
+                                        <lightning-formatted-number value={hwCompletionDecimal} format-style="percent" minimum-fraction-digits="0"></lightning-formatted-number>
+                                    </div>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2 slds-m-bottom_medium">
+                        <div class="slds-box slds-theme_shade slds-box_height">
+                            <h3 class="slds-text-heading_small slds-m-bottom_small">
+                                <lightning-formatted-rich-text value={hwMtHeader}></lightning-formatted-rich-text>
+                            </h3>
+                             <div class="slds-grid slds-gutters slds-m-bottom_small">
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning-input type="date" label="Forecasted HW MT Start Date" value={forecastedHwMtStartDate}
+                                        onchange={handleInputChange} name="Forecasted_HW_MT_Start_Date__c" disabled={isHwMtDisabled}>
+                                    </lightning-input>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning-input type="date" label="Actual HW MT Start Date" value={actualHardwareMtDeliveryDate}
+                                        onchange={handleInputChange} name="Actual_HW_MT_Start_Date__c" disabled={isHwMtDisabled}>
+                                    </lightning-input>
+                                </div>
+                            </div>
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning-input type="number" label="HW MT Term (Months)" value={hwMtTerm}
+                                        onchange={handleInputChange} name="HW_MT_Term__c" disabled={isHwMtDisabled}></lightning-input>
+                                </div>
+                                 <div class="slds-col slds-size_1-of-2">
+                                    <label class="slds-form-element__label slds-m-bottom_xx-small">HW MT POC</label>
+                                    <lightning-progress-bar value={hwMtPoc} size="large" variant="success"></lightning-progress-bar>
+                                    <div class="slds-text-align_right slds-m-top_xx-small">
+                                        <lightning-formatted-number value={hwMtPocDecimal} format-style="percent" minimum-fraction-digits="2"></lightning-formatted-number>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2 slds-m-bottom_medium">
+                        <div class="slds-box slds-theme_shade slds-box_height">
+                            <h3 class="slds-text-heading_small slds-m-bottom_small">
+                                <lightning-formatted-rich-text value={pafHeader}></lightning-formatted-rich-text>
+                            </h3>
+                             <div class="slds-grid slds-gutters slds-m-bottom_small">
+                                 <div class="slds-col slds-size_1-of-2">
+                                    <lightning-input type="date" label="Forecasted AC Delivery Date" value={forecastedAcDeliveryDate}
+                                        name="Forecasted_AC_Delivery_Date__c" disabled>
+                                    </lightning-input>
+                                 </div>
+                                 <div class="slds-col slds-size_1-of-2">
+                                     <lightning-input type="date" label="Actual AC Delivery Date" value={actualAcDeliveryDate}
+                                        onchange={handleInputChange} name="Actual_AC_Delivery_Date__c" disabled={isPafDisabled}>
+                                    </lightning-input>
+                                 </div>
+                             </div>
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col slds-size_1-of-2">
+                                    </div>
+                                <div class="slds-col slds-size_1-of-2">
+                                    <label class="slds-form-element__label slds-m-bottom_xx-small">Completion %</label>
+                                    <lightning-progress-bar value={pafCompletion} size="large" variant="success"></lightning-progress-bar>
+                                    <div class="slds-text-align_right slds-m-top_xx-small">
+                                        <lightning-formatted-number value={pafCompletionDecimal} format-style="percent" minimum-fraction-digits="0"></lightning-formatted-number>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2 slds-m-bottom_medium">
+                        <div class="slds-box slds-theme_shade slds-box_height">
+                            <h3 class="slds-text-heading_small slds-m-bottom_small">
+                                <lightning-formatted-rich-text value={teHeader}></lightning-formatted-rich-text>
+                            </h3>
+                            <div class="slds-grid slds-gutters slds-m-bottom_small">
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning-input type="date" label="Forecasted TE Start Date" value={forecastedTeStartDate}
+                                        onchange={handleInputChange} name="Forecasted_TE_Start_Date__c" disabled={isTeDisabled}>
+                                    </lightning-input>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning-input type="date" label="Actual TE Completion Date" value={actualTeCompletionDate}
+                                        onchange={handleInputChange} name="Actual_TE_Completion_Date__c" disabled={isTeDisabled}>
+                                    </lightning-input>
+                                </div>
+                            </div>
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col slds-size_1-of-2">
+                                    </div>
+                                <div class="slds-col slds-size_1-of-2">
+                                    <label class="slds-form-element__label slds-m-bottom_xx-small">Completion %</label>
+                                    <lightning-progress-bar value={teCompletion} size="large" variant="success"></lightning-progress-bar>
+                                    <div class="slds-text-align_right slds-m-top_xx-small">
+                                        <lightning-formatted-number value={teCompletionDecimal} format-style="percent" minimum-fraction-digits="0"></lightning-formatted-number>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slds-m-top_medium slds-text-align_right">
+                    <lightning-button label="Save" variant="brand" onclick={handleSaveClick}></lightning-button>
+                </div>
+            </template>
+
+            <template if:true={error}>
+                <div class="slds-text-color_error">
+                    An error occurred while loading the project data.
+                </div>
+            </template>
+
+        </div>
+    </lightning-card>
+
+    <template if:true={isModalOpen}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse" size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Confirm Changes</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <p>Are you sure you want to save these changes? Once submitted, the saved triggers cannot be undone from this component.</p>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button label="Cancel" onclick={closeModal} class="slds-m-right_x-small"></lightning-button>
+                    <lightning-button label="Confirm & Save" variant="brand" onclick={handleConfirmSave}></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

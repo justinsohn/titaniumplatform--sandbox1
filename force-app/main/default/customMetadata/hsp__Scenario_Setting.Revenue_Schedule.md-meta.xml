@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Revenue Schedule</label>
+    <protected>false</protected>
+    <values>
+        <field>hsp__Allow_Add_Product__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Allow_Edit_Product__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Amount_Decimal_Precision__c</field>
+        <value xsi:type="xsd:double">2.0</value>
+    </values>
+    <values>
+        <field>hsp__Amount_Rounding_Behavior__c</field>
+        <value xsi:type="xsd:string">Ceiling</value>
+    </values>
+    <values>
+        <field>hsp__Amount_Rounding_Excess_Distribution__c</field>
+        <value xsi:type="xsd:string">Front Loading</value>
+    </values>
+    <values>
+        <field>hsp__Amount_Writeback_Threshold__c</field>
+        <value xsi:type="xsd:double">1.0</value>
+    </values>
+    <values>
+        <field>hsp__Auto_Scheduled__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>hsp__Client_Side_Total_Calculation__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Custom_PLIS_Header_Field_API_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Custom_Period_Range_End_Date_Field__c</field>
+        <value xsi:type="xsd:string">hsp__Period_Calendar_End_Date__c</value>
+    </values>
+    <values>
+        <field>hsp__Custom_Period_Range_Start_Date_Field__c</field>
+        <value xsi:type="xsd:string">hsp__Period_Calendar_Start_Date__c</value>
+    </values>
+    <values>
+        <field>hsp__Custom_Scenario__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Date_Format_Override__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Deferred_Execution_Batch_Size__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Deleted_Line_Automation_Behavior__c</field>
+        <value xsi:type="xsd:string">Make_Plan_Unit_Zero</value>
+    </values>
+    <values>
+        <field>hsp__Description__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Display_Current_Schedule__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Display_Total__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>hsp__Enable_Advanced_Cloning__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>hsp__Enable_Automation_Past_Period_Edit__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Enable_Cascade_Header_Delete__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>hsp__Enable_Currency_Toggle__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>hsp__Enable_Hierarchy_View__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Enable_Info_Icon_in_Plan_Line_Item__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Enable_Line_Actions__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>hsp__Enable_Line_Cascade_Delete__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>hsp__Enable_Line_Edit__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>hsp__Enable_Plan_Compact_Layout__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Enable_Plan_Update_Completed_Event__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>hsp__Enable_Source_Filter_in_Summary_Plan__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Enable_Spread_Options_On_Edit__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>hsp__Enable_Worksheet_PLI_Edit__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Enable_Writeback_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Enforce_Clone_Opportunity__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>hsp__Enforce_Custom_Permission_Line_Action__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__External_Id__c</field>
+        <value xsi:type="xsd:string">SC-Revenue Schedule</value>
+    </values>
+    <values>
+        <field>hsp__Fiscal_Year_Start_Month__c</field>
+        <value xsi:type="xsd:double">1.0</value>
+    </values>
+    <values>
+        <field>hsp__Fractional_Remainder_Behavior__c</field>
+        <value xsi:type="xsd:string">Not Applied</value>
+    </values>
+    <values>
+        <field>hsp__Generate_Enhanced_Numeric_Fields_On_PLIS__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>hsp__Generate_enhanced_date_fields_on_PLIS__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Header_Amount_Writeback_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Header_Quantity_Writeback_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Include_CurrentPeriod_For_RollingAverage__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Is_User_Sortable__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>hsp__Line_Item_Amount_Writeback_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Line_Item_Quantity_Writeback_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Number_Of_Line_Items_In_A_Partial_Load__c</field>
+        <value xsi:type="xsd:double">20.0</value>
+    </values>
+    <values>
+        <field>hsp__Numeric_Column_Width__c</field>
+        <value xsi:type="xsd:double">25.0</value>
+    </values>
+    <values>
+        <field>hsp__OLI_PLI_Field_Mapping__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__OLI_sObject_Fieldset__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Old_PLI_to_New_PLI_Mapping__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__PLIS_CSS_Override_Field__c</field>
+        <value xsi:type="xsd:string">hsp__CSS_Cell_Override__c</value>
+    </values>
+    <values>
+        <field>hsp__Parent_PLI_Identifier_Field_Override__c</field>
+        <value xsi:type="xsd:string">hsp__External_Id__c</value>
+    </values>
+    <values>
+        <field>hsp__Period_Behavior__c</field>
+        <value xsi:type="xsd:string">Include Current Period</value>
+    </values>
+    <values>
+        <field>hsp__Plan_Date_Shift_Behavior__c</field>
+        <value xsi:type="xsd:string">Persist Plan and Offset</value>
+    </values>
+    <values>
+        <field>hsp__Plan_Default_Record_Type__c</field>
+        <value xsi:type="xsd:string">Plan</value>
+    </values>
+    <values>
+        <field>hsp__Plan_Exchange_Rate_Source__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Plan_Line_Effective_Date_API_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Plan_Line_Exchange_Rate_Source__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Plan_Line_Item_Date_Shift_Behavior__c</field>
+        <value xsi:type="xsd:string">Persist Plan and Offset</value>
+    </values>
+    <values>
+        <field>hsp__Plan_Line_Item_Edit_Field_Set__c</field>
+        <value xsi:type="xsd:string">Revenue_Schedule_Fieldset</value>
+    </values>
+    <values>
+        <field>hsp__Plan_Line_Item_Field_Set__c</field>
+        <value xsi:type="xsd:string">Revenue_Schedule_Fieldset</value>
+    </values>
+    <values>
+        <field>hsp__Plan_Line_Item_Lock_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Plan_Line_Item_Lock_Override__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Plan_Line_Item_Relationship__c</field>
+        <value xsi:type="xsd:string">OpportunityLineItems</value>
+    </values>
+    <values>
+        <field>hsp__Plan_Line_Item_Schedule_Columns__c</field>
+        <value xsi:type="xsd:double">12.0</value>
+    </values>
+    <values>
+        <field>hsp__Plan_Line_Item_Schedule_Field_Set__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Plan_Line_Item_Search_Result_Field_Set__c</field>
+        <value xsi:type="xsd:string">Worksheet_Line_Search_Result_Fields</value>
+    </values>
+    <values>
+        <field>hsp__Plan_Line_Item_sObject__c</field>
+        <value xsi:type="xsd:string">OpportunityLineItem</value>
+    </values>
+    <values>
+        <field>hsp__Plan_Line_Total_Amount_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Plan_Line_Total_Quantity_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Plan_Lines_End_Period_Behavior__c</field>
+        <value xsi:type="xsd:string">Individual Product Schedule</value>
+    </values>
+    <values>
+        <field>hsp__Plan_Schedule_Value_Behavior__c</field>
+        <value xsi:type="xsd:string">Persist Change</value>
+    </values>
+    <values>
+        <field>hsp__Plan_Total_Amount_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Plan_Total_Quantity_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Plan_sObject__c</field>
+        <value xsi:type="xsd:string">Opportunity</value>
+    </values>
+    <values>
+        <field>hsp__Proration_Mode_Patterns__c</field>
+        <value xsi:type="xsd:string">Mode 2 Strict</value>
+    </values>
+    <values>
+        <field>hsp__Proration_Mode__c</field>
+        <value xsi:type="xsd:string">PLIS represents full calendar period boundary</value>
+    </values>
+    <values>
+        <field>hsp__Quantity_Decimal_Precision__c</field>
+        <value xsi:type="xsd:double">2.0</value>
+    </values>
+    <values>
+        <field>hsp__Quantity_Rounding_Behavior__c</field>
+        <value xsi:type="xsd:string">Ceiling</value>
+    </values>
+    <values>
+        <field>hsp__Quantity_Rounding_Excess_Distribution__c</field>
+        <value xsi:type="xsd:string">Front Loading</value>
+    </values>
+    <values>
+        <field>hsp__Quantity_Writeback_Threshold__c</field>
+        <value xsi:type="xsd:double">1.0</value>
+    </values>
+    <values>
+        <field>hsp__Recalculate_Plan_Line_Items__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Render_Deleted_Line_in_Worksheet__c</field>
+        <value xsi:type="xsd:string">disabled</value>
+    </values>
+    <values>
+        <field>hsp__Rolling_Average_And_Total_Type__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Scenario__c</field>
+        <value xsi:type="xsd:string">a6rcT0000001IqvQAE</value>
+    </values>
+    <values>
+        <field>hsp__Schedule_Exchange_Rate_Source__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Search_Result_Limit__c</field>
+        <value xsi:type="xsd:double">500.0</value>
+    </values>
+    <values>
+        <field>hsp__Show_Worksheet_Actions__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Target_Amount_Converted_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Target_Conversion_Rate_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Target_Conversion_Rate_Object__c</field>
+        <value xsi:type="xsd:string">Plan Line Item Schedule</value>
+    </values>
+    <values>
+        <field>hsp__Text_Column_Width__c</field>
+        <value xsi:type="xsd:double">50.0</value>
+    </values>
+    <values>
+        <field>hsp__Update_Opportunity_Product__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Update_Opportunity__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Use_Custom_Period_Range__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>hsp__Use_Extended_Record_Edit_Popup__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Worksheet_PLI_Editable_Field_Set__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__revVana_Solution__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

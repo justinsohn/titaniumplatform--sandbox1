@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Revenue Schedule</label>
+    <protected>false</protected>
+    <values>
+        <field>hsp__Date_Format_Override__c</field>
+        <value xsi:type="xsd:string">MMM yyyy</value>
+    </values>
+    <values>
+        <field>hsp__Enable_Action_Dropdown__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Enable_Line_Item_Action__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Enable_Pencil_Icon__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>hsp__Enable_Refresh_Button__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>hsp__Enable_Search_Button__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>hsp__External_Id__c</field>
+        <value xsi:type="xsd:string">SC-Revenue Schedule</value>
+    </values>
+    <values>
+        <field>hsp__Pagination_Size__c</field>
+        <value xsi:type="xsd:double">12.0</value>
+    </values>
+    <values>
+        <field>hsp__Pagination_Style__c</field>
+        <value xsi:type="xsd:string">Date</value>
+    </values>
+    <values>
+        <field>hsp__revVana_Solution__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

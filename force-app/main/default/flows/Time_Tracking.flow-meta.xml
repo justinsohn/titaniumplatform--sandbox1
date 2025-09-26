@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <apiVersion>56.0</apiVersion>
+    <dynamicChoiceSets>
+        <name>Category</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Category__c</picklistField>
+        <picklistObject>CTS_Time_Tracking__ChangeEvent</picklistObject>
+    </dynamicChoiceSets>
+    <environments>Default</environments>
+    <interviewLabel>Time Tracking {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Time Tracking</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <description>Create a time tracking record</description>
+        <name>Create_Time_Tracking</name>
+        <label>Create Time Tracking</label>
+        <locationX>540</locationX>
+        <locationY>308</locationY>
+        <connector>
+            <targetReference>Finish</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Category__c</field>
+            <value>
+                <elementReference>Category</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Time_this_Effort_in_minutes__c</field>
+            <value>
+                <elementReference>Time_this_Effort_in_minutes</elementReference>
+            </value>
+        </inputAssignments>
+        <object>CTS_Time_Tracking__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <screens>
+        <name>Enter_Time</name>
+        <label>Enter Time</label>
+        <locationX>386</locationX>
+        <locationY>190</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Create_Time_Tracking</targetReference>
+        </connector>
+        <fields>
+            <name>Time_this_Effort_in_minutes</name>
+            <dataType>Number</dataType>
+            <fieldText>Time this Effort (in minutes)</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+            <scale>0</scale>
+        </fields>
+        <fields>
+            <name>Category2</name>
+            <choiceReferences>Category</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Category</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Finish</name>
+        <label>Finish</label>
+        <locationX>706</locationX>
+        <locationY>373</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Confirmation</name>
+            <fieldText>&lt;p&gt;Thank you, {!$User.FirstName}.  Your time has been submitted.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Done</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>401</locationX>
+        <locationY>46</locationY>
+        <connector>
+            <targetReference>Enter_Time</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+</Flow>

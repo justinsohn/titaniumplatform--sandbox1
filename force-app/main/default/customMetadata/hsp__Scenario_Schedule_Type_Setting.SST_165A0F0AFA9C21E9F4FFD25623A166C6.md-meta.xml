@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Recurring Plan Generation</label>
+    <protected>false</protected>
+    <values>
+        <field>hsp__Commit_Before_Deferred_Execution__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Criteria__c</field>
+        <value xsi:type="xsd:string">C_233A1B017D5300CB014EB1B07C270377</value>
+    </values>
+    <values>
+        <field>hsp__Description__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Enable_Plan_Update_Completed_Event__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>hsp__External_Id__c</field>
+        <value xsi:type="xsd:string">SST-Revenue Schedule-Automatic-C_233A1B017D5300CB014EB1B07C270377</value>
+    </values>
+    <values>
+        <field>hsp__Inactive__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Mapping__c</field>
+        <value xsi:type="xsd:string">M_897370BF249597088D208BF9F92A50BE</value>
+    </values>
+    <values>
+        <field>hsp__Post_Process_Apex__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Rowset__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Scenario_Schedule_Type_External_Id__c</field>
+        <value xsi:type="xsd:string">SST-Revenue Schedule-Automatic</value>
+    </values>
+    <values>
+        <field>hsp__Scenario_Schedule_Type__c</field>
+        <value xsi:type="xsd:string">a6qcT0000000YCzQAM</value>
+    </values>
+    <values>
+        <field>hsp__Writeback_Mapping__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__revVana_Solution__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

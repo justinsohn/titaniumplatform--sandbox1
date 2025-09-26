@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>OppPrd_Revenue Group-Pli_Revenue Group</label>
+    <protected>false</protected>
+    <values>
+        <field>hsp__Calculate_Salesforce_Formula__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Calculation_Type__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Default_Value__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Deferred_Execution__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Description__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Destination_Field__c</field>
+        <value xsi:type="xsd:string">F_6BDC5965E380B3430E4F605FB38854C0</value>
+    </values>
+    <values>
+        <field>hsp__Execution_Order__c</field>
+        <value xsi:type="xsd:double">38.0</value>
+    </values>
+    <values>
+        <field>hsp__Formula__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Inactive__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Include_CurrentPeriod_For_RollingAverage__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Mapping_Type__c</field>
+        <value xsi:type="xsd:string">Field</value>
+    </values>
+    <values>
+        <field>hsp__Mapping__c</field>
+        <value xsi:type="xsd:string">M_897370BF249597088D208BF9F92A50BE</value>
+    </values>
+    <values>
+        <field>hsp__Ongoing_Sync__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>hsp__Optimize_Formula__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Relationship__c</field>
+        <value xsi:type="xsd:string">hsp__Opportunity_Line_Item__r</value>
+    </values>
+    <values>
+        <field>hsp__Skip_this_field_mapping_if_source_blank__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Source_Field__c</field>
+        <value xsi:type="xsd:string">F_81C5DF71E44D093BD7B2A5F223EB9FC6</value>
+    </values>
+    <values>
+        <field>hsp__Value__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Window_Size__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__revVana_Solution__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

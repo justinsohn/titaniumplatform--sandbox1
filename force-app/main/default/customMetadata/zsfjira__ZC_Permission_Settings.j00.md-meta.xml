@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>j00</label>
+    <protected>false</protected>
+    <values>
+        <field>zsfjira__createIssueCustomPermissionName__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>zsfjira__createIssue__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>zsfjira__deleteIssueCustomPermissionName__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>zsfjira__deleteIssue__c</field>
+        <value xsi:type="xsd:string">Custom</value>
+    </values>
+    <values>
+        <field>zsfjira__editIssueCustomPermissionName__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>zsfjira__editIssue__c</field>
+        <value xsi:type="xsd:string">Custom</value>
+    </values>
+    <values>
+        <field>zsfjira__integrationUserCustomPermissionName__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>zsfjira__integrationUser__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>zsfjira__linkIssueCustomPermissionName__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>zsfjira__linkIssue__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>zsfjira__loginToJiraCustomPermissionName__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>zsfjira__loginToJira__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>zsfjira__transitionIssueCustomPermissionName__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>zsfjira__transitionIssue__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>zsfjira__unlinkIssueCustomPermissionName__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>zsfjira__unlinkIssue__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Automatic</label>
+    <protected>false</protected>
+    <values>
+        <field>hsp__Description__c</field>
+        <value xsi:type="xsd:string">Based on the frequency, spread, and proration parameters, this schedule type can automatically distribute the quantities to months between the start and end dates for each opportunity product. The input quantity represents the total value for each opportu</value>
+    </values>
+    <values>
+        <field>hsp__External_Id__c</field>
+        <value xsi:type="xsd:string">ST-Automatic</value>
+    </values>
+    <values>
+        <field>hsp__Schedule_Tag_Target_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Schedule_Type_Applier__c</field>
+        <value xsi:type="xsd:string">hsp__Calculated_Applier</value>
+    </values>
+    <values>
+        <field>hsp__Schedule_Type__c</field>
+        <value xsi:type="xsd:string">a6tcT00000007W9QAI</value>
+    </values>
+    <values>
+        <field>hsp__revVana_Solution__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Monthly_Timesheet_Alert</name>
+        <label>Monthly Timesheet Alert</label>
+        <locationX>50</locationX>
+        <locationY>360</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Record.project_cloud__User__r.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>SubjectTimeSubmissionWeeklyAlert</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>BodyTimeSubmissionWeeklyAlert</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <apiVersion>59.0</apiVersion>
+    <decisions>
+        <name>Is_today_the_last_day_of_the_month</name>
+        <label>Is today the last day of the month?</label>
+        <locationX>182</locationX>
+        <locationY>252</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>True_last_day_of_the_month</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsLastDayOfMonth</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Monthly_Timesheet_Alert</targetReference>
+            </connector>
+            <label>True, last day of the month</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>CurrentMonthAsString</name>
+        <dataType>String</dataType>
+        <expression>CASE(
+  MONTH(TODAY()),
+  1, &apos;January&apos;,
+  2, &apos;February&apos;,
+  3, &apos;March&apos;,
+  4, &apos;April&apos;,
+  5, &apos;May&apos;,
+  6, &apos;June&apos;,
+  7, &apos;July&apos;,
+  8, &apos;August&apos;,
+  9, &apos;September&apos;,
+  10, &apos;October&apos;,
+  11, &apos;November&apos;,
+  12, &apos;December&apos;,
+  &apos;Unknown Month&apos;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>IsLastDayOfMonth</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(
+  MOD(DATE(YEAR(TODAY()), MONTH(TODAY()) + 1, 1) - 1 - DATE(1900, 1, 7), 7) &gt; 4,
+  TODAY() = DATE(YEAR(TODAY()), MONTH(TODAY()) + 1, 1) - 1 - MOD(DATE(YEAR(TODAY()), MONTH(TODAY()) + 1, 1) - 1 - DATE(1900, 1, 7), 7) + 4,
+  TODAY() = DATE(YEAR(TODAY()), MONTH(TODAY()) + 1, 1) - 1
+)</expression>
+    </formulas>
+    <interviewLabel>CC: Monthly Timesheet Alert - Scheduled {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CC: Monthly Timesheet Alert - Scheduled</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_today_the_last_day_of_the_month</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Active_Salesforce_User__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Time_Tracking_User__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Exclude_from_Timesheet_Alerts__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>project_cloud__Resource__c</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2023-11-27</startDate>
+            <startTime>08:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>BodyTimeSubmissionWeeklyAlert</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;If you have not already done so, please submit your timesheet for this month before the end of the current work day&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>SubjectTimeSubmissionWeeklyAlert</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Time for {!CurrentMonthAsString} is due</text>
+    </textTemplates>
+</Flow>

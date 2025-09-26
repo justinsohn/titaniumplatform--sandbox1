@@ -1,0 +1,406 @@
+/* Custom CSS for Revenue Recognition Grid Component */
+
+/* Family Header Styling */
+.revenue-grid-table {
+    table-layout: auto; /* Changed from fixed to auto */
+    width: 100%;
+    min-width: max-content; /* Ensure table can expand as needed */
+}
+
+/* Base cell styling - More compact padding */
+.revenue-grid-table th,
+.revenue-grid-table td {
+    padding: 0.4rem 0.6rem; /* Reduced from 0.5rem 0.75rem */
+    vertical-align: middle;
+    white-space: nowrap; /* Prevent text wrapping in cells */
+    border: 1px solid #e5e5e5;
+}
+
+/* First column (Product Family/Code) - Much more compact */
+.revenue-grid-table th:nth-child(1), 
+.revenue-grid-table td:nth-child(1) {
+    max-width: 75px; /* Reduced from 280px */
+    white-space: normal; /* Allow wrapping for long product names */
+    word-wrap: break-word;
+}
+
+/* Price/Rev (Sold) column - Much more compact */
+.revenue-grid-table th:nth-child(2),
+.revenue-grid-table td:nth-child(2) {
+    text-align: center;
+}
+
+/* Month columns - Optimized for remaining space */
+.revenue-grid-table th:nth-child(n+3), 
+.revenue-grid-table td:nth-child(n+3) {
+    min-width: 85px; /* Reduced from 95px */
+    width: auto; /* Let them distribute remaining space evenly */
+    text-align: right;
+}
+
+/* Enhanced padding for amount columns */
+.revenue-grid-table td:nth-child(n+2) { 
+    padding-right: 0.5rem; /* Reduced from 1rem */
+    padding-left: 0.5rem;
+}
+
+/* Product name truncation for better space usage */
+.revenue-grid-table td:nth-child(1) .slds-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Allow expansion on hover for truncated product names */
+.revenue-grid-table td:nth-child(1):hover .slds-truncate {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    word-wrap: break-word;
+}
+
+/* Family Header Styling */
+.family-header-row {
+    background-color: #f3f2f2;
+    border-top: 3px solid #0176d3;
+    border-left: 3px solid #0176d3;
+}
+
+.family-header-row td { 
+    padding: 0.25rem !important; 
+    background-color: inherit !important;
+    font-weight: 600;
+}
+
+.family-header-row:hover {
+    background-color: #eef1f6;
+}
+
+/* Product Code Row Styling */
+.product-code-row {
+    background-color: #ffffff;
+}
+
+.product-code-row:hover {
+    background-color: #f9f9f9;
+}
+
+/* Family Totals Styling */
+.family-totals-row {
+    background-color: #f7f9fb;
+    border-top: 2px solid #027d00;
+    border-bottom: 1px solid #e5e5e5;
+    font-weight: 600; 
+}
+
+.family-totals-row td { 
+    padding: 0.25rem 0.5rem !important;
+    background-color: #f3f5f7;
+}
+
+.family-total-label {
+    font-style: italic;
+    color: #027d00;
+    font-weight: 600;
+}
+
+.family-total-value { 
+    font-weight: 700;
+    color: #027d00 !important;
+    background-color: rgba(2, 125, 0, 0.1);
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(2, 125, 0, 0.3);
+    display: inline-block; 
+}
+
+/* Grand Totals Row Styling */
+.grand-totals-row {
+    background-color: #e9eaec; 
+    border-top: 3px solid #5c5c5c;
+    border-bottom: 2px solid #5c5c5c;
+    font-weight: bold;
+}
+
+.grand-totals-row td { 
+    padding: 0.5rem !important;
+    color: #080707;
+    background-color: #e9eaec;
+    font-weight: bold;
+}
+
+.grand-total-label {
+    font-weight: bold;
+    color: #080707;
+}
+
+.grand-total-value { 
+    font-weight: bold;
+    color: #080707 !important;
+    background-color: rgba(8, 7, 7, 0.1);
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* Revenue Amount Styling */
+.revenue-amount[data-value="0"] {
+    color: #8c9196;
+}
+
+.revenue-amount:not([data-value="0"]) {
+    color: #364636;
+    font-weight: 500;
+}
+
+.revenue-amount-total[data-value="0"] {
+    color: inherit;
+    opacity: 0.7;
+}
+
+.revenue-amount-total:not([data-value="0"]) {
+    font-weight: 600; 
+}
+
+/* Family Separator */
+.family-spacer-cell {
+    border: none !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    height: 12px; 
+}
+
+.family-separator {
+    height: 12px; 
+    background: linear-gradient(45deg, transparent 45%, #e0e0e0 45%, #e0e0e0 55%, transparent 55%);
+    margin: 0 20px;
+}
+
+/* Icon Styling */
+.slds-icon_container_circle {
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Table Header Enhancements */
+.slds-table thead th {
+    background-color: #f4f6f9;
+    border-bottom: 2px solid #0176d3;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* Zebra Striping Enhancement */
+.slds-table_striped tbody tr:nth-child(even):not(.family-header-row):not(.family-totals-row):not(.grand-totals-row) {
+    background-color: #fafaf9; 
+}
+
+/* Override zebra striping for special rows */
+.slds-table_striped tbody .family-header-row {
+    background-color: #f3f2f2 !important;
+}
+
+.slds-table_striped tbody .family-totals-row {
+    background-color: #f7f9fb !important;
+}
+
+.slds-table_striped tbody .grand-totals-row {
+    background-color: #e9eaec !important;
+}
+
+/* Loading, Error, Empty State Styling */
+.loading-container { 
+    text-align: center; 
+    padding: 2rem; 
+}
+
+.loading-container .slds-text-body_small { 
+    margin-top: 0.5rem; 
+}
+
+.error-container { 
+    margin-bottom: 1rem; 
+}
+
+.empty-state-container { 
+    text-align: center; 
+    padding: 2rem; 
+}
+
+/* Product hierarchy indentation */
+.product-hierarchy-level-1 { 
+    padding-left: 1rem; 
+} 
+
+.product-hierarchy-level-2 { 
+    padding-left: 1.5rem; 
+} 
+
+/* Amount cell styling improvements */
+.amount-cell {
+    text-align: right;
+    font-variant-numeric: tabular-nums; /* Better number alignment */
+}
+
+.amount-cell-positive { 
+    color: #314331; 
+}
+
+.amount-cell-negative { 
+    color: #c23934; 
+}
+
+.amount-cell-zero { 
+    color: #706e6b; 
+}
+
+/* Enhanced hover states */
+tbody tr:not(.family-header-row):not(.family-totals-row):not(.grand-totals-row):hover { 
+    background-color: #f0f5ff !important; 
+    transition: background-color 0.15s ease-in-out;
+}
+
+.family-totals-row:hover { 
+    background-color: #e8f5e9 !important; 
+} 
+
+.family-header-row:hover { 
+    background-color: #eef1f6 !important; 
+}
+
+.grand-totals-row:hover { 
+    background-color: #dcdcdc !important; 
+} 
+
+/* Container and scrolling improvements */
+.revenue-grid-container {
+    position: relative;
+    overflow: visible; /* Allow natural overflow */
+}
+
+/* Horizontal scroll container */
+.slds-scrollable_x {
+    overflow-x: auto;
+    overflow-y: visible;
+    max-width: 100%;
+    /* Remove any height restrictions that might cause issues */
+}
+
+/* Custom scrollbar styling */
+.slds-scrollable_x::-webkit-scrollbar { 
+    height: 12px; 
+} 
+
+.slds-scrollable_x::-webkit-scrollbar-track { 
+    background: #f0f0f0; 
+    border-radius: 6px; 
+}
+
+.slds-scrollable_x::-webkit-scrollbar-thumb { 
+    background: #0176d3; 
+    border-radius: 6px; 
+}
+
+.slds-scrollable_x::-webkit-scrollbar-thumb:hover { 
+    background: #014486; 
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .revenue-grid-table th:nth-child(1), 
+    .revenue-grid-table td:nth-child(1) {
+        min-width: 20px;
+        
+    }
+    
+    .revenue-grid-table th:nth-child(2),
+    .revenue-grid-table td:nth-child(2) {
+        min-width: 20px;
+        
+    }
+    
+    .revenue-grid-table th:nth-child(n+3), 
+    .revenue-grid-table td:nth-child(n+3) {
+        min-width: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .revenue-grid-table th,
+    .revenue-grid-table td {
+        padding: 0.4rem 0.5rem; 
+        font-size: 0.875rem; 
+    }
+    
+    .revenue-grid-table th:nth-child(1), 
+    .revenue-grid-table td:nth-child(1) {
+        min-width: 20px;
+        
+    }
+    
+    .revenue-grid-table th:nth-child(2),
+    .revenue-grid-table td:nth-child(2) {
+        min-width: 20px;
+        
+    }
+    
+    .revenue-grid-table th:nth-child(n+3), 
+    .revenue-grid-table td:nth-child(n+3) {
+        min-width: 20px;
+    }
+    
+    .family-total-value, 
+    .grand-total-value {
+        font-size: 0.85rem; 
+        padding: 3px 5px;
+    }
+    
+    .product-hierarchy-level-2 { 
+        padding-left: .5rem; 
+    }
+}
+
+/* Print styles */
+@media print {
+    .family-spacer-row { 
+        page-break-before: auto; 
+        page-break-after: auto; 
+    }
+    
+    .family-header-row { 
+        page-break-after: avoid; 
+    }
+    
+    .family-total-value, 
+    .grand-total-value {
+        background-color: transparent !important;
+        border: 1px solid #ccc !important;
+    }
+    
+    .family-totals-row, 
+    .family-total-cell { 
+        background-color: #f0f0f0 !important; 
+        color: black !important; 
+    }
+    
+    .grand-totals-row { 
+        background-color: #e0e0e0 !important; 
+        color: black !important; 
+        font-weight: bold; 
+    }
+    
+    /* Ensure table fits on print page */
+    .revenue-grid-table {
+        font-size: 0.75rem;
+    }
+    
+    .revenue-grid-table th:nth-child(n+3), 
+    .revenue-grid-table td:nth-child(n+3) {
+        min-width: 25px;
+        
+    }
+}

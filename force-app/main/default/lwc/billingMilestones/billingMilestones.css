@@ -1,0 +1,172 @@
+/* CSS for Billing Milestones LWC */
+
+/* Table styling */
+.milestone-table {
+    width: 100%;
+    table-layout: fixed; /* Ensures columns maintain set widths */
+    border-collapse: collapse;
+    margin-bottom: 1rem; /* Add some space below each table */
+}
+
+/* Column widths - Adjust as needed based on your content */
+.product-column {
+    width: 250px; 
+    min-width: 200px;
+}
+
+.amount-column {
+    width: 120px; 
+    min-width: 100px;
+}
+
+.milestone-column { /* Class for TH for milestone columns */
+    width: 160px; /* Adjusted to better accommodate inputs if labels are visible */
+    min-width: 150px;
+    text-align: center;
+    vertical-align: top; 
+}
+
+.allocation-column, 
+.remaining-column {
+    width: 90px; 
+    min-width: 80px;
+    text-align: center;
+}
+
+/* Row styling */
+.family-row td {
+    background-color: #f3f3f3; /* Light grey for family headers */
+    font-weight: bold;
+    padding: 0.5rem;
+    border-bottom: 1px solid #dddbda; /* Add border for separation */
+}
+
+.totals-row td,
+.bulk-update-row td { /* Style for Totals and Invoice Information rows */
+    background-color: #eef1f6; /* Slightly different grey */
+    font-weight: bold;
+    padding: 0.5rem;
+    vertical-align: middle; /* Align content vertically in the middle */
+    border-bottom: 1px solid #dddbda;
+}
+
+.product-row td {
+    padding: 0.5rem;
+    vertical-align: top; /* Align content to the top for product rows */
+    border-bottom: 1px solid #dddbda;
+}
+
+/* Input styling within individual milestone data cells (percentage input) */
+.milestone-data-cell .percentage-input {
+    max-width: 75px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.milestone-data-cell .amount-display {
+    font-size: 0.8rem;
+    color: #706e6b; /* Muted text color for amount */
+    margin-top: 0.25rem;
+    text-align: center; 
+}
+
+/* Bulk update input styling (Target Date and Ready to Invoice checkbox in the footer row) */
+.milestone-bulk-input-cell .date-input,
+.milestone-bulk-input-cell .checkbox-input {
+    display: block; /* Ensure inputs take block display for centering */
+    margin-left: auto;
+    margin-right: auto;
+}
+.milestone-bulk-input-cell .checkbox-input {
+    text-align: center; /* Center the checkbox itself */
+    padding-top: 0.25rem; 
+}
+.milestone-bulk-input-cell .date-input {
+     max-width: 130px; /* Constrain width of date input */
+}
+
+
+/* Styling for locked/disabled columns and cells */
+/* Applies to TH and TD elements that get this class */
+.column-locked {
+    background-color: #f0f0f0 !important; /* Light grey background for the cell */
+    opacity: 0.7; /* Slightly transparent to indicate disabled state */
+}
+
+/* Make direct child lightning-inputs within a .column-locked cell appear non-interactive */
+.column-locked lightning-input {
+    pointer-events: none; /* Prevents mouse interactions with the LWC component wrapper */
+}
+
+/* Style the native input element when its LWC parent is disabled AND inside a locked column */
+/* This ensures a consistent "disabled" look */
+.column-locked lightning-input input[disabled],
+.column-locked lightning-input[disabled] + .slds-checkbox__label .slds-checkbox_faux { /* Target checkbox faux element */
+    background-color: #e9ecef !important; /* More distinct disabled background */
+    border-color: #adb5bd !important;   /* Disabled border for checkbox */
+    color: #6c757d !important;          /* Disabled text color */
+    cursor: not-allowed !important;     /* Show "not-allowed" cursor */
+}
+/* For the checkbox label text when disabled in a locked column */
+.column-locked lightning-input[type="checkbox"][disabled] + .slds-checkbox__label {
+    color: #6c757d !important;
+    cursor: not-allowed !important;
+}
+
+
+/* Milestone count input styling (in the order header) */
+.milestone-count-input {
+    max-width: 100px; 
+    display: inline-block; /* To align with the "Update Count" button */
+    vertical-align: middle;
+}
+
+/* Ensure disabled state of milestone count input is visually clear (if it were to be disabled by other logic) */
+.milestone-count-input lightning-input[disabled] input { /* Target the native input */
+    background-color: #e9ecef !important; /* Standard disabled background */
+    color: #6c757d !important;          /* Standard disabled text color */
+    cursor: not-allowed !important;     /* Show "not-allowed" cursor */
+}
+
+/* General cell padding and borders for better table appearance */
+.milestone-table th,
+.milestone-table td {
+    padding: 0.5rem;
+    border: 1px solid #dddbda; /* Light border for all cells */
+    text-align: left; /* Default text align */
+}
+
+.milestone-table th { /* Header specific styling */
+    background-color: #f3f2f2; /* Light grey for headers */
+    font-weight: bold;
+    text-align: center; /* Center align header text */
+}
+
+/* Align numeric/currency content to the right in specific columns */
+.milestone-table .amount-column,
+.milestone-table .allocation-column,
+.milestone-table .remaining-column,
+.milestone-table .milestone-column .amount-display { /* Target amount display within milestone columns */
+    text-align: right;
+}
+.milestone-table .milestone-column .percentage-input input { /* Center percentage input text */
+    text-align: center;
+}
+
+
+/* Ensure enough vertical space for inputs in milestone cells */
+.milestone-data-cell, .milestone-bulk-input-cell {
+    min-height: 80px; /* Adjust as needed to prevent squishing */
+}
+
+/* Chart Container Styling */
+.chart-container {
+    position: relative; /* Needed for Chart.js responsiveness */
+    height: 400px;      /* Or your desired height */
+    width: 100%;        /* Or your desired width */
+    margin-top: 2rem;   /* Space above the chart */
+    padding: 1rem;
+    border: 1px solid #dddbda;
+    border-radius: .25rem;
+    background-color: #fff; /* White background for the chart area */
+}

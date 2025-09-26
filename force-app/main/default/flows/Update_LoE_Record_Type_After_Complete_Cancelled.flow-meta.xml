@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <assignments>
+        <name>Add_Record_Type</name>
+        <label>Add Record Type</label>
+        <locationX>545</locationX>
+        <locationY>209</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.RecordTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>NewRecordType</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Record_Type</targetReference>
+        </connector>
+    </assignments>
+    <description>Update LoE Record Type After Complete/Cancelled</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>NewRecordType</name>
+        <dataType>String</dataType>
+        <expression>IF(TEXT({!$Record.Stage__c}) = &quot;Request Cancelled&quot;, &quot;0124N000000l1QD&quot;,
+IF(TEXT({!$Record.Stage__c}) = &quot;Budgetary LoE Completed&quot;, &quot;0124N000000l1QD&quot;,
+IF(TEXT({!$Record.Stage__c}) = &quot;LoE Estimate Completed&quot;, &quot;01202000000D25pAAC&quot;,
+{!$Record.RecordTypeId}
+)))</expression>
+    </formulas>
+    <interviewLabel>Update LoE Record Type After Complete/Cancelled {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update LoE Record Type After Complete/Cancelled</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Record_Type</name>
+        <label>Update Record Type</label>
+        <locationX>695</locationX>
+        <locationY>157</locationY>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>$Record.RecordTypeId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>88</locationX>
+        <locationY>70</locationY>
+        <connector>
+            <targetReference>Add_Record_Type</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Stage__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Level_of_Effort_Estimate__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+    <textTemplates>
+        <name>RecordType</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&quot;01202000000D25pAAC&quot;&lt;/p&gt;</text>
+    </textTemplates>
+</Flow>

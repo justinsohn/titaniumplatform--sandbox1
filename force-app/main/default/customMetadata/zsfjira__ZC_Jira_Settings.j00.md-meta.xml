@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>j00</label>
+    <protected>false</protected>
+    <values>
+        <field>zsfjira__defaultIssueType__c</field>
+        <value xsi:type="xsd:string">10034</value>
+    </values>
+    <values>
+        <field>zsfjira__defaultPriority__c</field>
+        <value xsi:type="xsd:string">10002</value>
+    </values>
+    <values>
+        <field>zsfjira__defaultProject__c</field>
+        <value xsi:type="xsd:string">T4S</value>
+    </values>
+    <values>
+        <field>zsfjira__jsmSelection__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>zsfjira__selectedIssueTypes__c</field>
+        <value xsi:type="xsd:string">[&quot;10023&quot;,&quot;10034&quot;,&quot;10037&quot;,&quot;10035&quot;,&quot;10016&quot;,&quot;10032&quot;]</value>
+    </values>
+    <values>
+        <field>zsfjira__selectedProjects__c</field>
+        <value xsi:type="xsd:string">[&quot;CDA&quot;,&quot;TPR&quot;,&quot;T4S&quot;]</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,17 @@
+/* Style for the Overall Project Financial Summary table */
+.summary-table-container .slds-table tbody td {
+    padding-top: 0.5rem;    /* Consistent top padding for all cells */
+    padding-bottom: 0.5rem; /* Consistent bottom padding for all cells for uniform height */
+    /* This will override the default 0.5rem top/bottom padding from slds-table_cell-buffer */
+}
+
+/* Apply only the border for the visual separator in the Overall Project Financial Summary table */
+.actuals-section-start td {
+    border-top: 1px solid #dddbda; /* SLDS neutral border color */
+    /* Padding is now handled by the .summary-table-container .slds-table tbody td rule for uniformity */
+}
+
+/* Style for the visual separator in the Phase Details table */
+.sold-actual-divider {
+    border-right: 2px solid #b0b0b0 !important; /* A slightly darker, more prominent grey line */
+}

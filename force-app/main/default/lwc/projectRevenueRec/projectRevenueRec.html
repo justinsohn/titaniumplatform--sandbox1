@@ -1,0 +1,428 @@
+<template>
+    <lightning-card title="Revenue Recognition by Type" icon-name="standard:hierarchy">
+        <div class="slds-p-horizontal_medium slds-p-vertical_small">
+            <template if:true={isLoading}>
+                <div class="slds-is-relative slds-m-vertical_large">
+                    <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+                </div>
+            </template>
+
+            <template if:true={error}>
+                <div class="slds-box slds-theme_error slds-m-bottom_medium">
+                    <p>
+                        <lightning-icon icon-name="utility:error" alternative-text="Error" size="x-small" class="slds-m-right_x-small"></lightning-icon>
+                        An error occurred while loading data: {errorText}
+                    </p>
+                </div>
+            </template>
+
+            <template if:false={isLoading}>
+                <template if:true={hasAnyData}>
+
+                    <!-- Section 1: Professional Services Rev/Rec (from Project Tasks) -->
+                    <template if:true={hasProfessionalServicesPhases}>
+                         <div class="slds-m-bottom_large">
+                            <h3 class="slds-text-heading_large slds-m-bottom_medium section-header">
+                                <lightning-icon icon-name="utility:task" size="small" class="slds-m-right_small"></lightning-icon>
+                                Professional Services Rev/Rec
+                            </h3>
+                            <template for:each={professionalServicesPhases} for:item="phase">
+                                <div key={phase.phaseId} class="slds-box slds-theme_default slds-m-bottom_medium slds-border_left slds-border_top slds-border_right slds-border_bottom phase-container">
+                                    <div class="slds-grid slds-page-header__row slds-page-header__row_gutters slds-p-around_small slds-theme_shade">
+                                        <div class="slds-col slds-has-flexi-truncate">
+                                            <h2 class="slds-text-heading_medium slds-truncate" title={phase.phaseName}>
+                                                <lightning-icon icon-name="standard:service_crew" alternative-text="Phase" size="small" class="slds-m-right_small"></lightning-icon>
+                                                {phase.phaseName}
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="slds-p-around_medium">
+                                        <template if:true={phase.hasAnyTasks}>
+                                            <div class="task-list slds-scrollable_x">
+                                                <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered slds-table_striped">
+                                                    <thead>
+                                                        <tr class="slds-line-height_reset slds-text-title_caps slds-theme_shade task-header">
+                                                            <th class="slds-size_2-of-12 slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Service Name">Service Name</div></th>
+                                                            <th class="slds-size_1-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Opp LOE MH (Sold)">Sold Hours</div></th>
+                                                            <th class="slds-size_1-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Additional Hours">Addtl Hrs</div></th>
+                                                            <th class="slds-size_1-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Baseline Hours">Baseline Hrs</div></th>
+                                                            <th class="slds-size_1-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Approved Hours">Apprvd Hrs</div></th>
+                                                            <th class="slds-size_1-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Task POC">POC %</div></th>
+                                                            <th class="slds-size_1-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Price/Rev (Sold)">Price/Rev (Sold)</div></th>
+                                                            <th class="slds-size_2-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Rev/Rec Actual">Rev/Rec Actual</div></th>
+                                                            <th class="slds-size_2-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Rev Rec Backlog">Rev Rec Backlog</div></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <template for:each={phase.tasks} for:item="task">
+                                                            <tr key={task.taskId} class="slds-hint-parent">
+                                                                <td data-label="Service Name" class="slds-p-horizontal_small"><div class="slds-truncate" title={task.taskName}>{task.taskName}</div></td>
+                                                                <td data-label="Sold Hours" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.estimatedHours}></lightning-formatted-number></td>
+                                                                <td data-label="Additional Hours" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.additionalHours}></lightning-formatted-number></td>
+                                                                <td data-label="Baseline Hours" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.baselineHours}></lightning-formatted-number></td>
+                                                                <td data-label="Approved Hours" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.approvedHours}></lightning-formatted-number></td>
+                                                                <td data-label="POC %" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.taskPOC} format-style="percent-fixed" minimum-fraction-digits="1" maximum-fraction-digits="1"></lightning-formatted-number></td>
+                                                                <td data-label="Price/Rev (Sold)" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.priceRevSold} format-style="currency" currency-code="USD"></lightning-formatted-number></td>
+                                                                <td data-label="Rev/Rec Actual" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.revRecActual} format-style="currency" currency-code="USD"></lightning-formatted-number></td>
+                                                                <td data-label="Rev Rec Backlog" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.revenueBacklog} format-style="currency" currency-code="USD"></lightning-formatted-number></td>
+                                                            </tr>
+                                                        </template>
+                                                        <tr class="slds-text-title_bold slds-theme_shade">
+                                                            <td data-label="Totals" class="slds-p-horizontal_small" colspan="8"><strong>Totals:</strong></td>
+                                                            <td data-label="Total Rev Rec Backlog" class="slds-text-align_right slds-p-horizontal_small"><strong><lightning-formatted-number value={phase.totalRevenueBacklogForPhase} format-style="currency" currency-code="USD"></lightning-formatted-number></strong></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </template>
+                                        <template if:false={phase.hasAnyTasks}>
+                                            <div class="slds-text-align_center slds-p-vertical_medium slds-text-color_weak">No professional services data found for this phase.</div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </template>
+
+                    <!-- Section 2: Aggregate POC Product Rev/Rec (from Opportunity Products, with sub-groups) -->
+                    <template if:true={hasAggregatePOCPhases}>
+                         <div class="slds-m-bottom_large">
+                            <h3 class="slds-text-heading_large slds-m-bottom_medium section-header">
+                                <lightning-icon icon-name="utility:chart" size="small" class="slds-m-right_small"></lightning-icon>
+                                Aggregate POC Product Rev/Rec
+                            </h3>
+                            <template for:each={aggregatePOCPhases} for:item="phase">
+                                <div key={phase.phaseId} class="slds-box slds-theme_default slds-m-bottom_medium slds-border_left slds-border_top slds-border_right slds-border_bottom phase-container">
+                                    <div class="slds-grid slds-page-header__row slds-page-header__row_gutters slds-p-around_small slds-theme_shade">
+                                        <div class="slds-col slds-has-flexi-truncate">
+                                            <h2 class="slds-text-heading_medium slds-truncate" title={phase.phaseName}>
+                                                <lightning-icon icon-name="standard:product_item" alternative-text="Phase" size="small" class="slds-m-right_small"></lightning-icon>
+                                                {phase.phaseName}
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="slds-p-around_medium">
+                                        <!-- Iterate over sub-groups -->
+                                        <template for:each={phase.subGroups} for:item="subGroup">
+                                            <div key={subGroup.name} class="slds-m-bottom_medium">
+                                                <h4 class="slds-text-heading_small slds-p-bottom_x-small">{subGroup.name}</h4>
+                                                <template if:true={subGroup.hasAnyTasks}>
+                                                    <div class="task-list slds-scrollable_x">
+                                                        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered slds-table_striped">
+                                                            <thead>
+                                                                <tr class="slds-line-height_reset slds-text-title_caps slds-theme_shade task-header">
+                                                                    <th class="slds-size_3-of-12 slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Product Name">Product Name</div></th>
+                                                                    <th class="slds-size_2-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Product POC">Aggregate %</div></th>
+                                                                    <th class="slds-size_2-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Price/Rev (Sold)">Price/Rev (Sold)</div></th>
+                                                                    <th class="slds-size_2-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Rev/Rec Actual">Rev/Rec Actual</div></th>
+                                                                    <th class="slds-size_3-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Rev Rec Backlog">Rev Rec Backlog</div></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <template for:each={subGroup.tasks} for:item="task">
+                                                                    <tr key={task.taskId} class="slds-hint-parent">
+                                                                        <td data-label="Product Name" class="slds-p-horizontal_small"><div class="slds-truncate" title={task.taskName}>{task.taskName}</div></td>
+                                                                        <td data-label="Aggregate POC" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.taskPOC} format-style="percent-fixed" minimum-fraction-digits="1" maximum-fraction-digits="1"></lightning-formatted-number></td>
+                                                                        <td data-label="Price/Rev (Sold)" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.priceRevSold} format-style="currency" currency-code="USD"></lightning-formatted-number></td>
+                                                                        <td data-label="Rev/Rec Actual" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.revRecActual} format-style="currency" currency-code="USD"></lightning-formatted-number></td>
+                                                                        <td data-label="Rev Rec Backlog" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.revenueBacklog} format-style="currency" currency-code="USD"></lightning-formatted-number></td>
+                                                                    </tr>
+                                                                </template>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </template>
+                                                <template if:false={subGroup.hasAnyTasks}>
+                                                    <div class="slds-text-align_center slds-p-vertical_medium slds-text-color_weak">No products found for this sub-group.</div>
+                                                </template>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </template>
+
+                    <!-- NEW Section: Maintenance Rev/Rec (from Project Tasks) -->
+                    <template if:true={hasMaintenancePhases}>
+                        <div class="slds-m-bottom_large">
+                            <h3 class="slds-text-heading_large slds-m-bottom_medium section-header">
+                                <lightning-icon icon-name="utility:build_nearby" size="small" class="slds-m-right_small"></lightning-icon>
+                                Maintenance Rev/Rec
+                            </h3>
+                            <template for:each={maintenancePhases} for:item="phase">
+                                <div key={phase.phaseId} class="slds-box slds-theme_default slds-m-bottom_medium slds-border_left slds-border_top slds-border_right slds-border_bottom phase-container">
+                                    <div class="slds-grid slds-page-header__row slds-page-header__row_gutters slds-p-around_small slds-theme_shade">
+                                        <div class="slds-col slds-has-flexi-truncate">
+                                            <h2 class="slds-text-heading_medium slds-truncate" title={phase.phaseName}>
+                                                <lightning-icon icon-name="standard:service_crew" alternative-text="Phase" size="small" class="slds-m-right_small"></lightning-icon>
+                                                {phase.phaseName}
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="slds-p-around_medium">
+                                        <template if:true={phase.hasAnyTasks}>
+                                            <div class="task-list slds-scrollable_x">
+                                                <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered slds-table_striped">
+                                                    <thead>
+                                                        <tr class="slds-line-height_reset slds-text-title_caps slds-theme_shade task-header">
+                                                            <th class="slds-size_3-of-12 slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Service Name">Service Name</div></th>
+                                                            <th class="slds-size_2-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Task POC">Term %</div></th>
+                                                            <th class="slds-size_2-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Price/Rev (Sold)">Price/Rev (Sold)</div></th>
+                                                            <th class="slds-size_2-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Rev/Rec Actual">Rev/Rec Actual</div></th>
+                                                            <th class="slds-size_3-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Rev Rec Backlog">Rev Rec Backlog</div></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <template for:each={phase.tasks} for:item="task">
+                                                            <tr key={task.taskId} class="slds-hint-parent">
+                                                                <td data-label="Service Name" class="slds-p-horizontal_small"><div class="slds-truncate" title={task.taskName}>{task.taskName}</div></td>
+                                                                <td data-label="Term %" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.taskPOC} format-style="percent-fixed" minimum-fraction-digits="1" maximum-fraction-digits="1"></lightning-formatted-number></td>
+                                                                <td data-label="Price/Rev (Sold)" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.priceRevSold} format-style="currency" currency-code="USD"></lightning-formatted-number></td>
+                                                                <td data-label="Rev/Rec Actual" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.revRecActual} format-style="currency" currency-code="USD"></lightning-formatted-number></td>
+                                                                <td data-label="Rev Rec Backlog" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.revenueBacklog} format-style="currency" currency-code="USD"></lightning-formatted-number></td>
+                                                            </tr>
+                                                        </template>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </template>
+                                        <template if:false={phase.hasAnyTasks}>
+                                            <div class="slds-text-align_center slds-p-vertical_medium slds-text-color_weak slds-m-top_small">
+                                                No maintenance data found for this phase.
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </template>
+
+                    <!-- NEW Section: Managed Services Rev/Rec (from Project Tasks) -->
+                    <template if:true={hasManagedServicesPhases}>
+                        <div class="slds-m-bottom_large">
+                            <h3 class="slds-text-heading_large slds-m-bottom_medium section-header">
+                                <lightning-icon icon-name="utility:connected_apps" size="small" class="slds-m-right_small"></lightning-icon>
+                                Managed Services Rev/Rec
+                            </h3>
+                            <template for:each={managedServicesPhases} for:item="phase">
+                                <div key={phase.phaseId} class="slds-box slds-theme_default slds-m-bottom_medium slds-border_left slds-border_top slds-border_right slds-border_bottom phase-container">
+                                    <div class="slds-grid slds-page-header__row slds-page-header__row_gutters slds-p-around_small slds-theme_shade">
+                                        <div class="slds-col slds-has-flexi-truncate">
+                                            <h2 class="slds-text-heading_medium slds-truncate" title={phase.phaseName}>
+                                                <lightning-icon icon-name="standard:service_crew" alternative-text="Phase" size="small" class="slds-m-right_small"></lightning-icon>
+                                                {phase.phaseName}
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="slds-p-around_medium">
+                                        <template if:true={phase.hasAnyTasks}>
+                                            <div class="task-list slds-scrollable_x">
+                                                <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered slds-table_striped">
+                                                    <thead>
+                                                        <tr class="slds-line-height_reset slds-text-title_caps slds-theme_shade task-header">
+                                                            <th class="slds-size_3-of-12 slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Service Name">Service Name</div></th>
+                                                            <th class="slds-size_2-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Task POC">Term %</div></th>
+                                                            <th class="slds-size_2-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Price/Rev (Sold)">Price/Rev (Sold)</div></th>
+                                                            <th class="slds-size_2-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Rev/Rec Actual">Rev/Rec Actual</div></th>
+                                                            <th class="slds-size_3-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Rev Rec Backlog">Rev Rec Backlog</div></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <template for:each={phase.tasks} for:item="task">
+                                                            <tr key={task.taskId} class="slds-hint-parent">
+                                                                <td data-label="Service Name" class="slds-p-horizontal_small"><div class="slds-truncate" title={task.taskName}>{task.taskName}</div></td>
+                                                                <td data-label="Term %" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.taskPOC} format-style="percent-fixed" minimum-fraction-digits="1" maximum-fraction-digits="1"></lightning-formatted-number></td>
+                                                                <td data-label="Price/Rev (Sold)" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.priceRevSold} format-style="currency" currency-code="USD"></lightning-formatted-number></td>
+                                                                <td data-label="Rev/Rec Actual" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.revRecActual} format-style="currency" currency-code="USD"></lightning-formatted-number></td>
+                                                                <td data-label="Rev Rec Backlog" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.revenueBacklog} format-style="currency" currency-code="USD"></lightning-formatted-number></td>
+                                                            </tr>
+                                                        </template>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </template>
+                                        <template if:false={phase.hasAnyTasks}>
+                                            <div class="slds-text-align_center slds-p-vertical_medium slds-text-color_weak slds-m-top_small">
+                                                No managed services data found for this phase.
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </template>
+
+                    <!-- Section 6: Milestone Rev Rec - Time and Expenses (from Opportunity Products) -->
+                    <template if:true={hasMilestoneTimeAndExpensesProducts}>
+                        <div class="slds-m-bottom_large">
+                            <h3 class="slds-text-heading_large slds-m-bottom_medium section-header">
+                                <lightning-icon icon-name="utility:sales_cadence_target" size="small" class="slds-m-right_small"></lightning-icon>
+                                Milestone Rev Rec - Time and Expenses
+                            </h3>
+                             <div class="slds-box slds-theme_default slds-m-bottom_medium slds-border_left slds-border_top slds-border_right slds-border_bottom phase-container">
+                                <div class="slds-p-around_medium">
+                                    <div class="task-list slds-scrollable_x">
+                                        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered slds-table_striped">
+                                            <thead>
+                                                <tr class="slds-line-height_reset slds-text-title_caps slds-theme_shade task-header">
+                                                    <th class="slds-size_6-of-12 slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Product Name">Product Name</div></th>
+                                                    <th class="slds-size_3-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Price/Rev (Sold)">Price/Rev (Sold)</div></th>
+                                                    <th class="slds-size_3-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Rev/Rec Actual">Rev/Rec Actual</div></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <template for:each={milestoneTimeAndExpensesProducts} for:item="product">
+                                                    <tr key={product.taskId} class="slds-hint-parent">
+                                                        <td data-label="Product Name" class="slds-p-horizontal_small"><div class="slds-truncate" title={product.taskName}>{product.taskName}</div></td>
+                                                        <td data-label="Price/Rev (Sold)" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={product.priceRevSold} format-style="currency" currency-code="USD"></lightning-formatted-number></td>
+                                                        <td data-label="Rev/Rec Actual" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={product.revRecActual} format-style="currency" currency-code="USD"></lightning-formatted-number></td>
+                                                    </tr>
+                                                </template>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+
+                    <!-- Section 7: Milestone Rev Rec - Hardware (from Opportunity Products) -->
+                    <template if:true={hasMilestoneHardwarePhases}>
+                        <div class="slds-m-bottom_large">
+                            <h3 class="slds-text-heading_large slds-m-bottom_medium section-header">
+                                <lightning-icon icon-name="utility:package" size="small" class="slds-m-right_small"></lightning-icon>
+                                Milestone Rev Rec - Hardware
+                            </h3>
+                            <template for:each={milestoneHardwareProducts} for:item="phase">
+                                <div key={phase.phaseId} class="slds-box slds-theme_default slds-m-bottom_medium slds-border_left slds-border_top slds-border_right slds-border_bottom phase-container">
+                                    <div class="slds-grid slds-page-header__row slds-page-header__row_gutters slds-p-around_small slds-theme_shade">
+                                        <div class="slds-col slds-has-flexi-truncate">
+                                            <h2 class="slds-text-heading_medium slds-truncate" title={phase.phaseName}>
+                                                <lightning-icon icon-name="standard:product_item" alternative-text="Phase" size="small" class="slds-m-right_small"></lightning-icon>
+                                                {phase.phaseName}
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="slds-p-around_medium">
+                                        <template if:true={phase.hasAnyTasks}>
+                                            <div class="task-list slds-scrollable_x">
+                                                <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered slds-table_striped">
+                                                    <thead>
+                                                        <tr class="slds-line-height_reset slds-text-title_caps slds-theme_shade task-header">
+                                                            <th class="slds-size_6-of-12 slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Product Name">Product Name</div></th>
+                                                            <th class="slds-size_3-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Price/Rev (Sold)">Price/Rev (Sold)</div></th>
+                                                            <th class="slds-size_3-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Rev/Rec Actual">Rev/Rec Actual</div></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <template for:each={phase.tasks} for:item="task">
+                                                            <tr key={task.taskId} class="slds-hint-parent">
+                                                                <td data-label="Product Name" class="slds-p-horizontal_small"><div class="slds-truncate" title={task.taskName}>{task.taskName}</div></td>
+                                                                <td data-label="Price/Rev (Sold)" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.priceRevSold} format-style="currency" currency-code="USD"></lightning-formatted-number></td>
+                                                                <td data-label="Rev/Rec Actual" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.revRecActual} format-style="currency" currency-code="USD"></lightning-formatted-number></td>
+                                                            </tr>
+                                                        </template>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </template>
+                                        <template if:false={phase.hasAnyTasks}>
+                                            <div class="slds-text-align_center slds-p-vertical_medium slds-text-color_weak">No hardware data found for this phase.</div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </template>
+
+                    <!-- Section 8: Milestone Rev Rec - Product Advancement Fee (from Opportunity Products) -->
+                    <template if:true={hasMilestoneAdvancementFeeTasks}>
+                        <div class="slds-m-bottom_large">
+                            <h3 class="slds-text-heading_large slds-m-bottom_medium section-header">
+                                <lightning-icon icon-name="utility:moneybag" size="small" class="slds-m-right_small"></lightning-icon>
+                                Milestone Rev Rec - Product Advancement Fee
+                            </h3>
+                             <div class="slds-box slds-theme_default slds-m-bottom_medium slds-border_left slds-border_top slds-border_right slds-border_bottom phase-container">
+                                <div class="slds-p-around_medium">
+                                    <div class="task-list slds-scrollable_x">
+                                        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered slds-table_striped">
+                                            <thead>
+                                                <tr class="slds-line-height_reset slds-text-title_caps slds-theme_shade task-header">
+                                                    <th class="slds-size_6-of-12 slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Product Name">Product Name</div></th>
+                                                    <th class="slds-size_3-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Price/Rev (Sold)">Price/Rev (Sold)</div></th>
+                                                    <th class="slds-size_3-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Rev/Rec Actual">Rev/Rec Actual</div></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <template for:each={milestoneAdvancementFeeProducts} for:item="task">
+                                                    <tr key={task.taskId} class="slds-hint-parent">
+                                                        <td data-label="Product Name" class="slds-p-horizontal_small"><div class="slds-truncate" title={task.taskName}>{task.taskName}</div></td>
+                                                        <td data-label="Price/Rev (Sold)" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.priceRevSold} format-style="currency" currency-code="USD"></lightning-formatted-number></td>
+                                                        <td data-label="Rev/Rec Actual" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={task.revRecActual} format-style="currency" currency-code="USD"></lightning-formatted-number></td>
+                                                    </tr>
+                                                </template>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+
+                    <!-- Section 9: Milestone Rev Rec - By Product Family (from Opportunity Products) -->
+                    <template if:true={hasMilestoneProductFamilyGroups}>
+                        <div class="slds-m-bottom_large">
+                            <h3 class="slds-text-heading_large slds-m-bottom_medium section-header">
+                                <lightning-icon icon-name="utility:milestone" size="small" class="slds-m-right_small"></lightning-icon>
+                                Milestone Rev Rec - Other Products
+                            </h3>
+                            <template for:each={milestoneProductFamilyGroups} for:item="group">
+                                <div key={group.name} class="slds-box slds-theme_default slds-m-bottom_medium slds-border_left slds-border_top slds-border_right slds-border_bottom phase-container">
+                                    <div class="slds-grid slds-page-header__row slds-page-header__row_gutters slds-p-around_small slds-theme_shade">
+                                        <div class="slds-col slds-has-flexi-truncate">
+                                            <h2 class="slds-text-heading_medium slds-truncate" title={group.name}>
+                                                <lightning-icon icon-name="standard:folder" alternative-text="Product Family" size="small" class="slds-m-right_small"></lightning-icon>
+                                                {group.name}
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="slds-p-around_medium">
+                                        <template if:true={group.products.length}>
+                                            <div class="task-list slds-scrollable_x">
+                                                <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered slds-table_striped">
+                                                    <thead>
+                                                        <tr class="slds-line-height_reset slds-text-title_caps slds-theme_shade task-header">
+                                                            <th class="slds-size_6-of-12 slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Product Name">Product Name</div></th>
+                                                            <th class="slds-size_3-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Price/Rev (Sold)">Price/Rev (Sold)</div></th>
+                                                            <th class="slds-size_3-of-12 slds-text-align_right slds-p-horizontal_small" scope="col"><div class="slds-truncate" title="Rev/Rec Actual">Rev/Rec Actual</div></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <template for:each={group.products} for:item="product">
+                                                            <tr key={product.taskId} class="slds-hint-parent">
+                                                                <td data-label="Product Name" class="slds-p-horizontal_small"><div class="slds-truncate" title={product.taskName}>{product.taskName}</div></td>
+                                                                <td data-label="Price/Rev (Sold)" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={product.priceRevSold} format-style="currency" currency-code="USD"></lightning-formatted-number></td>
+                                                                <td data-label="Rev/Rec Actual" class="slds-text-align_right slds-p-horizontal_small"><lightning-formatted-number value={product.revRecActual} format-style="currency" currency-code="USD"></lightning-formatted-number></td>
+                                                            </tr>
+                                                        </template>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </template>
+                                        <template if:false={group.products.length}>
+                                            <div class="slds-text-align_center slds-p-vertical_medium slds-text-color_weak">No products found for this family.</div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </template>
+
+                </template> <template if:false={hasAnyData}>
+                    <div class="slds-text-align_center slds-p-vertical_large slds-text-color_weak">
+                        No Revenue Recognition data found for this project.
+                    </div>
+                </template>
+            </template> </div> </lightning-card>
+</template>

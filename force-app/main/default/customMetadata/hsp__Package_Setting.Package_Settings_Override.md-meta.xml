@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Package Settings Override</label>
+    <protected>false</protected>
+    <values>
+        <field>hsp__Automatically_Manage_PPRRequest__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>hsp__Automatically_Manage_PPR_Request__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Batch_Processing_Size__c</field>
+        <value xsi:type="xsd:double">20.0</value>
+    </values>
+    <values>
+        <field>hsp__Batch_Reschedule_Interval__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Configuration_Type_in_Exported_Zip_File__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Configurator_Group_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Configurator_Sub_Group_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Delete_Event_Queue_Records_After_Hours__c</field>
+        <value xsi:type="xsd:double">1.0</value>
+    </values>
+    <values>
+        <field>hsp__Delete_Stuck_Event_Chain_After_Seconds__c</field>
+        <value xsi:type="xsd:double">300.0</value>
+    </values>
+    <values>
+        <field>hsp__Diagnostic_Logs_Refresh_Threshold__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Diagnostics_Log_Level__c</field>
+        <value xsi:type="xsd:string">Error</value>
+    </values>
+    <values>
+        <field>hsp__Diagnostics_Logs_Refresh_Threshold__c</field>
+        <value xsi:type="xsd:double">2000.0</value>
+    </values>
+    <values>
+        <field>hsp__Enable_Test_Result_Creation__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Event_Processing_Batch_Size__c</field>
+        <value xsi:type="xsd:double">50.0</value>
+    </values>
+    <values>
+        <field>hsp__Event_Processing_Size__c</field>
+        <value xsi:type="xsd:double">20.0</value>
+    </values>
+    <values>
+        <field>hsp__Exchange_Rate_Options__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Execute_Automation_with_the_Legacy_Code__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Execute_Automations_with_External_Ids__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>hsp__Keep_Event_Chain_History__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Large_Plan_Threshold__c</field>
+        <value xsi:type="xsd:double">5000.0</value>
+    </values>
+    <values>
+        <field>hsp__Max_Periods_Default__c</field>
+        <value xsi:type="xsd:double">12.0</value>
+    </values>
+    <values>
+        <field>hsp__Number_Of_Lines_To_Batch_Apex_Threshold__c</field>
+        <value xsi:type="xsd:double">30.0</value>
+    </values>
+    <values>
+        <field>hsp__Order_of_Configuration_Type_in_Docs__c</field>
+        <value xsi:type="xsd:string">hsp__Scenario__c;hsp__Schedule_Type__c;hsp__Scenario_Schedule_Type__c;hsp__Schedule_Period__c;hsp__Package_Setting__mdt;hsp__Scenario_Setting__mdt;hsp__Scenario_Schedule_Type_Setting__mdt;hsp__Schedule_Type_Setting__mdt;hsp__Schedule_Type_Map__mdt;hsp__Tr</value>
+    </values>
+    <values>
+        <field>hsp__Plan_Loader_Batch_Size__c</field>
+        <value xsi:type="xsd:double">20.0</value>
+    </values>
+    <values>
+        <field>hsp__Process_Line_Item_Batch_Size__c</field>
+        <value xsi:type="xsd:double">15.0</value>
+    </values>
+    <values>
+        <field>hsp__Queue_and_Optimize_Event_Processing__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>hsp__Refresh_Exchange_Rate_Boolean_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>hsp__Stop_Import_When_Errors__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Write_Diagnostic_Logs_Per_Execution__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>hsp__Write_Diagnostics_Logs_Per_Execution__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>hsp__revVana_Solution__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>
