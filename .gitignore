@@ -1,48 +1,51 @@
-# This file is used for Git repositories to specify intentionally untracked files that Git should ignore. 
-# If you are not using git, you can delete this file. For more information see: https://git-scm.com/docs/gitignore
-# For useful gitignore templates see: https://github.com/github/gitignore
+﻿# --- OS / editor noise ---
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
 
-# Salesforce cache
-.sf/
-.sfdx/
-.localdevserver/
-deploy-options.json
+# --- IDE (remove this block if you want settings tracked) ---
+.vscode/
 
-# LWC VSCode autocomplete
-**/lwc/jsconfig.json
-
-# LWC Jest coverage reports
+# --- Node / tooling ---
+node_modules/
+.npm/
 coverage/
-
-# Logs
-logs
+.nyc_output/
+.eslintcache
+.jest/
+.jest-cache/
 *.log
 npm-debug.log*
-yarn-debug.log*
 yarn-error.log*
 
-# Dependency directories
-node_modules/
+# --- Build / temp outputs ---
+dist/
+build/
+tmp/
+temp/
+*.tmp
 
-# ApexPMD cache
-.pmdCache
+# --- Archives / binaries ---
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.jar
+*.exe
+*.dll
 
-# Eslint cache
-.eslintcache
-
-# MacOS system files
-.DS_Store
-
-# Windows system files
-Thumbs.db
-ehthumbs.db
-[Dd]esktop.ini
-$RECYCLE.BIN/
-
-# Local environment variables
+# --- Env files (keep secrets local) ---
 .env
+.env.*
 
-# Python Salesforce Functions
-**/__pycache__/
-**/.venv/
-**/venv/
+# --- Salesforce CLI & caches ---
+.sfdx/
+.sf/
+**/.localdevserver/
+
+# --- Common DX/MDAPI scratch dirs ---
+mdapiout/
+mdapi_output/
+deploy/
+out/
